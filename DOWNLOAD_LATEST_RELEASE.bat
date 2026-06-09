@@ -4,6 +4,7 @@ cd /d "%~dp0"
 
 set "ZIP_URL=https://raw.githubusercontent.com/se5139/-/main/release/kakao_emoticon_v100_clean_latest.zip"
 set "SHA_URL=https://raw.githubusercontent.com/se5139/-/main/release/kakao_emoticon_v100_clean_latest.sha256.txt"
+set "GITHUB_RELEASE_PAGE=https://github.com/se5139/-/tree/main/release"
 set "OUT_DIR=%~dp0downloaded_release"
 set "ZIP_PATH=%OUT_DIR%\kakao_emoticon_v100_clean_latest.zip"
 set "SHA_PATH=%OUT_DIR%\kakao_emoticon_v100_clean_latest.sha256.txt"
@@ -23,7 +24,15 @@ powershell -NoProfile -ExecutionPolicy Bypass -Command "try { Invoke-WebRequest 
 if errorlevel 1 (
   echo.
   echo [FAIL] Download failed.
-  echo Check your internet connection or open DOWNLOAD_LATEST_FROM_GITHUB_KO.md manually.
+  echo This can happen if the GitHub repository is private or requires login.
+  echo Opening the GitHub release folder page instead.
+  start "" "%GITHUB_RELEASE_PAGE%"
+  echo.
+  echo Manual fallback:
+  echo 1. Log in to GitHub if needed.
+  echo 2. Open the release folder.
+  echo 3. Download kakao_emoticon_v100_clean_latest.zip.
+  echo 4. Read DOWNLOAD_LATEST_FROM_GITHUB_KO.md if you need the detailed steps.
   pause
   exit /b 1
 )
