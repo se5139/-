@@ -1,0 +1,16 @@
+{
+  "ok": true,
+  "missing": [],
+  "pipeline_status": "REGENERATION_DONE_RECHECK_REQUIRED",
+  "categories": [
+    "finish_quality",
+    "motion_quality",
+    "phrase_readability",
+    "set_repetition"
+  ],
+  "regenerated_static_count": 32,
+  "regenerated_animated_count": 24,
+  "regenerated_gif_count": 3,
+  "output_dir": "/mnt/data/work_v76/outputs/v76_check/v76_check_rejection_to_regeneration_1780835293",
+  "work_package_zip": "/mnt/data/work_v76/outputs/v76_check/v76_check_rejection_to_regeneration_1780835293/v76_rejection_to_regeneration_work_package.zip"
+}

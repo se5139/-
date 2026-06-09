@@ -1,0 +1,10 @@
+Kakao Emoticon Profit System v57 - Windows Installer Build Guide
+
+1. Extract the ZIP completely.
+2. Recommended folder: C:\KakaoEmoticonV57
+3. Run 0_BUILD_WINDOWS_INSTALLER_EXE.bat or BUILD_V57_SETUP_EXE.bat.
+4. If the compiler is not found, run OPEN_V57_INNO_SCRIPT.bat and click Build > Compile in Inno Setup.
+5. Expected output: installer\Output\KakaoEmoticonSetup_v57.exe
+
+V57 UI change:
+- The app uses a left sidebar vertical menu instead of a long top tab row.

@@ -1,0 +1,8 @@
+Kakao Emoticon Profit System v63
+
+- Added template engine manager.
+- Primary active engine: Jinja2 >= 3.1.6.
+- Optional advanced text template engine: Mako >= 1.3.12.
+- Django Template / Chameleon / Handlebars-Mustache evaluated but not bundled as default runtime dependencies.
+- New menu: 53 템플릿 엔진 관리/분리 구조.
+- Verification: see kakao_emoticon_profit_system_v63_verification_report.json.

@@ -1,0 +1,12 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><title>v70 세트 완성도 강화 리포트</title>
+<style>
+body{font-family:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#f6f7fb;color:#172033;margin:0;padding:28px}.wrap{max-width:1240px;margin:auto}.hero{background:linear-gradient(135deg,#111827,#0f766e,#84cc16);color:white;border-radius:28px;padding:28px 32px;box-shadow:0 18px 42px rgba(15,23,42,.20)}.card{background:white;border:1px solid #e5e7eb;border-radius:22px;padding:20px;margin-top:18px;box-shadow:0 10px 28px rgba(15,23,42,.06)}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px}.preview{text-align:center;background:white;border:1px solid #e5e7eb;border-radius:18px;padding:12px}.preview img{max-width:100%;border-radius:16px;background:white}.badge{display:inline-block;background:#dcfce7;color:#166534;border-radius:999px;padding:5px 10px;margin:3px;font-weight:700}.score{font-size:28px;font-weight:800;color:#0f766e}.warn{background:#fff7ed;border:1px solid #fed7aa;color:#9a3412;border-radius:14px;padding:12px}.mono{white-space:pre-wrap;background:#0f172a;color:#e5e7eb;border-radius:16px;padding:14px;overflow:auto}
+</style></head><body><div class="wrap"><div class="hero"><h1>v70 세트 완성도 강화 리포트</h1><p>32개 정지형 · 24개 움직이는형 · 감정/문구/포즈 중복 점검 · 제출 후보 패키지</p></div>
+<div class="card"><h2>프로젝트</h2><p><b>{{ project_name }}</b></p><p>{{ concept_text }}</p>{% for r in set_rules %}<span class="badge">{{ r }}</span>{% endfor %}</div>
+<div class="card"><h2>세트 미리보기</h2><div class="grid"><div class="preview"><h3>32개 정지형 갤러리</h3><img src="data:image/png;base64,{{ static_gallery_b64 }}"></div><div class="preview"><h3>24개 움직이는형 갤러리</h3><img src="data:image/png;base64,{{ animated_gallery_b64 }}"></div><div class="preview"><h3>대표 GIF</h3><img src="data:image/gif;base64,{{ gif_b64 }}"></div></div></div>
+<div class="card"><h2>세트 품질 점수</h2><div class="grid">{% for k,v in set_scores.items() %}<div><div class="score">{{ v }}</div><b>{{ k }}</b></div>{% endfor %}</div></div>
+<div class="card"><h2>개선 계획</h2><ul>{% for item in improvement_plan %}<li>{{ item }}</li>{% endfor %}</ul></div>
+<div class="card warn"><b>중복/안전 경고</b><ul>{% for item in duplicate_warnings %}<li>{{ item }}</li>{% endfor %}{% if not duplicate_warnings %}<li>현재 기준 중복 위험은 크게 발견되지 않았습니다.</li>{% endif %}</ul></div>
+<div class="card"><h2>Identity Lock</h2><div class="mono">{{ identity_pretty }}</div></div>
+</div></body></html>

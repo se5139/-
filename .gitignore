@@ -1,0 +1,40 @@
+# Local Python environments and caches
+**/.venv/
+**/__pycache__/
+**/*.pyc
+**/*.pyo
+**/*.pyd
+
+# Generated outputs and local diagnostics
+**/outputs/
+**/_test_localappdata/
+_test_localappdata_v92/
+
+# Local-only tools downloaded by Codex
+_tools/
+
+# Intermediate review/extract folders from previous build attempts
+_review_extract/
+_final_zip_recheck/
+_github_upload/
+_deliverables_v90/
+kakao_emoticon_v100_clean/
+
+# Secrets and local config
+.env
+.env.*
+*.env
+openai-api-key.txt
+*api*key*.txt
+*secret*.txt
+
+# Build products are ignored by default...
+*.zip
+*.exe
+*.sha256.txt
+
+# ...except the current v92 release artifacts for easy install on another PC.
+!_deliverables_v92/
+!_deliverables_v92/*.zip
+!_deliverables_v92/*.exe
+!_deliverables_v92/*.sha256.txt

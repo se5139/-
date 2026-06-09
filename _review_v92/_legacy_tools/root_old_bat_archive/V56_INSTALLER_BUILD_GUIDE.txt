@@ -1,0 +1,21 @@
+Kakao Emoticon Profit System v56 - Windows Installer Build Guide
+
+1. Extract this ZIP completely.
+2. Recommended folder: C:\KakaoEmoticonV56
+3. If Inno Setup Compiler is installed, run:
+   0_BUILD_WINDOWS_INSTALLER_EXE.bat
+
+Output file:
+   installer\Output\KakaoEmoticonSetup_v56.exe
+
+If the compiler is still not detected:
+1. Run OPEN_V56_INNO_SCRIPT.bat
+2. When Inno Setup opens, click Build or Compile.
+3. Check installer\Output\KakaoEmoticonSetup_v56.exe
+
+If your Inno Setup is installed in a custom folder, set ISCC_PATH to the full ISCC.exe path before running the build BAT.
+Example:
+   set ISCC_PATH=C:\YourPath\Inno Setup 6\ISCC.exe
+   0_BUILD_WINDOWS_INSTALLER_EXE.bat
+
+The final application remains Python-based. Inno Setup is only used to create the Windows installer wizard.

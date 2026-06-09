@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>{{ project_name }} - v63 Template Engine Decision Report</title>
+<style>
+body{font-family:Arial,'Malgun Gothic',sans-serif;background:#f8fafc;color:#111827;margin:0;padding:28px} .wrap{max-width:1040px;margin:0 auto}.hero{background:linear-gradient(135deg,#111827,#2563eb);color:white;border-radius:22px;padding:24px;box-shadow:0 14px 32px rgba(15,23,42,.18)}.card{background:white;border:1px solid #e5e7eb;border-radius:18px;padding:18px;margin-top:16px;box-shadow:0 8px 20px rgba(15,23,42,.06)}table{width:100%;border-collapse:collapse}th,td{border-bottom:1px solid #e5e7eb;padding:10px;text-align:left;vertical-align:top}th{background:#f1f5f9}.badge{display:inline-block;background:#dbeafe;color:#1e40af;border-radius:999px;padding:4px 10px;font-weight:700}
+</style>
+</head>
+<body><div class="wrap">
+<div class="hero"><h1>v63 템플릿 엔진 관리 구조</h1><p>{{ project_name }} · {{ generated_at }}</p><p>주 엔진: <b>{{ active_engine }}</b> / 선택 보조: <b>{{ optional_engine }}</b></p></div>
+<div class="card"><h2>프로젝트 콘셉트</h2><p>{{ concept_text }}</p><p><span class="badge">정책</span> {{ selected_template_policy }}</p></div>
+<div class="card"><h2>엔진 선택 매트릭스</h2><table><thead><tr><th>엔진</th><th>역할</th><th>상태</th><th>선택 이유</th><th>의존성</th></tr></thead><tbody>{% for e in engine_choices %}<tr><td>{{ e.engine }}</td><td>{{ e.role }}</td><td>{{ e.status }}</td><td>{{ e.reason }}</td><td>{{ e.dependency }}</td></tr>{% endfor %}</tbody></table></div>
+<div class="card"><h2>출력물</h2><ul>{% for item in intended_outputs %}<li>{{ item }}</li>{% endfor %}</ul></div>
+<div class="card"><h2>트렌드 신호</h2><ul>{% for item in trend_signals %}<li>{{ item }}</li>{% endfor %}</ul></div>
+<div class="card"><h2>안전 기준</h2><ul>{% for note in safety_notes %}<li>{{ note }}</li>{% endfor %}</ul></div>
+</div></body></html>

@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<title>{{ project_name }} - Coding Toolchain Report</title>
+<style>
+body{font-family:Arial,'Malgun Gothic',sans-serif;margin:28px;color:#222;background:#fafafa;}
+.card{background:#fff;border:1px solid #ddd;border-radius:14px;padding:18px;margin:14px 0;box-shadow:0 2px 8px rgba(0,0,0,.04);}
+table{border-collapse:collapse;width:100%;background:#fff;} th,td{border:1px solid #ddd;padding:8px;text-align:left;font-size:13px;} th{background:#f1f4f8;}
+.badge{display:inline-block;background:#e8f1ff;border-radius:10px;padding:3px 8px;margin:2px;font-size:12px;}
+</style>
+</head>
+<body>
+<h1>{{ project_name }} v64 Coding Toolchain Report</h1>
+<p>Generated at {{ generated_at }}</p>
+<div class="card">
+<h2>Fixed project rule</h2>
+<p>{{ fixed_rule }}</p>
+</div>
+<div class="card">
+<h2>Recommended stack</h2>
+<table><thead><tr><th>Category</th><th>Selected tools</th><th>Role</th><th>Status</th></tr></thead><tbody>
+{% for row in toolchain %}<tr><td>{{ row.category }}</td><td>{{ row.tools | join(', ') }}</td><td>{{ row.role }}</td><td>{{ row.status }}</td></tr>{% endfor %}
+</tbody></table>
+</div>
+<div class="card">
+<h2>Template engine policy</h2>
+<table><thead><tr><th>Engine</th><th>Use</th><th>Decision</th></tr></thead><tbody>
+{% for row in template_engines %}<tr><td>{{ row.engine }}</td><td>{{ row.use_case }}</td><td>{{ row.decision }}</td></tr>{% endfor %}
+</tbody></table>
+</div>
+<div class="card">
+<h2>Install checklist</h2>
+{% for item in install_checklist %}<span class="badge">{{ item }}</span>{% endfor %}
+</div>
+</body></html>

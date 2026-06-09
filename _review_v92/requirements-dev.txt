@@ -1,0 +1,7 @@
+# Optional developer/test tools for v65.
+# These are not required for normal end users.
+pytest>=8.0.0
+ruff>=0.8.0
+mypy>=1.10.0
+pyinstaller>=6.0.0
+ruff>=0.5.0

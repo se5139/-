@@ -1,0 +1,15 @@
+
+# {{ project_name }} v66 개발 실행 워크플로우
+
+생성시각: {{ generated_at }}
+
+최종 기준: {{ final_policy }}
+
+{% for s in stages %}
+## {{ s.order }}. {{ s.stage }}
+- 주 도구: {{ s.primary_tool }}
+- 보조 도구: {{ s.support_tools | join(', ') }}
+- 출력: {{ s.output }}
+- 검증: {{ s.verification }}
+- 최종 기준: {{ s.final_rule }}
+{% endfor %}
