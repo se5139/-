@@ -27,6 +27,7 @@ installer/*_build_report.json
 
 # Local-only work folders and downloaded tools
 _tools/
+.codex-remote-attachments/
 _review_extract/
 _github_upload/
 _deliverables_v90/
