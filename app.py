@@ -7,6 +7,7 @@ import json
 import math
 import os
 import re
+import shutil
 import socketserver
 import sys
 import time
@@ -2421,6 +2422,9 @@ def build_release_package() -> dict[str, object]:
     zip_path = RELEASE_ROOT / f"{package_stem}.zip"
     checksum_path = RELEASE_ROOT / f"{package_stem}.sha256.txt"
     report_path = RELEASE_ROOT / f"{package_stem}_report.json"
+    latest_zip_path = RELEASE_ROOT / "kakao_emoticon_v100_clean_latest.zip"
+    latest_checksum_path = RELEASE_ROOT / "kakao_emoticon_v100_clean_latest.sha256.txt"
+    latest_report_path = RELEASE_ROOT / "kakao_emoticon_v100_clean_latest_report.json"
     package_root_name = "kakao_emoticon_v100_clean"
 
     included_files = release_allowlist_files()
@@ -2460,6 +2464,10 @@ def build_release_package() -> dict[str, object]:
         **manifest,
         "zip_path": str(zip_path),
         "zip_name": zip_path.name,
+        "latest_zip_path": str(latest_zip_path),
+        "latest_zip_name": latest_zip_path.name,
+        "latest_checksum_path": str(latest_checksum_path),
+        "latest_report_path": str(latest_report_path),
         "zip_size_bytes": zip_path.stat().st_size,
         "zip_size_label": bytes_label(zip_path.stat().st_size),
         "sha256": checksum,
@@ -2467,6 +2475,9 @@ def build_release_package() -> dict[str, object]:
         "report_path": str(report_path),
     }
     report_path.write_text(json.dumps(report, ensure_ascii=False, indent=2), encoding="utf-8")
+    shutil.copy2(zip_path, latest_zip_path)
+    latest_checksum_path.write_text(f"{checksum}  {latest_zip_path.name}\n", encoding="utf-8")
+    latest_report_path.write_text(json.dumps(report, ensure_ascii=False, indent=2), encoding="utf-8")
     return report
 
 
@@ -2474,9 +2485,15 @@ def release_result_page(report: dict[str, object]) -> str:
     zip_path = Path(str(report.get("zip_path", "")))
     checksum_path = Path(str(report.get("checksum_path", "")))
     report_path = Path(str(report.get("report_path", "")))
+    latest_zip_path = Path(str(report.get("latest_zip_path", "")))
+    latest_checksum_path = Path(str(report.get("latest_checksum_path", "")))
+    latest_report_path = Path(str(report.get("latest_report_path", "")))
     zip_href = "/" + zip_path.as_posix() if zip_path.exists() else ""
     checksum_href = "/" + checksum_path.as_posix() if checksum_path.exists() else ""
     report_href = "/" + report_path.as_posix() if report_path.exists() else ""
+    latest_zip_href = "/" + latest_zip_path.as_posix() if latest_zip_path.exists() else ""
+    latest_checksum_href = "/" + latest_checksum_path.as_posix() if latest_checksum_path.exists() else ""
+    latest_report_href = "/" + latest_report_path.as_posix() if latest_report_path.exists() else ""
     excluded = report.get("excluded_summary", {})
     excluded_rows = ""
     if isinstance(excluded, dict):
@@ -2512,8 +2529,11 @@ def release_result_page(report: dict[str, object]) -> str:
       <p>다른 PC에서 압축을 풀고 <code>START_WINDOWS.bat</code>을 실행하면 이어서 사용할 수 있습니다.</p>
       <p>
         <a class="button" href="{html.escape(zip_href)}">ZIP 다운로드</a>
+        <a class="button" href="{html.escape(latest_zip_href)}">최신 ZIP 고정 링크</a>
         <a class="button" href="{html.escape(checksum_href)}">SHA256 보기</a>
+        <a class="button" href="{html.escape(latest_checksum_href)}">최신 SHA256</a>
         <a class="button" href="{html.escape(report_href)}">패키지 리포트</a>
+        <a class="button" href="{html.escape(latest_report_href)}">최신 리포트</a>
         <a class="button" href="/release-check">배포 점검으로</a>
       </p>
     </section>
@@ -2521,6 +2541,7 @@ def release_result_page(report: dict[str, object]) -> str:
       <h2>패키지 정보</h2>
       <ul>
         <li>파일명: <code>{html.escape(str(report.get("zip_name", "")))}</code></li>
+        <li>최신 고정 파일명: <code>{html.escape(str(report.get("latest_zip_name", "")))}</code></li>
         <li>크기: <strong>{html.escape(str(report.get("zip_size_label", "")))}</strong></li>
         <li>포함 파일 수: {html.escape(str(report.get("included_file_count", "")))}</li>
         <li>SHA256: <code>{html.escape(str(report.get("sha256", "")))}</code></li>

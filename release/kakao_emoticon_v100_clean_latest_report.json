@@ -1,7 +1,7 @@
 {
   "app_name": "Kakao Emoticon Maker v100 Clean",
   "app_version": "v100-clean",
-  "created_at_kst": "2026-06-09T11:58:30.727292+09:00",
+  "created_at_kst": "2026-06-09T12:04:11.823153+09:00",
   "package_type": "portable_standard_zip",
   "included_file_count": 14,
   "included_files": [
@@ -23,7 +23,7 @@
   "excluded_summary": {
     "v100 portable 핵심 구성 외 파일 제외": 677,
     "빌드/캐시 산출물 제외": 6,
-    ".git 폴더 제외": 76,
+    ".git 폴더 제외": 87,
     ".vscode 폴더 제외": 2,
     "github_backup 폴더 제외": 7,
     "outputs 폴더 제외": 3502,
@@ -42,11 +42,15 @@
     "API 키, .env, 로그, 캐시, Git 폴더는 기본 제외했습니다.",
     "압축 해제 후 VERIFY_PACKAGE.bat로 실행 전 검증을 할 수 있습니다."
   ],
-  "zip_path": "release\\kakao_emoticon_v100_clean_portable_20260609_115827.zip",
-  "zip_name": "kakao_emoticon_v100_clean_portable_20260609_115827.zip",
-  "zip_size_bytes": 81331,
-  "zip_size_label": "79.4 KB",
-  "sha256": "3b4fc0cf12fbcf69ede9aa903ec05fed0ce1dd37f932614696ecaed9afe01162",
-  "checksum_path": "release\\kakao_emoticon_v100_clean_portable_20260609_115827.sha256.txt",
-  "report_path": "release\\kakao_emoticon_v100_clean_portable_20260609_115827_report.json"
+  "zip_path": "release\\kakao_emoticon_v100_clean_portable_20260609_120408.zip",
+  "zip_name": "kakao_emoticon_v100_clean_portable_20260609_120408.zip",
+  "latest_zip_path": "release\\kakao_emoticon_v100_clean_latest.zip",
+  "latest_zip_name": "kakao_emoticon_v100_clean_latest.zip",
+  "latest_checksum_path": "release\\kakao_emoticon_v100_clean_latest.sha256.txt",
+  "latest_report_path": "release\\kakao_emoticon_v100_clean_latest_report.json",
+  "zip_size_bytes": 81599,
+  "zip_size_label": "79.7 KB",
+  "sha256": "820fd787ce6bcbb95cb2930143da460b3519a6aba9d334982cabf311e5f1b553",
+  "checksum_path": "release\\kakao_emoticon_v100_clean_portable_20260609_120408.sha256.txt",
+  "report_path": "release\\kakao_emoticon_v100_clean_portable_20260609_120408_report.json"
 }
