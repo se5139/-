@@ -31,5 +31,6 @@ https://raw.githubusercontent.com/se5139/-/main/release/kakao_emoticon_v100_clea
 ## 참고
 
 - GitHub 화면에서 직접 받을 때는 `release` 폴더의 `kakao_emoticon_v100_clean_latest.zip`을 선택한 뒤 Download 버튼을 누르면 됩니다.
+- Windows에서는 `DOWNLOAD_LATEST_RELEASE.bat`을 실행해 최신 ZIP과 체크섬을 `downloaded_release` 폴더로 받을 수 있습니다.
 - 첫 실행에는 Python 3.10 이상이 필요합니다.
 - API 키가 없어도 기본 기능은 실행됩니다.

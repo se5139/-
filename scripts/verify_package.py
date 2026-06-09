@@ -14,6 +14,7 @@ REQUIRED_FILES = [
     "DOWNLOAD_LATEST_FROM_GITHUB_KO.md",
     "RELEASE_NOTES_KO.md",
     "requirements.txt",
+    "DOWNLOAD_LATEST_RELEASE.bat",
     "START_WINDOWS.bat",
     "RUN_SERVER_NO_BROWSER.bat",
     "VERIFY_PACKAGE.bat",
