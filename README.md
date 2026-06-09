@@ -112,11 +112,20 @@ release/kakao_emoticon_profit_system_v90_simple_png_gif_output_hotfix_codex_fixe
 원격 저장소에 있던 다른 PC 실행/동기화 안내도 유지했습니다.
 
 ```text
+CONTINUE_WORK_OTHER_PC_KO.md
 QUICK_START_OTHER_PC_KO.txt
 DOWNLOAD_LATEST_FROM_GITHUB_KO.md
 SYNC_STATE_GUIDE_KO.md
 TROUBLESHOOTING_KO.md
 RELEASE_NOTES_KO.md
+```
+
+다른 PC에서 이어서 개발/수정 작업을 할 때는 아래 순서를 권장합니다.
+
+```powershell
+.\SETUP_DEV_ENV_WINDOWS.bat
+.\PULL_LATEST_BEFORE_WORK.bat
+.\SAVE_WORK_TO_GITHUB.bat
 ```
 
 동기화 상태 내보내기/가져오기 파일도 포함되어 있습니다.
