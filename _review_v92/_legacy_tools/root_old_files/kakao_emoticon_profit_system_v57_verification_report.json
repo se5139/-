@@ -1,0 +1,87 @@
+[
+  {
+    "name": "key file exists:app.py",
+    "status": "PASS",
+    "detail": ""
+  },
+  {
+    "name": "key file exists:modules/constants.py",
+    "status": "PASS",
+    "detail": ""
+  },
+  {
+    "name": "key file exists:24_V57_SIDEBAR_NAVIGATION_CHECK.bat",
+    "status": "PASS",
+    "detail": ""
+  },
+  {
+    "name": "key file exists:25_V57_INSTALLER_TOKEN_CHECK.bat",
+    "status": "PASS",
+    "detail": ""
+  },
+  {
+    "name": "key file exists:installer/KakaoEmoticonSetup_v57.iss",
+    "status": "PASS",
+    "detail": ""
+  },
+  {
+    "name": "key file exists:BUILD_V57_SETUP_EXE.bat",
+    "status": "PASS",
+    "detail": ""
+  },
+  {
+    "name": "key file exists:OPEN_V57_INNO_SCRIPT.bat",
+    "status": "PASS",
+    "detail": ""
+  },
+  {
+    "name": "app.py py_compile",
+    "status": "PASS",
+    "detail": ""
+  },
+  {
+    "name": "constants v57",
+    "status": "PASS",
+    "detail": ""
+  },
+  {
+    "name": "sidebar nav marker",
+    "status": "PASS",
+    "detail": ""
+  },
+  {
+    "name": "top main tabs removed",
+    "status": "PASS",
+    "detail": ""
+  },
+  {
+    "name": "49 page routes",
+    "status": "PASS",
+    "detail": "count=49"
+  },
+  {
+    "name": "searchable nav marker",
+    "status": "PASS",
+    "detail": ""
+  },
+  {
+    "name": "long caption moved",
+    "status": "PASS",
+    "detail": ""
+  },
+  {
+    "name": "installer v57 output",
+    "status": "PASS",
+    "detail": ""
+  },
+  {
+    "name": "installer v57 target",
+    "status": "PASS",
+    "detail": ""
+  },
+  {
+    "name": "app no destructive delete added",
+    "status": "PASS",
+    "detail": ""
+  }
+]

@@ -1,0 +1,20 @@
+# v64 Coding Toolchain Prompt Pack
+
+## Project rule
+{{ fixed_rule }}
+
+## How to use tools
+{% for row in toolchain %}
+- {{ row.category }}: {{ row.tools | join(', ') }} — {{ row.role }}
+{% endfor %}
+
+## Template engine policy
+{% for row in template_engines %}
+- {{ row.engine }}: {{ row.decision }} / {{ row.use_case }}
+{% endfor %}
+
+## Safety
+- Do not save raw API keys.
+- Keep user data separated from code folders.
+- Do not delete or overwrite user data without explicit approval.
+- Final package remains Python-centered local PC installable program.

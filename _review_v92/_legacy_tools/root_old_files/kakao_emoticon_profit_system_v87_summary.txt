@@ -1,0 +1,11 @@
+카카오톡 이모티콘 자동생성 프로그램 v87 요약
+
+- v86 파일명 오류 핫픽스 유지
+- 루트 BAT 17개에서 8개로 축소
+- 기본 Streamlit UI 5개 큰 흐름 유지
+- 고급 세부 기능은 숨김 메뉴/advanced tools로 이동
+- 정지형 32개, 움직이는 후보 24개, GIF 5개 실제 생성 검사 PASS
+- 특수문자/한글/띄어쓰기/긴 파일명/Windows 예약어 파일명 검사 PASS
+- ZIP 내부 파일명 검사 PASS
+- API 키 원문 패턴 검사 PASS
+- Windows EXE 컴파일은 이 환경에서 수행하지 못했으며, 사용자 Windows PC에서 Inno Setup으로 생성해야 함

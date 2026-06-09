@@ -1,0 +1,71 @@
+{
+  "version": "v62",
+  "ok": true,
+  "results": [
+    {
+      "name": "syntax:app.py",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "name": "syntax:modules/jinja_template_engine.py",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "name": "syntax:modules/constants.py",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "name": "engine smoke test",
+      "status": "PASS",
+      "details": "/mnt/data/v62_work/outputs/v62_check/v62_check/v62_jinja_report.html"
+    },
+    {
+      "name": "rendered output files",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "name": "API key raw leakage check",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "name": "requirements include Jinja2",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "name": "Jinja2 template files exist",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "name": "sidebar menu label",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "name": "v62 page route",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "name": "app imports engine",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "name": "v62 Inno Setup script exists",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "name": "v62 installer markers",
+      "status": "PASS",
+      "details": ""
+    }
+  ]
+}

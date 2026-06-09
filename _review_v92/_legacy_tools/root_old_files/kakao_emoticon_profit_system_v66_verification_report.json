@@ -1,0 +1,23 @@
+{
+  "checks": {
+    "compileall": true,
+    "app_ast": true,
+    "v66_check_script": true,
+    "no_api_key_leak": true,
+    "build_bat_v66": true,
+    "iss_v66": true,
+    "zip_created": true,
+    "zip_valid": true,
+    "reextract_compileall": true,
+    "reextract_v66_check": true,
+    "zip_no_api_key_leak": true
+  },
+  "errors": [],
+  "v66_check_stdout_tail": "{\n  \"checks\": {\n    \"exists:modules/multi_tool_execution_pipeline.py\": true,\n    \"exists:templates/v66_multi_tool_execution/execution_report.html.j2\": true,\n    \"exists:templates/v66_multi_tool_execution/workflow.md.j2\": true,\n    \"exists:templates/v66_multi_tool_execution/github_quality_check.yml.j2\": true,\n    \"exists:docs/v66_multi_tool_execution_pipeline.md\": true,\n    \"exists:installer/KakaoEmoticonSetup_v66.iss\": true,\n    \"exists:scripts/build_inno_installer_v66.py\": true,\n    \"exists:run_cleanup_old_versions_v66.bat\": true,\n    \"exists:14_V66_CLEAN_OLD_VERSIONS_AND_EXTRACTED.bat\": true,\n    \"app_ast_ok\": true,\n    \"version_66\": true,\n    \"render_ok\": true,\n    \"stage_count_10\": true,\n    \"has_jinja_stage\": true,\n    \"has_inno_stage\": true,\n    \"package_zip_valid\": true,\n    \"app_menu_has_v66\": true,\n    \"active_build_script_v66\": true,\n    \"inno_version_66\": true,\n    \"no_api_key_leak\": true\n  },\n  \"errors\": [],\n  \"ok\": true\n}\n",
+  "v66_check_stderr_tail": "",
+  "api_leak_files": [],
+  "reextract_stdout_tail": "{\n  \"checks\": {\n    \"exists:modules/multi_tool_execution_pipeline.py\": true,\n    \"exists:templates/v66_multi_tool_execution/execution_report.html.j2\": true,\n    \"exists:templates/v66_multi_tool_execution/workflow.md.j2\": true,\n    \"exists:templates/v66_multi_tool_execution/github_quality_check.yml.j2\": true,\n    \"exists:docs/v66_multi_tool_execution_pipeline.md\": true,\n    \"exists:installer/KakaoEmoticonSetup_v66.iss\": true,\n    \"exists:scripts/build_inno_installer_v66.py\": true,\n    \"exists:run_cleanup_old_versions_v66.bat\": true,\n    \"exists:14_V66_CLEAN_OLD_VERSIONS_AND_EXTRACTED.bat\": true,\n    \"app_ast_ok\": true,\n    \"version_66\": true,\n    \"render_ok\": true,\n    \"stage_count_10\": true,\n    \"has_jinja_stage\": true,\n    \"has_inno_stage\": true,\n    \"package_zip_valid\": true,\n    \"app_menu_has_v66\": true,\n    \"active_build_script_v66\": true,\n    \"inno_version_66\": true,\n    \"no_api_key_leak\": true\n  },\n  \"errors\": [],\n  \"ok\": true\n}\n",
+  "reextract_stderr_tail": "",
+  "zip_api_leak_files": [],
+  "ok": true
+}

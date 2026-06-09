@@ -1,0 +1,11 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><title>v68 지속 진화형 품질개선 리포트</title>
+<style>
+body{font-family:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#f6f7fb;color:#172033;margin:0;padding:28px}.wrap{max-width:1180px;margin:auto}.hero{background:linear-gradient(135deg,#0f172a,#16a34a,#06b6d4);color:white;border-radius:28px;padding:28px 32px;box-shadow:0 18px 42px rgba(15,23,42,.2)}.card{background:white;border:1px solid #e5e7eb;border-radius:22px;padding:20px;margin-top:18px;box-shadow:0 10px 28px rgba(15,23,42,.06)}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px}.preview{text-align:center;background:#fff;border:1px solid #e5e7eb;border-radius:18px;padding:12px}.preview img{max-width:230px;border-radius:18px;background:white}.badge{display:inline-block;background:#dcfce7;color:#166534;border-radius:999px;padding:5px 10px;margin:3px;font-weight:700}.warn{background:#fff7ed;color:#9a3412;border:1px solid #fed7aa;border-radius:14px;padding:12px}.score{font-size:28px;font-weight:800;color:#16a34a}.mono{white-space:pre-wrap;background:#0f172a;color:#e5e7eb;border-radius:16px;padding:14px;overflow:auto}
+</style></head><body><div class="wrap"><div class="hero"><h1>v68 지속 진화형 품질개선 리포트</h1><p>온라인 추상 트렌드 신호 · 사용자 만족도 · 정지형→움직이는형 품질 진화</p></div>
+<div class="card"><h2>프로젝트</h2><p><b>{{ project_name }}</b></p><p>{{ concept_text }}</p><p>스타일: <b>{{ selected_style }}</b> / 만족도 기록: <b>{{ satisfaction_score }}</b></p>{% for r in recommendations %}<span class="badge">{{ r }}</span>{% endfor %}</div>
+<div class="card"><h2>바로 보이는 결과</h2><div class="grid"><div class="preview"><h3>정지형 PNG</h3><img src="data:image/png;base64,{{ static_png_b64 }}"></div><div class="preview"><h3>대표 움직이는 GIF</h3><img src="data:image/gif;base64,{{ animated_gif_b64 }}"></div></div></div>
+<div class="card"><h2>품질 점수</h2><div class="grid">{% for k,v in evolution_scores.items() %}<div><div class="score">{{ v }}</div><b>{{ k }}</b></div>{% endfor %}</div></div>
+<div class="card"><h2>추상 트렌드 신호</h2><pre class="mono">{{ abstract_trend_json }}</pre></div>
+<div class="card warn"><b>안전 원칙</b><ul>{% for n in safety_notes %}<li>{{ n }}</li>{% endfor %}</ul></div>
+</div></body></html>

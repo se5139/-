@@ -1,0 +1,90 @@
+{
+  "ok": true,
+  "checks": [
+    {
+      "name": "build script syntax",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "optional root arg",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "optional iss arg",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "infer paths fallback",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "no v59 builder required args in active 0 bat",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "v60 iss exists",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "iss version v60",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "iss output filename v60",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "iss cleanup v60",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "cleanup script v60 exists",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "cleanup current version 60",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "cleanup actual yes bat",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "manual cleanup bat v60",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "shortcut script v60 exists",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "portable installer target v60",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "launcher title v60",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "no concrete OpenAI API key bundled",
+      "status": "PASS",
+      "detail": ""
+    }
+  ]
+}

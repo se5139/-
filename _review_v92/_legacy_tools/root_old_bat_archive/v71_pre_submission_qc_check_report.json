@@ -1,0 +1,52 @@
+{
+  "ok": true,
+  "errors": [],
+  "result": {
+    "project_name": "v71_check_pre_submission_qc",
+    "output_dir": "/mnt/data/work_v71/outputs/v71_pre_submission_qc_check/v71_check_pre_submission_qc_1780832816",
+    "base_set_package_zip": "/mnt/data/work_v71/outputs/v71_pre_submission_qc_check/v71_check_pre_submission_qc_1780832816/base_v70_set/v71_check_pre_submission_qc_1780832816/v70_submission_candidate_package.zip",
+    "static_gallery_png": "/mnt/data/work_v71/outputs/v71_pre_submission_qc_check/v71_check_pre_submission_qc_1780832816/base_v70_set/v71_check_pre_submission_qc_1780832816/v70_static_32_gallery.png",
+    "animated_gallery_png": "/mnt/data/work_v71/outputs/v71_pre_submission_qc_check/v71_check_pre_submission_qc_1780832816/base_v70_set/v71_check_pre_submission_qc_1780832816/v70_animated_24_gallery.png",
+    "motion_contact_sheet": "/mnt/data/work_v71/outputs/v71_pre_submission_qc_check/v71_check_pre_submission_qc_1780832816/base_v70_set/v71_check_pre_submission_qc_1780832816/v70_motion_required_gif_contact_sheet.png",
+    "representative_static_png": "/mnt/data/work_v71/outputs/v71_pre_submission_qc_check/v71_check_pre_submission_qc_1780832816/base_v70_set/v71_check_pre_submission_qc_1780832816/static_32_png/static_01_넵.png",
+    "representative_gif": "/mnt/data/work_v71/outputs/v71_pre_submission_qc_check/v71_check_pre_submission_qc_1780832816/base_v70_set/v71_check_pre_submission_qc_1780832816/animated_24_candidate/animated_01_넵_bounce.gif",
+    "qc_matrix_csv": "/mnt/data/work_v71/outputs/v71_pre_submission_qc_check/v71_check_pre_submission_qc_1780832816/v71_pre_submission_qc_matrix.csv",
+    "qc_matrix_json": "/mnt/data/work_v71/outputs/v71_pre_submission_qc_check/v71_check_pre_submission_qc_1780832816/v71_pre_submission_qc_matrix.json",
+    "pre_submission_manifest_json": "/mnt/data/work_v71/outputs/v71_pre_submission_qc_check/v71_check_pre_submission_qc_1780832816/v71_pre_submission_manifest.json",
+    "normalized_export_plan_csv": "/mnt/data/work_v71/outputs/v71_pre_submission_qc_check/v71_check_pre_submission_qc_1780832816/v71_normalized_export_plan.csv",
+    "html_report_path": "/mnt/data/work_v71/outputs/v71_pre_submission_qc_check/v71_check_pre_submission_qc_1780832816/v71_pre_submission_qc_report.html",
+    "learning_db": "/mnt/data/work_v71/outputs/v71_pre_submission_qc_check/v71_check_pre_submission_qc_1780832816/v71_pre_submission_qc_learning.sqlite3",
+    "pre_submission_qc_zip": "/mnt/data/work_v71/outputs/v71_pre_submission_qc_check/v71_check_pre_submission_qc_1780832816/v71_pre_submission_qc_package.zip",
+    "checklist_json": "/mnt/data/work_v71/outputs/v71_pre_submission_qc_check/v71_check_pre_submission_qc_1780832816/v71_pre_submission_checklist.json",
+    "total_checks": 249,
+    "pass_count": 249,
+    "warn_count": 0,
+    "fail_count": 0,
+    "overall_status": "PASS",
+    "qc_scores": {
+      "pre_submission_readiness": 100,
+      "static_spec_readiness": 100,
+      "animated_spec_readiness": 100,
+      "gif_candidate_readiness": 100,
+      "set_diversity_reference": 85,
+      "official_recheck_needed": 100
+    },
+    "critical_warnings": [
+      "제출 직전 카카오 이모티콘 스튜디오/카카오비즈니스 공식 기준을 다시 확인해야 합니다.",
+      "WebP 정식 변환은 카카오가 제공하는 WebP Animator 기준을 확인해야 합니다."
+    ],
+    "improvement_plan": [
+      "FAIL 항목이 있으면 최종 제출 ZIP 잠금 상태로 유지합니다.",
+      "정지형 PNG가 150KB를 넘으면 PNG 최적화와 색상 수 정리를 적용합니다.",
+      "GIF가 24프레임을 넘으면 시작-중간-끝 리듬을 유지하면서 프레임 수를 줄입니다.",
+      "다크모드 대비가 약한 문구는 흰색 외곽선/밝은 말풍선을 우선 적용합니다.",
+      "정식 제출 전 공식 파일명, 수량, 용량, WebP/GIF 요구 조건을 다시 확인합니다."
+    ],
+    "safety_notes": [
+      "온라인 자료는 추상 트렌드 신호로만 사용하고 기존 캐릭터/문구/애니메이션 복제는 금지합니다.",
+      "API 키 원문은 리포트/ZIP/JSON/CSV에 저장하지 않습니다.",
+      "사용자 데이터는 업데이트 정리 대상에서 제외하고 백업 후 이동합니다."
+    ],
+    "checksum_sha256": "d09ee614cfba8f155659deab9b0dbc5080574f0c1fdca62bdfdf8b33229788f8"
+  }
+}

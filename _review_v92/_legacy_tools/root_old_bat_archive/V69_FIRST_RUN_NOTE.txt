@@ -1,0 +1,7 @@
+Kakao Emoticon Profit System v69
+
+1. 새 폴더에 압축 해제하세요. 예: C:\KakaoEmoticonV69
+2. 0_BUILD_WINDOWS_INSTALLER_EXE.bat 실행 후 installer\Output\KakaoEmoticonSetup_v69.exe를 생성하세요.
+3. 설치 후 4_REPAIR_ENVIRONMENT.bat를 한 번 실행하면 의존성이 준비됩니다.
+4. 프로그램 좌측 메뉴에서 56 실제 그림체/모션 품질 고도화를 실행하세요.
+5. 이전 버전 정리는 메인 프로그램이 정상 실행되는 것을 확인한 뒤 진행하세요.

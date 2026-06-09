@@ -1,0 +1,50 @@
+{
+  "ok": true,
+  "errors": [],
+  "report": {
+    "project_name": "v73_final_user_approval_check",
+    "output_dir": "/mnt/data/work_v73/outputs/v73_check/v73_final_user_approval_check_1780833718",
+    "base_v72_html_report": "/mnt/data/work_v73/outputs/v73_check/v73_final_user_approval_check_1780833718/base_v72_autofix_lock/v73_final_user_approval_check_1780833718/v72_submission_autofix_lock_report.html",
+    "base_v72_final_zip": "/mnt/data/work_v73/outputs/v73_check/v73_final_user_approval_check_1780833718/base_v72_autofix_lock/v73_final_user_approval_check_1780833718/v72_final_submission_candidate.zip",
+    "base_v72_locked_zip": "/mnt/data/work_v73/outputs/v73_check/v73_final_user_approval_check_1780833718/base_v72_autofix_lock/v73_final_user_approval_check_1780833718/v72_locked_review_package.zip",
+    "approval_status": "USER_APPROVED_FINAL_CANDIDATE",
+    "final_submission_allowed": true,
+    "approval_score": 100,
+    "required_checked_count": 10,
+    "required_total_count": 10,
+    "optional_checked_count": 4,
+    "blocking_reasons": [],
+    "user_confirmations": {
+      "human_origin_checked": true,
+      "static_32_reviewed": true,
+      "animated_24_reviewed": true,
+      "required_gif_reviewed": true,
+      "phrases_reviewed": true,
+      "darkmode_readability_checked": true,
+      "copyright_similarity_checked": true,
+      "official_spec_rechecked": true,
+      "api_key_not_included_checked": true,
+      "user_final_approval": true,
+      "backup_done": true,
+      "series_plan_saved": true,
+      "trend_notes_saved": true,
+      "rejection_plan_ready": true
+    },
+    "approval_checklist_csv": "/mnt/data/work_v73/outputs/v73_check/v73_final_user_approval_check_1780833718/v73_user_approval_checklist.csv",
+    "approval_manifest_json": "/mnt/data/work_v73/outputs/v73_check/v73_final_user_approval_check_1780833718/v73_user_approval_manifest.json",
+    "html_report_path": "/mnt/data/work_v73/outputs/v73_check/v73_final_user_approval_check_1780833718/v73_final_user_approval_report.html",
+    "final_approved_zip": "/mnt/data/work_v73/outputs/v73_check/v73_final_user_approval_check_1780833718/v73_user_approved_final_candidate.zip",
+    "manual_review_zip": "/mnt/data/work_v73/outputs/v73_check/v73_final_user_approval_check_1780833718/v73_manual_review_package.zip",
+    "learning_db": "/mnt/data/work_v73/outputs/v73_check/v73_final_user_approval_check_1780833718/v73_final_user_approval_learning.sqlite3",
+    "checksum_sha256": "b8934e32a304c83b80679ff3318d58f85717cb0ce6f426cb6ad76f969919a212",
+    "safety_notes": [
+      "v73은 자동 제출 기능이 아니라 사용자의 최종 확인/수동 승인 워크플로우입니다.",
+      "최종 승인 ZIP은 로컬 후보일 뿐이며 카카오 승인이나 수익을 보장하지 않습니다.",
+      "제출 직전 카카오 이모티콘 스튜디오의 최신 공식 기준을 다시 확인해야 합니다.",
+      "기존 캐릭터·문구·애니메이션 복제 금지 원칙을 유지합니다.",
+      "API 키 원문, 비밀번호, 개인정보 원문을 결과 ZIP에 포함하지 않습니다."
+    ]
+  }
+}
+
+STDERR:

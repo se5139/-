@@ -1,0 +1,14 @@
+Kakao Emoticon Profit System v58
+
+Conclusion included:
+- v56 installation/diagnostics passed.
+- v57 sidebar navigation fixed the crowded horizontal tab UI.
+- Uploaded OpenAI API key file should be treated as exposed. Rotate/recreate the key before production use.
+
+v58 additions:
+- API key safety page.
+- Raw key non-storage policy.
+- Environment variable template generation.
+- Local file/ZIP analysis first.
+- Paid calls blocked by default.
+- OpenAI analysis remains optional.

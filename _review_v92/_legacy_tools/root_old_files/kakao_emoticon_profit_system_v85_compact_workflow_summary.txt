@@ -1,0 +1,23 @@
+Kakao Emoticon Profit System v85 - Compact Workflow Simplification
+
+Purpose:
+- Reduce the user-facing workflow from dozens of small step-by-step menus into five high-level flows.
+- Preserve underlying detailed functions, but hide them under an advanced menu.
+- Keep Python-centered local Windows installable program direction.
+
+Main simplified flows:
+1. 제작 시작 · 정지형/움직이는형 미리보기
+2. 세트 구성 · 32개/24개 품질 진화
+3. 검사 · 자동보정 · 제출 전 승인
+4. 반려 대응 · 캡처/OCR · 재생성
+5. 최종 납품 · 백업/리포트/재검사
+
+Fixes:
+- Left sidebar now shows compact workflow by default.
+- Old detailed menus are available only in an advanced expander.
+- Root folder clutter reduced.
+- Legacy root files moved under _legacy_tools/root_old_files.
+- Build/installer scripts updated to v85.
+- No user data deletion.
+- No paid API call by default.
+- No raw API key file included.

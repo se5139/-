@@ -1,0 +1,14 @@
+# v64 local development ignore
+.venv/
+outputs/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.zip
+*.sha256.txt
+.env
+.env.*
+openai-api-key.txt
+*api*key*.txt
+installer/Output/

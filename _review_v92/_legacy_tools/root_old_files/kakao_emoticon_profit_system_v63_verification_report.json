@@ -1,0 +1,80 @@
+{
+  "version": "v63",
+  "checks": {
+    "exists_html_report_path": true,
+    "exists_prompt_template_path": true,
+    "exists_style_rulebook_path": true,
+    "exists_motion_template_path": true,
+    "exists_engine_matrix_path": true,
+    "exists_manifest_path": true,
+    "exists_package_zip_path": true,
+    "zip_integrity": true,
+    "api_key_raw_leak_absent": true,
+    "jinja2_available": true,
+    "mako_optional_available_current_env": false,
+    "requirements_jinja_latest_floor": true,
+    "requirements_mako_latest_floor": true
+  },
+  "errors": [],
+  "result": {
+    "ok": true,
+    "generated_at": "2026-06-07T08:31:16",
+    "project_name": "v63_template_manager_check",
+    "selected_primary_engine": "Jinja2",
+    "output_dir": "/mnt/data/v63_work/outputs/v63_template_engine_manager_check/v63_template_manager_check",
+    "html_report_path": "/mnt/data/v63_work/outputs/v63_template_engine_manager_check/v63_template_manager_check/v63_template_engine_decision_report.html",
+    "prompt_template_path": "/mnt/data/v63_work/outputs/v63_template_engine_manager_check/v63_template_manager_check/v63_prompt_template.md",
+    "style_rulebook_path": "/mnt/data/v63_work/outputs/v63_template_engine_manager_check/v63_template_manager_check/v63_style_rulebook.json",
+    "motion_template_path": "/mnt/data/v63_work/outputs/v63_template_engine_manager_check/v63_template_manager_check/v63_motion_template.csv",
+    "engine_matrix_path": "/mnt/data/v63_work/outputs/v63_template_engine_manager_check/v63_template_manager_check/v63_engine_matrix.json",
+    "manifest_path": "/mnt/data/v63_work/outputs/v63_template_engine_manager_check/v63_template_manager_check/v63_manifest.json",
+    "package_zip_path": "/mnt/data/v63_work/outputs/v63_template_engine_manager_check/v63_template_manager_check/v63_template_engine_manager_bundle.zip",
+    "warnings": [],
+    "engine_choices": [
+      {
+        "engine": "Jinja2",
+        "role": "primary",
+        "status": "active",
+        "reason": "HTML report, prompt pack, CSV/JSON text artifacts need safe autoescape, inheritance, filters, and strict undefined checks.",
+        "dependency": "Jinja2>=3.1.6"
+      },
+      {
+        "engine": "Mako",
+        "role": "advanced_text_optional",
+        "status": "optional_ready_after_pip_install",
+        "reason": "Useful for power-user prompt/code-like text templates, but not required for normal Streamlit UI flow.",
+        "dependency": "Mako>=1.3.12"
+      },
+      {
+        "engine": "Django Template Language",
+        "role": "evaluated_not_loaded",
+        "status": "not_selected",
+        "reason": "Good inside Django projects, but this program is a local Streamlit app and does not need the full Django framework.",
+        "dependency": "not bundled"
+      },
+      {
+        "engine": "Chameleon",
+        "role": "evaluated_not_loaded",
+        "status": "not_selected",
+        "reason": "Strong for HTML/XML TAL templates, but less suitable for the current markdown/CSV/prompt/report workflow.",
+        "dependency": "not bundled"
+      },
+      {
+        "engine": "Handlebars/Mustache family",
+        "role": "concept_reference",
+        "status": "not_selected_for_python_runtime",
+        "reason": "Popular logic-light style; the same separation principle is reflected through Jinja2 templates without adding a JS runtime.",
+        "dependency": "not bundled"
+      }
+    ]
+  },
+  "zip_files": [
+    "v63_template_engine_decision_report.html",
+    "v63_prompt_template.md",
+    "v63_style_rulebook.json",
+    "v63_motion_template.csv",
+    "v63_engine_matrix.json",
+    "v63_manifest.json"
+  ],
+  "ok": true
+}

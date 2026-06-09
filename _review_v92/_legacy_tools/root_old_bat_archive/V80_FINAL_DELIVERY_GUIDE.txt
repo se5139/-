@@ -1,0 +1,8 @@
+Kakao Emoticon Profit System v80 final delivery guide
+
+1. Unzip to C:\KakaoEmoticonV80.
+2. Run 0_BUILD_WINDOWS_INSTALLER_EXE.bat.
+3. Run installer\Output\KakaoEmoticonSetup_v80.exe.
+4. Start the program from desktop shortcut.
+5. Open left menu: 64 최종 통합 납품/재검사.
+6. Re-check the latest Kakao official rules before manual upload.

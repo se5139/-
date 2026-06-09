@@ -1,0 +1,46 @@
+{
+  "version": "67.0.0",
+  "checks": [
+    {
+      "name": "compileall",
+      "status": "PASS"
+    },
+    {
+      "name": "app routing markers",
+      "status": "PASS"
+    },
+    {
+      "name": "old coding tool menus hidden",
+      "status": "PASS"
+    },
+    {
+      "name": "engine smoke test",
+      "status": "PASS"
+    },
+    {
+      "name": "static PNG generation",
+      "status": "PASS"
+    },
+    {
+      "name": "animated GIF generation",
+      "status": "PASS"
+    },
+    {
+      "name": "24/32 plan generation",
+      "status": "PASS"
+    },
+    {
+      "name": "Jinja2 HTML report",
+      "status": "PASS"
+    },
+    {
+      "name": "API key plaintext leakage",
+      "status": "PASS"
+    }
+  ],
+  "limitations": [
+    "이 환경은 Windows가 아니라 Inno Setup EXE 직접 컴파일 테스트는 수행하지 못함",
+    "사용자 PC에서는 0_BUILD_WINDOWS_INSTALLER_EXE.bat 실행 후 설치마법사 EXE를 생성해야 함"
+  ],
+  "video_review_montage": "/mnt/data/video_20260607_191706_focus_montage.jpg"
+}

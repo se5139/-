@@ -1,0 +1,11 @@
+{
+  "time": "2026-06-07T14:59:51",
+  "version": "87",
+  "root": "/mnt/data/v87_work",
+  "iss": "/mnt/data/v87_work/installer/KakaoEmoticonSetup_v87.iss",
+  "ok": false,
+  "errors": [
+    "Inno Setup compiler was not found. Use _advanced_tools/advanced_bat/OPEN_V87_INNO_SCRIPT.bat or install Inno Setup 6 with command-line compiler."
+  ],
+  "candidates": []
+}

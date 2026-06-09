@@ -1,0 +1,10 @@
+{
+  "time": "2026-06-07T12:52:31",
+  "root": "/mnt/data/work_v81",
+  "iss": "/mnt/data/work_v81/installer/KakaoEmoticonSetup_v81.iss",
+  "ok": false,
+  "errors": [
+    "Inno Setup compiler not found. Install Inno Setup 6 or open the .iss file manually with Inno Setup Compiler."
+  ],
+  "candidates": []
+}

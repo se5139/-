@@ -1,0 +1,32 @@
+Kakao Emoticon Auto Maker v49 - First Run Guide
+
+1. ZIP file extraction
+   - Do not run BAT files inside the ZIP preview window.
+   - Extract the ZIP first.
+   - Recommended path: C:\KakaoEmoticonV49
+
+2. Install
+   - Run: 1_INSTALL_NOW.bat
+   - If asked about old-version cleanup:
+     Y = clean old install folders and desktop shortcuts only
+     Enter = skip cleanup
+   - User data folders are backed up/preserved.
+
+3. Start
+   - Run: 2_START_PROGRAM.bat
+   - First run can take several minutes because Python packages are installed.
+
+4. New v49 tab
+   - Open tab: 46 후보 적용/정지형/움직이는형 품질 진화
+   - Upload multiple files or a ZIP if needed.
+   - Run v49 analysis.
+   - Click: v49 결과를 현재 제작 흐름에 적용
+
+5. Diagnostics
+   - Run: 16_V49_STATIC_ANIMATED_EVOLUTION_CHECK.bat
+   - Report location: outputs\v49_verification
+
+6. Safety
+   - This program is a creative assistance tool.
+   - It does not guarantee Kakao approval or revenue.
+   - Check current official Kakao format requirements before submission.

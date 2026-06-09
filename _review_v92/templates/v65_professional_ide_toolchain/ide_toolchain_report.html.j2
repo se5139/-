@@ -1,0 +1,20 @@
+
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <title>v65 Professional IDE Toolchain Report</title>
+  <style>
+    body{font-family:Arial,'Malgun Gothic',sans-serif;background:#f6f7fb;color:#111827;margin:0;padding:30px;}
+    .hero{background:linear-gradient(135deg,#111827,#2563eb);color:white;border-radius:24px;padding:26px;margin-bottom:18px;}
+    .card{background:#fff;border:1px solid #e5e7eb;border-radius:18px;padding:18px;margin:14px 0;box-shadow:0 8px 22px rgba(15,23,42,.06)}
+    table{width:100%;border-collapse:collapse;font-size:13px} th,td{border-bottom:1px solid #e5e7eb;padding:9px;text-align:left;vertical-align:top} th{background:#eff6ff;color:#1e3a8a}
+    .badge{display:inline-block;background:#dbeafe;color:#1e40af;border-radius:999px;padding:4px 10px;font-weight:700;font-size:12px}
+  </style>
+</head>
+<body>
+  <div class="hero"><h1>v65 전문 IDE/코딩 프로그램 통합 정책</h1><p>{{ fixed_rule }}</p><p><span class="badge">Generated {{ generated_at }}</span></p></div>
+  <div class="card"><h2>전문 IDE 우선순위</h2><table><thead><tr><th>순위</th><th>도구</th><th>분류</th><th>역할</th><th>적용 정책</th></tr></thead><tbody>{% for row in ide_tools %}<tr><td>{{ row.priority }}</td><td>{{ row.tool }}</td><td>{{ row.category }}</td><td>{{ row.project_role }}</td><td>{{ row.adoption_policy }}</td></tr>{% endfor %}</tbody></table></div>
+  <div class="card"><h2>개발 스택 분리</h2><table><thead><tr><th>레이어</th><th>도구</th><th>이유</th><th>런타임 영향</th></tr></thead><tbody>{% for row in dev_stack %}<tr><td>{{ row.layer }}</td><td>{{ row.selected_tools|join(', ') }}</td><td>{{ row.why }}</td><td>{{ row.runtime_impact }}</td></tr>{% endfor %}</tbody></table></div>
+</body>
+</html>

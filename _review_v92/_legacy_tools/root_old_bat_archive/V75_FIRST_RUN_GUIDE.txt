@@ -1,0 +1,11 @@
+v75 first run guide
+
+1. Install or run the package as usual.
+2. Open the left sidebar menu.
+3. Select: 62 캡처 이미지 반려 사유 입력/OCR 보조
+4. Upload Kakao review/rejection screenshots.
+5. Enter or correct the rejection text manually.
+6. Run v75.
+7. Review the v75 report and connected v74 action plan.
+
+OCR is optional. Korean OCR accuracy is not guaranteed. Manual corrected text is the source of truth.

@@ -1,0 +1,6 @@
+V63 first run note
+
+1. v63 ZIP을 새 폴더에 압축 해제합니다.
+2. 0_BUILD_WINDOWS_INSTALLER_EXE.bat를 실행해 KakaoEmoticonSetup_v63.exe를 만듭니다.
+3. 설치 후 4_REPAIR_ENVIRONMENT.bat를 한 번 실행해 Jinja2 3.1.6 이상과 Mako 1.3.12 이상이 설치되도록 합니다.
+4. 프로그램 좌측 메뉴에서 53 템플릿 엔진 관리/분리 구조를 확인합니다.
