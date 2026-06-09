@@ -1,0 +1,7 @@
+v65 first run note
+
+1. Final program remains Python-centered local PC package.
+2. Use 0_BUILD_WINDOWS_INSTALLER_EXE.bat to build the Windows installer.
+3. After installing, run 4_REPAIR_ENVIRONMENT.bat once if new packages are needed.
+4. Open menu 54 Coding Toolchain Manager.
+5. Do not store raw API keys in project files.

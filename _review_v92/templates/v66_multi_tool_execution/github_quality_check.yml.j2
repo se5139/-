@@ -1,0 +1,19 @@
+name: v66 quality check
+on:
+  workflow_dispatch:
+  push:
+    branches: [ main ]
+jobs:
+  python-quality:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install runtime dependencies
+        run: pip install -r requirements.txt
+      - name: Compile Python files
+        run: python -m compileall .
+      - name: Run v66 verification
+        run: python scripts/v66_multi_tool_execution_check.py

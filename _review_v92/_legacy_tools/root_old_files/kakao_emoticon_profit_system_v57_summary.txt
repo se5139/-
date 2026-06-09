@@ -1,0 +1,17 @@
+Kakao Emoticon Profit System v57
+
+Purpose:
+- Improve the web UI that looked crowded because 49 Streamlit tabs were displayed in one horizontal row.
+
+Changes:
+- Replaced top horizontal tabs with a left sidebar vertical menu.
+- Added menu search.
+- Added current-step card.
+- Moved long feature history into an expander.
+- Preserved existing feature blocks and data safety rules.
+
+Verification:
+- Python syntax check
+- Sidebar navigation marker check
+- 49 route count check
+- No destructive deletion logic added

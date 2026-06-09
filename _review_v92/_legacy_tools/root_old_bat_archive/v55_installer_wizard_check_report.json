@@ -1,0 +1,31 @@
+{
+  "ok": true,
+  "errors": [],
+  "checks": {
+    "exists:app.py": true,
+    "exists:modules/constants.py": true,
+    "exists:installer/KakaoEmoticonSetup_v56.iss": true,
+    "exists:BUILD_V56_SETUP_EXE.bat": true,
+    "exists:scripts/cleanup_old_versions_v56.py": true,
+    "exists:scripts/create_shortcuts_v56.py": true,
+    "compile:app.py": true,
+    "compile:scripts/cleanup_old_versions_v56.py": true,
+    "compile:scripts/create_shortcuts_v56.py": true,
+    "ascii:BUILD_V56_SETUP_EXE.bat": true,
+    "ascii:1_INSTALL_NOW.bat": true,
+    "ascii:3_CREATE_SHORTCUTS_ONLY.bat": true,
+    "ascii:run_cleanup_old_versions_v56.bat": true,
+    "ascii:installer/KakaoEmoticonSetup_v56.iss": true,
+    "iss_token:KakaoEmoticonSetup_v56": true,
+    "iss_token:DefaultDirName={localappdata}\\{#MyAppDir}": true,
+    "iss_token:#define MyAppDir \"KakaoEmoticonProfitSystemV56\"": true,
+    "iss_token:WizardStyle=modern": true,
+    "iss_token:[Icons]": true,
+    "iss_token:[Run]": true,
+    "iss_no_powershell": true,
+    "constants_v56": true,
+    "no_old_bad_patterns:1_INSTALL_NOW.bat": true,
+    "no_old_bad_patterns:3_CREATE_SHORTCUTS_ONLY.bat": true,
+    "no_old_bad_patterns:BUILD_V56_SETUP_EXE.bat": true
+  }
+}

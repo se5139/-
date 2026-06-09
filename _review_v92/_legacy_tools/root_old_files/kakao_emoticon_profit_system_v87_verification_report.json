@@ -1,0 +1,34 @@
+{
+  "version": "87.0.0",
+  "status": "PASS_WITH_WINDOWS_EXE_COMPILE_NOT_PERFORMED",
+  "created_at": "2026-06-07 15:00:15",
+  "purpose": "v86 기준 초보자 흐름 정리 및 Windows 파일명 안전 생성검사 강화 핫픽스",
+  "checks": {
+    "compileall": "PASS",
+    "core_imports": "PASS",
+    "static_32_generation": "PASS",
+    "animated_24_candidate_generation": "PASS",
+    "gif_3_or_more_generation": "PASS - 5 GIFs generated in v87 check",
+    "windows_forbidden_filename_runtime": "PASS",
+    "windows_forbidden_filename_inside_zip": "PASS",
+    "special_phrase_preservation_csv_json": "PASS",
+    "compact_5_menu_ui": "PASS",
+    "root_bat_count": "PASS - 8 visible BAT files",
+    "api_key_literal_scan": "PASS",
+    "inno_setup_compiler_detection": "PASS - script ran, compiler not found in this Linux environment"
+  },
+  "limitations": [
+    "Windows용 Inno Setup EXE 컴파일은 이 Linux 기반 환경에서 완료하지 못했습니다.",
+    "사용자 Windows PC에 Inno Setup이 설치되어 있어야 installer/Output/KakaoEmoticonSetup_v87.exe 생성이 완료됩니다."
+  ],
+  "root_visible_bats": [
+    "00_DOUBLE_CLICK_THIS_FIRST_BUILD_SETUP_EXE.bat",
+    "00_STEP_2_PORTABLE_INSTALL_NOW.bat",
+    "00_STEP_3_START_PROGRAM.bat",
+    "1_INSTALL_NOW.bat",
+    "2_START_PROGRAM.bat",
+    "47_V87_FULL_USER_FLOW_FILENAME_SAFETY_CHECK.bat",
+    "4_REPAIR_ENVIRONMENT.bat",
+    "START_WINDOWS.bat"
+  ]
+}

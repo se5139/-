@@ -1,24 +1,59 @@
 # Python caches
 __pycache__/
+**/__pycache__/
 *.py[cod]
 *.pyo
+*.pyd
 
 # Virtual environments
 .venv/
 venv/
 env/
+**/.venv/
 
-# Generated outputs and local test data
+# Generated outputs and local diagnostics
 outputs/
 output/
+**/outputs/
 _final_zip_recheck/
 _test_localappdata*/
 v90_simple_png_gif_output_check_report.json
+v92_error_diagnostics_output_check_report.json
 
 # Local installer build noise
 installer/Output/
 installer/*_build_report.json
 *.log
+
+# Local-only work folders and downloaded tools
+_tools/
+_review_extract/
+_github_upload/
+_deliverables_v90/
+kakao_emoticon_v100_clean/
+
+# Secrets and local config
+.env
+.env.*
+*.env
+openai-api-key.txt
+*api*key*.txt
+*secret*.txt
+
+# Build products are ignored by default.
+*.zip
+*.exe
+*.sha256.txt
+
+# Keep packaged releases that are intentionally committed for other PCs.
+!release/
+!release/*.zip
+!release/*.exe
+!release/*.sha256.txt
+!_deliverables_v92/
+!_deliverables_v92/*.zip
+!_deliverables_v92/*.exe
+!_deliverables_v92/*.sha256.txt
 
 # OS/editor noise
 .DS_Store

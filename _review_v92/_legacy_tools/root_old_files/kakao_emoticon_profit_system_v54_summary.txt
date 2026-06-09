@@ -1,0 +1,29 @@
+Kakao Emoticon Profit System v54 - Windows Installer Hotfix
+
+Purpose:
+- Fix v53 Windows installer errors shown in user screenshots.
+- Fix old-version cleanup errors caused by UTF-8/Korean PowerShell mojibake.
+- Fix shortcut creation path errors caused by trailing backslash + quote handling.
+
+Main fixes:
+1. Installer now uses %CD% after cd /d instead of raw %~dp0 when passing paths to PowerShell.
+2. cleanup_old_versions_v54.ps1 and create_shortcuts_v54.ps1 are ASCII-only.
+3. PowerShell scripts use -LiteralPath and path cleanup/TrimEnd protection.
+4. C:\ extracted old package folders and LOCALAPPDATA install folders are cleanup candidates.
+5. Desktop and OneDrive Desktop shortcuts are created after install.
+6. User data folders are backed up before old folders are removed.
+
+Recommended install location:
+C:\KakaoEmoticonV54
+
+Run:
+1_INSTALL_NOW.bat
+
+Manual shortcut repair:
+3_CREATE_SHORTCUTS_ONLY.bat
+
+Manual cleanup:
+14_V54_CLEAN_OLD_VERSIONS_AND_EXTRACTED.bat
+
+Verification:
+21_V54_INSTALLER_HOTFIX_CHECK.bat

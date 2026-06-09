@@ -1,0 +1,38 @@
+카카오 이모티콘 수익화 시스템 v39 요약
+
+버전명: v39 Kakao Studio Excel Learning Engine
+핵심 기능: 카카오 이모티콘 스튜디오에서 다운로드 가능한 2가지 엑셀 파일을 프로그램 학습 데이터로 가져오는 기능.
+
+지원 파일:
+1. 이모티콘 플러스 발신 통계 엑셀
+   - 조회기간
+   - 날짜
+   - 이모티콘명
+   - 시리즈명
+   - 발신수
+   - 이용자수
+
+2. 판매내역 엑셀
+   - 판매기간
+   - 국내/일본/글로벌 판매 건수·판매금액
+   - 판매일
+   - 유형
+   - 이모티콘 제목
+   - 시리즈명
+   - 구분
+   - 건수/통화/금액
+
+생성 결과:
+- plus_rows.csv/json
+- sales_summary.csv/json
+- sales_details.csv/json
+- performance_scores.csv/json
+- extension_recommendations.csv/json
+- kakao_studio_excel_v39.html/json
+- growth_learning/kakao_studio_excel_imports.jsonl
+- 전체 ZIP 리포트
+
+주의:
+- 판매/발신 데이터가 0이면 프로그램은 확장 추천을 강하게 하지 않고 데이터 축적 우선을 안내함.
+- 승인 또는 수익을 보장하지 않음.
+- v19 데이터 보호 구조와 v20 성장형 학습 구조를 유지함.

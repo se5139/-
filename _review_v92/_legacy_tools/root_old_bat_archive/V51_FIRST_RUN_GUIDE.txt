@@ -1,0 +1,8 @@
+Kakao Emoticon v51 first run guide
+
+1. Extract the ZIP completely.
+2. Run 1_INSTALL_NOW.bat.
+3. Run 2_START_PROGRAM.bat.
+4. Open tab 48: API key / quota ledger / paid-call guard.
+5. Keep paid calls OFF unless you explicitly want paid API use.
+6. Local file/ZIP analysis works without API keys.

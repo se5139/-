@@ -1,0 +1,7 @@
+v73 실행 안내
+
+1. C:\KakaoEmoticonV73 같은 짧은 경로에 압축을 풉니다.
+2. 0_BUILD_WINDOWS_INSTALLER_EXE.bat 실행 후 installer\Output\KakaoEmoticonSetup_v73.exe를 만듭니다.
+3. 설치 후 프로그램에서 좌측 메뉴 60 제출 전 최종 사용자 확인/수동 승인을 실행합니다.
+4. 모든 필수 체크가 완료되어야 v73_user_approved_final_candidate.zip이 최종 승인 후보로 열립니다.
+5. 제출 직전 카카오 공식 기준은 반드시 다시 확인해야 합니다.

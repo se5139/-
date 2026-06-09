@@ -1,107 +1,109 @@
-# Kakao Emoticon Profit System v90
+# Kakao Emoticon Profit System
 
-Python 중심의 Windows 로컬 PC 실행/설치형 카카오톡 이모티콘 제작 보조 프로그램입니다.
+Python 중심의 로컬 PC 실행형 카카오톡 이모티콘 제작 보조 프로그램입니다.
 
-이 저장소는 v90 간편 PNG/GIF 출력 구조를 기준으로 정리되어 있습니다.
+현재 저장소 루트는 사용자가 요청한 **v90 간편 PNG/GIF 출력 hotfix 기준**으로 실행할 수 있게 정리되어 있습니다. 기존 GitHub 저장소에 있던 v92 자료는 삭제하지 않고 `_review_v92/`, `_deliverables_v92/`에 보존했습니다.
 
-## 핵심 출력 규칙
+## 빠른 실행
 
-- 정지형 최종 제출 후보: `static_png_submit` 폴더의 PNG 32개
-- 움직이는형 최종 제출 후보: `animated_gif_submit` 폴더의 GIF 24개
-- `preview_jpg`는 눈으로 확인하는 미리보기 전용입니다.
-- `v90_submit_only_png_gif.zip`에는 JPG가 들어가지 않습니다.
-- 특수문자 문구 원문은 화면, CSV, JSON에 보존하고 파일명만 Windows 안전 이름으로 바꿉니다.
-- 유료 API는 기본 OFF입니다.
+### Windows에서 처음 실행
 
-## 기본 메뉴 5개 흐름
+1. Python 3.10 이상을 설치합니다.
+2. Python 설치 화면에서 `Add Python to PATH`를 체크합니다.
+3. 이 저장소를 받습니다.
 
-1. 제작 시작 · 정지형/움직이는형 미리보기
-2. 세트 구성 · 32개/24개 품질 진화
-3. 검사 · 자동보정 · 제출 전 승인
-4. 반려 대응 · 캡처/OCR · 재생성
-5. 최종 납품 · 백업/리포트/재검사
-
-세부 기능은 고급 메뉴 안에 유지합니다.
-
-## Windows에서 실행
-
-처음 받은 PC에서는 먼저 Python 3.10 이상을 설치하고, 설치할 때 `Add Python to PATH`를 선택하세요.
-
-```bat
-00_STEP_2_PORTABLE_INSTALL_NOW.bat
+```powershell
+git clone https://github.com/se5139/-.git
+cd -
 ```
 
-설치가 끝나면 실행합니다.
+4. 설치 배치 파일을 실행합니다.
 
-```bat
-00_STEP_3_START_PROGRAM.bat
+```powershell
+.\00_STEP_2_PORTABLE_INSTALL_NOW.bat
 ```
 
-브라우저가 자동으로 열리지 않으면 아래 주소를 직접 엽니다.
+5. 프로그램을 시작합니다.
+
+```powershell
+.\00_STEP_3_START_PROGRAM.bat
+```
+
+6. 브라우저에서 아래 주소를 엽니다.
 
 ```text
 http://127.0.0.1:8520
 ```
 
-## 설치마법사 EXE
+### 설치 마법사로 실행
 
-릴리스 산출물은 `release` 폴더에 있습니다.
+Windows PC에서는 아래 설치 파일을 사용할 수 있습니다.
 
-- `release/KakaoEmoticonSetup_v90.exe`
-- `release/KakaoEmoticonSetup_v90.exe.sha256.txt`
-- `release/kakao_emoticon_profit_system_v90_simple_png_gif_output_hotfix_codex_fixed.zip`
-- `release/FINAL_VALIDATION_RESULT_KO.txt`
+```text
+release/KakaoEmoticonSetup_v90.exe
+```
 
-설치마법사 EXE를 실행하면 Windows PC에 v90 프로그램을 설치하는 흐름으로 진행됩니다.
+무결성 확인용 SHA-256 파일은 함께 들어 있습니다.
+
+```text
+release/KakaoEmoticonSetup_v90.exe.sha256.txt
+```
+
+## 기본 메뉴
+
+프로그램은 v90 기준의 5개 큰 흐름을 유지합니다.
+
+1. 제작 시작, 정지형/움직이는형 미리보기
+2. 세트 구성, 32개/24개 품질 진화
+3. 검사, 자동보정, 제출 전 승인
+4. 반려 대응, 캡처/OCR, 재생성
+5. 최종 납품, 백업/리포트/재검사
+
+세부 기능과 고급 도구는 `_advanced_tools/` 아래에 보관되어 있습니다.
+
+## 제출 파일 기준
+
+- 정지형 최종 제출 파일: PNG 32개
+- 움직이는형 최종 제출 파일: GIF 24개
+- JPG는 확인용 preview 파일로만 사용합니다.
+- 제출용 ZIP에는 JPG가 들어가면 안 됩니다.
+- Windows 파일명 금지문자는 안전하게 치환합니다.
+- 특수문자 문구 원문은 화면, CSV, JSON에 보존합니다.
+- API 키 원문은 리포트, ZIP, CSV, JSON에 포함하지 않습니다.
+- 유료 API는 기본 OFF입니다.
 
 ## 검증
 
-기본 검사는 다음 BAT를 실행합니다.
+v90 핵심 검사는 아래 파일로 실행할 수 있습니다.
 
-```bat
-47_V90_SIMPLE_PNG_GIF_OUTPUT_CHECK.bat
+```powershell
+.\47_V90_SIMPLE_PNG_GIF_OUTPUT_CHECK.bat
 ```
 
-검증 항목:
+Codex 검증 산출물은 `release/` 폴더에 함께 보관했습니다.
 
-- Python compileall
-- 핵심 모듈 import
-- PNG 32개 실제 생성
-- GIF 24개 실제 생성
-- JPG preview 56개 생성
-- submit-only ZIP 내 JPG 미포함
-- manifest JSON/CSV 카운트 일치
-- Windows 파일명 금지문자 검사
-- 특수문자 문구 원문 보존
-- 기본 메뉴 5개 유지
-- 루트 BAT 8개 이하
-- v89 이하 이전 버전 정리 fake-flow
-- API 키 원문 패턴 검사
-- ZIP 무결성 검사
-
-## 환경 복구
-
-패키지 설치나 실행이 실패하면 아래 파일을 실행합니다.
-
-```bat
-4_REPAIR_ENVIRONMENT.bat
+```text
+release/FINAL_VALIDATION_RESULT_KO.txt
+release/00_BEGINNER_RUN_GUIDE_KO.txt
+release/kakao_emoticon_profit_system_v90_simple_png_gif_output_hotfix_codex_fixed.zip
+release/kakao_emoticon_profit_system_v90_simple_png_gif_output_hotfix_codex_fixed.zip.sha256.txt
 ```
 
-이 스크립트는 `.venv`를 다시 만들고 `requirements.txt`를 설치한 뒤 진단을 실행합니다.
+## 사용자 데이터 보호
 
-## 데이터 보호
+이 프로젝트는 사용자 데이터를 삭제하거나 덮어쓰지 않는 방향을 우선합니다. 버전 정리 스크립트는 이전 버전 후보를 백업 대상으로 먼저 분류하고, 현재 버전과 상위 버전은 삭제 대상에서 제외하도록 설계되어 있습니다.
 
-이전 버전 정리 기능은 현재 v90 이상 폴더를 제외합니다.
+## 기존 v92 자료
 
-v89 이하로 보이는 이전 버전 폴더를 정리할 때는 사용자 데이터 후보를 먼저 백업한 뒤 처리합니다.
+원격 저장소에 이미 있던 v92 자료는 병합 과정에서 보존했습니다.
 
-보존 후보:
+```text
+_review_v92/
+_deliverables_v92/
+```
 
-- `outputs`, `output`, `user_data`, `data`, `settings`, `reports`, `backups`, `exports`, `projects`
-- DB, JSON, CSV, Excel, TXT, HTML, PNG, JPG, GIF, ZIP
+v92 설치 파일은 아래 위치에 있습니다.
 
-## 개발 메모
-
-GitHub에는 실행 소스와 작은 릴리스 산출물만 올리는 것을 권장합니다.
-
-생성 결과물, 가상환경, 캐시, 테스트용 로컬 데이터는 `.gitignore`로 제외합니다.
+```text
+_deliverables_v92/KakaoEmoticonSetup_v92_DirectCreationHotfix.exe
+```

@@ -1,0 +1,24 @@
+{
+  "version": "84",
+  "purpose": "Root cleanup and user-action clarity hotfix after video review",
+  "video_finding": "The uploaded video shows the build BAT selected in File Explorer; no CMD/error output is visible. The real package issue was excessive root BAT clutter and unclear run path.",
+  "compileall_pass": true,
+  "root_cleanup_check_pass": true,
+  "root_bat_count": 18,
+  "old_visible_root_bats": [],
+  "api_key_plaintext_hits": [],
+  "checks": {
+    "active_build_bat": true,
+    "double_click_helper": true,
+    "manual_inno_script": true,
+    "v84_iss": true,
+    "legacy_archive": true,
+    "old_root_bats_hidden": true
+  },
+  "root_check_output_tail": "PASS - root old-version BAT files hidden\nPASS - root BAT count is manageable - 18\nPASS - main build BAT exists\nPASS - double-click helper exists\nPASS - manual Inno script opener exists\nPASS - v84 Inno script exists\nPASS - v84 build script exists\nPASS - legacy archive exists\nReport: /mnt/data/work_v84/outputs/v84_root_runtime_check_report.json\n",
+  "zip_sha256": "5dc4cf59e54f16669f40ec215267a7d2b7febbc84f2ecf1fed68a6711207b189",
+  "zip_size": 1012883,
+  "reextract_compileall_pass": true,
+  "reextract_root_check_pass": true,
+  "reextract_root_check_output_tail": "PASS - root old-version BAT files hidden\nPASS - root BAT count is manageable - 18\nPASS - main build BAT exists\nPASS - double-click helper exists\nPASS - manual Inno script opener exists\nPASS - v84 Inno script exists\nPASS - v84 build script exists\nPASS - legacy archive exists\nReport: /mnt/data/v84_reextract/outputs/v84_root_runtime_check_report.json\n"
+}

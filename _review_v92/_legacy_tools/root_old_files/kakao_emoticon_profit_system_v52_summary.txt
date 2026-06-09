@@ -1,0 +1,6 @@
+v52 summary
+- Static character to animated character pipeline added.
+- Selected improvement suggestions are applied to actual regeneration.
+- Same identity profile is reused for animated GIF generation.
+- Apply payload connects generated assets to current production flow.
+- Safety: no destructive overwrite, no famous character cloning.

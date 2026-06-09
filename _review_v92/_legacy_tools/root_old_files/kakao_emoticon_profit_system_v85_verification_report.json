@@ -1,0 +1,49 @@
+{
+  "version": "85.0.0",
+  "name": "compact workflow simplification",
+  "checks": [
+    {
+      "name": "python compileall",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "v85 compact workflow check",
+      "ok": true,
+      "detail": "[v85][PASS] compact workflow markers found\n[v85][PASS] root BAT count: 14\n[v85][PASS] root BATs: 00_DOUBLE_CLICK_THIS_FIRST_BUILD_SETUP_EXE.bat, 00_STEP_1_BUILD_SETUP_EXE.bat, 00_STEP_2_PORTABLE_INSTALL_NOW.bat, 00_STEP_3_START_PROGRAM.bat, 0_BUILD_WINDOWS_INSTALLER_EXE.bat, 1_INSTALL_NOW.bat, 2_START_PROGRAM.bat, 3_CREATE_SHORTCUTS_ONLY.bat, 46_V85_COMPACT_WORKFLOW_CHECK.bat, 4_REPAIR_ENVIRONMENT.bat, 5_OPEN_OUTPUTS.bat, 6_RUN_DIAGNOSTICS.bat, OPEN_V85_INNO_SCRIPT.bat, START_WINDOWS.bat\n"
+    },
+    {
+      "name": "root bat count simplified",
+      "ok": true,
+      "detail": "00_DOUBLE_CLICK_THIS_FIRST_BUILD_SETUP_EXE.bat, 00_STEP_1_BUILD_SETUP_EXE.bat, 00_STEP_2_PORTABLE_INSTALL_NOW.bat, 00_STEP_3_START_PROGRAM.bat, 0_BUILD_WINDOWS_INSTALLER_EXE.bat, 1_INSTALL_NOW.bat, 2_START_PROGRAM.bat, 3_CREATE_SHORTCUTS_ONLY.bat, 46_V85_COMPACT_WORKFLOW_CHECK.bat, 4_REPAIR_ENVIRONMENT.bat, 5_OPEN_OUTPUTS.bat, 6_RUN_DIAGNOSTICS.bat, OPEN_V85_INNO_SCRIPT.bat, START_WINDOWS.bat"
+    },
+    {
+      "name": "app compact markers",
+      "ok": true,
+      "detail": "all required markers present"
+    },
+    {
+      "name": "constants v85",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "raw openai key file absent",
+      "ok": true,
+      "detail": "[]"
+    },
+    {
+      "name": "v85 inno script exists",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "v85 build script exists",
+      "ok": true,
+      "detail": ""
+    }
+  ],
+  "limitations": [
+    "Inno Setup EXE compilation was not executed in this Linux environment."
+  ]
+}

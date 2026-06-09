@@ -1,0 +1,18 @@
+{
+  "checks": {
+    "exists:modules/coding_toolchain_manager.py": true,
+    "exists:templates/v65_coding_toolchain_manager/toolchain_report.html.j2": true,
+    "exists:docs/v65_coding_program_toolchain.md": true,
+    "exists:requirements-dev.txt": true,
+    "exists:.vscode/settings.json": true,
+    "exists:.gitignore": true,
+    "render_ok": true,
+    "has_python_final_rule": true,
+    "has_jinja_primary": true,
+    "has_tool_categories": true,
+    "package_zip_valid": true,
+    "no_api_key_leak": true
+  },
+  "errors": [],
+  "ok": true
+}

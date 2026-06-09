@@ -1,0 +1,4 @@
+category,tools,role,status
+{% for row in toolchain -%}
+"{{ row.category }}","{{ row.tools | join(' / ') }}","{{ row.role }}","{{ row.status }}"
+{% endfor -%}
