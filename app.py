@@ -2383,6 +2383,35 @@ def sha256_file(path: Path) -> str:
     return digest.hexdigest()
 
 
+def release_allowlist_files() -> list[Path]:
+    candidates = [
+        Path("app.py"),
+        Path("README.md"),
+        Path("requirements.txt"),
+        Path("START_WINDOWS.bat"),
+        Path("RUN_SERVER_NO_BROWSER.bat"),
+        Path("START_MAC_LINUX.sh"),
+        Path("KAKAO_SAFE_WORKFLOW.md"),
+        Path("RESEARCH_SOURCES.md"),
+        Path("memory/evolution_memory.json"),
+        Path("memory/api_usage_ledger.json"),
+        Path("scripts/stop_port.py"),
+        Path("scripts/wait_for_port.py"),
+    ]
+    return [path for path in candidates if path.exists() and path.is_file()]
+
+
+def release_excluded_summary(included_files: list[Path]) -> dict[str, int]:
+    included = {path.resolve() for path in included_files}
+    summary: dict[str, int] = {}
+    for item in Path(".").rglob("*"):
+        if not item.is_file() or item.resolve() in included:
+            continue
+        reason = release_exclusion_reason(item) or "v100 portable 핵심 구성 외 파일 제외"
+        summary[reason] = summary.get(reason, 0) + 1
+    return summary
+
+
 def build_release_package() -> dict[str, object]:
     RELEASE_ROOT.mkdir(exist_ok=True)
     timestamp = kst_now().strftime("%Y%m%d_%H%M%S")
@@ -2392,16 +2421,8 @@ def build_release_package() -> dict[str, object]:
     report_path = RELEASE_ROOT / f"{package_stem}_report.json"
     package_root_name = "kakao_emoticon_v100_clean"
 
-    included_files: list[Path] = []
-    excluded_summary: dict[str, int] = {}
-    for item in sorted(Path(".").rglob("*")):
-        if not item.is_file():
-            continue
-        reason = release_exclusion_reason(item)
-        if reason:
-            excluded_summary[reason] = excluded_summary.get(reason, 0) + 1
-            continue
-        included_files.append(item)
+    included_files = release_allowlist_files()
+    excluded_summary = release_excluded_summary(included_files)
 
     manifest = {
         "app_name": APP_NAME,
@@ -2409,6 +2430,7 @@ def build_release_package() -> dict[str, object]:
         "created_at_kst": kst_now().isoformat(),
         "package_type": "portable_standard_zip",
         "included_file_count": len(included_files),
+        "included_files": [path.as_posix() for path in included_files],
         "excluded_summary": excluded_summary,
         "run_after_extract": "START_WINDOWS.bat",
         "no_browser_server": "RUN_SERVER_NO_BROWSER.bat",
@@ -2654,6 +2676,7 @@ def release_check_page() -> str:
           <li><code>START_WINDOWS.bat</code>, <code>RUN_SERVER_NO_BROWSER.bat</code></li>
           <li><code>KAKAO_SAFE_WORKFLOW.md</code>, <code>RESEARCH_SOURCES.md</code></li>
           <li><code>memory/*.json</code> 기본 메모리와 API 사용량 원장</li>
+          <li><code>scripts/stop_port.py</code>, <code>scripts/wait_for_port.py</code> 실행 보조 스크립트</li>
         </ul>
       </div>
       <div class="panel">
@@ -2662,6 +2685,7 @@ def release_check_page() -> str:
           <li><code>outputs/</code>: 생성 결과물은 용량이 커서 기본 배포 ZIP에서 제외</li>
           <li><code>.venv/</code>, <code>__pycache__/</code>: PC마다 다시 만들 수 있는 실행 캐시</li>
           <li><code>.git/</code>, <code>github_backup/</code>, <code>_github_upload/</code>: 개발/백업용 폴더</li>
+          <li>v90 레거시 배치/설치/검사 스크립트와 개발 도구 폴더</li>
           <li>완성 배포는 알집 전용 형식보다 표준 <code>.zip</code> 권장</li>
         </ul>
       </div>
