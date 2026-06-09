@@ -10,6 +10,7 @@ ROOT = Path(__file__).resolve().parents[1]
 REQUIRED_FILES = [
     "app.py",
     "README.md",
+    "QUICK_START_OTHER_PC_KO.txt",
     "requirements.txt",
     "START_WINDOWS.bat",
     "RUN_SERVER_NO_BROWSER.bat",
