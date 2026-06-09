@@ -1,6 +1,7 @@
 ﻿from __future__ import annotations
 
 import html
+import hashlib
 import io
 import json
 import math
@@ -35,6 +36,7 @@ CANVAS_SIZE = 360
 STATIC_COUNT = 32
 ANIMATED_COUNT = 24
 OUTPUT_ROOT = Path("outputs")
+RELEASE_ROOT = Path("release")
 MEMORY_ROOT = Path("memory")
 EVOLUTION_MEMORY_PATH = MEMORY_ROOT / "evolution_memory.json"
 API_USAGE_LEDGER_PATH = MEMORY_ROOT / "api_usage_ledger.json"
@@ -2324,6 +2326,192 @@ def directory_size(path: Path) -> int:
     return total
 
 
+def release_exclusion_reason(path: Path) -> str | None:
+    rel = path.relative_to(Path("."))
+    parts = rel.parts
+    excluded_dirs = {
+        ".git",
+        ".vscode",
+        ".venv",
+        "venv",
+        "env",
+        "__pycache__",
+        "outputs",
+        "output",
+        "release",
+        "github_backup",
+        "_github_upload",
+        "_review_extract",
+        "_review_v92",
+        "_final_zip_recheck",
+        "_deliverables_v90",
+    }
+    excluded_prefixes = ("_test_localappdata",)
+    excluded_suffixes = (
+        ".pyc",
+        ".pyo",
+        ".pyd",
+        ".log",
+        ".tmp",
+        ".bak",
+        ".zip",
+        ".exe",
+        ".sha256.txt",
+    )
+    secret_patterns = ("api_key", "apikey", "secret", "token", ".env")
+    for part in parts:
+        lowered = part.lower()
+        if lowered in excluded_dirs:
+            return f"{part} 폴더 제외"
+        if any(lowered.startswith(prefix) for prefix in excluded_prefixes):
+            return f"{part} 임시 폴더 제외"
+    lowered_name = path.name.lower()
+    if lowered_name in {"thumbs.db", ".ds_store"}:
+        return "OS 캐시 파일 제외"
+    if lowered_name.endswith(excluded_suffixes):
+        return "빌드/캐시 산출물 제외"
+    if any(pattern in lowered_name for pattern in secret_patterns):
+        return "키/비밀값 가능성 파일 제외"
+    return None
+
+
+def sha256_file(path: Path) -> str:
+    digest = hashlib.sha256()
+    with path.open("rb") as file:
+        for chunk in iter(lambda: file.read(1024 * 1024), b""):
+            digest.update(chunk)
+    return digest.hexdigest()
+
+
+def build_release_package() -> dict[str, object]:
+    RELEASE_ROOT.mkdir(exist_ok=True)
+    timestamp = kst_now().strftime("%Y%m%d_%H%M%S")
+    package_stem = f"kakao_emoticon_v100_clean_portable_{timestamp}"
+    zip_path = RELEASE_ROOT / f"{package_stem}.zip"
+    checksum_path = RELEASE_ROOT / f"{package_stem}.sha256.txt"
+    report_path = RELEASE_ROOT / f"{package_stem}_report.json"
+    package_root_name = "kakao_emoticon_v100_clean"
+
+    included_files: list[Path] = []
+    excluded_summary: dict[str, int] = {}
+    for item in sorted(Path(".").rglob("*")):
+        if not item.is_file():
+            continue
+        reason = release_exclusion_reason(item)
+        if reason:
+            excluded_summary[reason] = excluded_summary.get(reason, 0) + 1
+            continue
+        included_files.append(item)
+
+    manifest = {
+        "app_name": APP_NAME,
+        "app_version": APP_VERSION,
+        "created_at_kst": kst_now().isoformat(),
+        "package_type": "portable_standard_zip",
+        "included_file_count": len(included_files),
+        "excluded_summary": excluded_summary,
+        "run_after_extract": "START_WINDOWS.bat",
+        "no_browser_server": "RUN_SERVER_NO_BROWSER.bat",
+        "local_url": f"http://{HOST}:{PORT}",
+        "notes": [
+            "표준 .zip 형식입니다. 알집에서도 열 수 있지만 .alz 전용 형식은 사용하지 않습니다.",
+            "outputs 폴더는 용량이 커서 기본 제외했습니다. 결과물은 필요할 때 별도로 보관하세요.",
+            "API 키, .env, 로그, 캐시, Git 폴더는 기본 제외했습니다.",
+        ],
+    }
+
+    with zipfile.ZipFile(zip_path, "w", compression=zipfile.ZIP_DEFLATED) as archive:
+        archive.writestr(
+            f"{package_root_name}/RELEASE_MANIFEST.json",
+            json.dumps(manifest, ensure_ascii=False, indent=2),
+        )
+        for file_path in included_files:
+            archive.write(file_path, Path(package_root_name) / file_path)
+
+    checksum = sha256_file(zip_path)
+    checksum_path.write_text(f"{checksum}  {zip_path.name}\n", encoding="utf-8")
+    report = {
+        **manifest,
+        "zip_path": str(zip_path),
+        "zip_name": zip_path.name,
+        "zip_size_bytes": zip_path.stat().st_size,
+        "zip_size_label": bytes_label(zip_path.stat().st_size),
+        "sha256": checksum,
+        "checksum_path": str(checksum_path),
+        "report_path": str(report_path),
+    }
+    report_path.write_text(json.dumps(report, ensure_ascii=False, indent=2), encoding="utf-8")
+    return report
+
+
+def release_result_page(report: dict[str, object]) -> str:
+    zip_path = Path(str(report.get("zip_path", "")))
+    checksum_path = Path(str(report.get("checksum_path", "")))
+    report_path = Path(str(report.get("report_path", "")))
+    zip_href = "/" + zip_path.as_posix() if zip_path.exists() else ""
+    checksum_href = "/" + checksum_path.as_posix() if checksum_path.exists() else ""
+    report_href = "/" + report_path.as_posix() if report_path.exists() else ""
+    excluded = report.get("excluded_summary", {})
+    excluded_rows = ""
+    if isinstance(excluded, dict):
+        excluded_rows = "".join(
+            f"<tr><td>{html.escape(str(reason))}</td><td>{html.escape(str(count))}</td></tr>"
+            for reason, count in sorted(excluded.items())
+        )
+    if not excluded_rows:
+        excluded_rows = "<tr><td colspan='2'>제외 항목 없음</td></tr>"
+    return f"""<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>v100 Release Package Created</title>
+  <style>
+    body {{ margin:0; color:#2d2424; font-family:"Malgun Gothic", sans-serif; background:linear-gradient(135deg,#fffaf0,#eef8ef); }}
+    main {{ width:min(980px, calc(100% - 32px)); margin:0 auto; padding:42px 0; }}
+    .panel {{ border:2px solid #ead8bc; border-radius:28px; background:rgba(255,255,255,.88); padding:24px; box-shadow:0 18px 50px rgba(96,69,45,.11); margin-bottom:18px; }}
+    h1 {{ margin:0 0 10px; font-size:clamp(32px,5vw,54px); letter-spacing:-.05em; }}
+    p, li, td, th {{ line-height:1.65; color:#6f625f; }}
+    code {{ background:#fff3d8; padding:2px 7px; border-radius:8px; }}
+    a.button {{ display:inline-block; border-radius:999px; padding:12px 16px; background:#7fd8be; color:#2d2424; font-weight:900; text-decoration:none; margin:4px 6px 4px 0; }}
+    table {{ width:100%; border-collapse:collapse; }}
+    th, td {{ text-align:left; padding:10px 12px; border-bottom:1px solid #ead8bc; }}
+    th {{ color:#2d2424; background:#fff3d8; }}
+  </style>
+</head>
+<body>
+  <main>
+    <section class="panel">
+      <h1>표준 ZIP 생성 완료</h1>
+      <p>다른 PC에서 압축을 풀고 <code>START_WINDOWS.bat</code>을 실행하면 이어서 사용할 수 있습니다.</p>
+      <p>
+        <a class="button" href="{html.escape(zip_href)}">ZIP 다운로드</a>
+        <a class="button" href="{html.escape(checksum_href)}">SHA256 보기</a>
+        <a class="button" href="{html.escape(report_href)}">패키지 리포트</a>
+        <a class="button" href="/release-check">배포 점검으로</a>
+      </p>
+    </section>
+    <section class="panel">
+      <h2>패키지 정보</h2>
+      <ul>
+        <li>파일명: <code>{html.escape(str(report.get("zip_name", "")))}</code></li>
+        <li>크기: <strong>{html.escape(str(report.get("zip_size_label", "")))}</strong></li>
+        <li>포함 파일 수: {html.escape(str(report.get("included_file_count", "")))}</li>
+        <li>SHA256: <code>{html.escape(str(report.get("sha256", "")))}</code></li>
+      </ul>
+    </section>
+    <section class="panel">
+      <h2>자동 제외된 항목</h2>
+      <table>
+        <thead><tr><th>이유</th><th>파일 수</th></tr></thead>
+        <tbody>{excluded_rows}</tbody>
+      </table>
+    </section>
+  </main>
+</body>
+</html>"""
+
+
 def release_check_page() -> str:
     required_files = [
         ("앱 본체", Path("app.py")),
@@ -2422,6 +2610,7 @@ def release_check_page() -> str:
     th {{ color:#2d2424; background:#fff3d8; }}
     code {{ background:#fff3d8; padding:2px 7px; border-radius:8px; }}
     a.button {{ display:inline-block; border-radius:999px; padding:10px 14px; background:#7fd8be; color:#2d2424; font-weight:900; text-decoration:none; margin:4px 6px 4px 0; }}
+    button {{ border:0; border-radius:999px; padding:12px 16px; background:#2d2424; color:white; font-weight:900; cursor:pointer; margin-top:8px; }}
     .hero {{ display:grid; grid-template-columns:1.2fr .8fr; gap:18px; align-items:stretch; }}
     .score {{ display:flex; flex-direction:column; justify-content:center; min-height:180px; }}
     .score strong {{ font-size:clamp(34px,6vw,62px); letter-spacing:-.06em; }}
@@ -2440,6 +2629,9 @@ def release_check_page() -> str:
         <h1>최종 배포 점검</h1>
         <p>다른 PC에서도 이어서 쓸 수 있도록 ZIP 만들기 전에 필수 파일, 제외 폴더, 결과물 상태를 확인합니다.</p>
         <p><a class="button" href="/">제작 화면</a><a class="button" href="/results">최근 결과물</a><a class="button" href="/status">실행 상태</a><a class="button" href="/api-settings">API 키 안내</a></p>
+        <form method="post" action="/package-release">
+          <button type="submit">다른 PC 이동용 표준 ZIP 만들기</button>
+        </form>
       </div>
       <div class="panel score">
         <span class="pill {readiness_class}">RELEASE</span>
@@ -5080,6 +5272,9 @@ class Handler(BaseHTTPRequestHandler):
         if self.path.startswith("/outputs/"):
             self.serve_output_file()
             return
+        if self.path.startswith("/release/"):
+            self.serve_release_file()
+            return
         if self.path == "/memory":
             self.respond(200, memory_page())
             return
@@ -5103,6 +5298,10 @@ class Handler(BaseHTTPRequestHandler):
         self.respond(200, page())
 
     def do_POST(self) -> None:
+        if self.path == "/package-release":
+            report = build_release_package()
+            self.respond(200, release_result_page(report))
+            return
         if self.path == "/memory/compact":
             compact_evolution_memory()
             self.respond(200, memory_page("진화 메모리를 중복 정리했습니다."))
@@ -5196,6 +5395,30 @@ class Handler(BaseHTTPRequestHandler):
             ".jpeg": "image/jpeg",
             ".png": "image/png",
             ".gif": "image/gif",
+            ".zip": "application/zip",
+        }
+        data = resolved.read_bytes()
+        self.send_response(200)
+        self.send_header("Content-Type", content_types.get(resolved.suffix.lower(), "application/octet-stream"))
+        self.send_header("Content-Length", str(len(data)))
+        self.end_headers()
+        self.wfile.write(data)
+
+    def serve_release_file(self) -> None:
+        parsed_path = unquote(urlparse(self.path).path).lstrip("/")
+        requested = Path(parsed_path)
+        try:
+            resolved = requested.resolve()
+            release_root = RELEASE_ROOT.resolve()
+        except Exception:
+            self.respond(400, page(error="잘못된 파일 경로입니다."))
+            return
+        if not str(resolved).startswith(str(release_root)) or not resolved.is_file():
+            self.respond(404, page(error="배포 파일을 찾을 수 없습니다."))
+            return
+        content_types = {
+            ".json": "application/json; charset=utf-8",
+            ".txt": "text/plain; charset=utf-8",
             ".zip": "application/zip",
         }
         data = resolved.read_bytes()
