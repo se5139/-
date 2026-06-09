@@ -2389,6 +2389,7 @@ def release_allowlist_files() -> list[Path]:
         Path("app.py"),
         Path("README.md"),
         Path("QUICK_START_OTHER_PC_KO.txt"),
+        Path("RELEASE_NOTES_KO.md"),
         Path("requirements.txt"),
         Path("START_WINDOWS.bat"),
         Path("RUN_SERVER_NO_BROWSER.bat"),
@@ -2698,7 +2699,7 @@ def release_check_page() -> str:
       <div class="panel">
         <h2>최종 ZIP에 넣을 것</h2>
         <ul>
-          <li><code>app.py</code>, <code>README.md</code>, <code>QUICK_START_OTHER_PC_KO.txt</code>, <code>requirements.txt</code></li>
+          <li><code>app.py</code>, <code>README.md</code>, <code>QUICK_START_OTHER_PC_KO.txt</code>, <code>RELEASE_NOTES_KO.md</code>, <code>requirements.txt</code></li>
           <li><code>START_WINDOWS.bat</code>, <code>RUN_SERVER_NO_BROWSER.bat</code>, <code>VERIFY_PACKAGE.bat</code></li>
           <li><code>KAKAO_SAFE_WORKFLOW.md</code>, <code>RESEARCH_SOURCES.md</code></li>
           <li><code>memory/*.json</code> 기본 메모리와 API 사용량 원장</li>

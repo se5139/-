@@ -11,6 +11,7 @@ REQUIRED_FILES = [
     "app.py",
     "README.md",
     "QUICK_START_OTHER_PC_KO.txt",
+    "RELEASE_NOTES_KO.md",
     "requirements.txt",
     "START_WINDOWS.bat",
     "RUN_SERVER_NO_BROWSER.bat",
