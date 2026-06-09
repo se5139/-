@@ -1,0 +1,9 @@
+V76 실행 안내
+
+1. ZIP을 C:\KakaoEmoticonV76 처럼 짧은 경로에 압축 해제합니다.
+2. 0_BUILD_WINDOWS_INSTALLER_EXE.bat 를 실행해 설치마법사 EXE를 만듭니다.
+3. installer\Output\KakaoEmoticonSetup_v76.exe 를 실행합니다.
+4. 설치 후 2_START_PROGRAM.bat 또는 바탕화면 아이콘으로 실행합니다.
+5. 좌측 메뉴에서 "63 캡처 반려 사유→실제 재생성 자동 연결"을 선택합니다.
+
+주의: v76 결과물은 재생성 산출물입니다. 실제 제출 전에는 v71 QC, v72 자동보정/잠금, v73 사용자 최종 승인을 다시 실행해야 합니다.

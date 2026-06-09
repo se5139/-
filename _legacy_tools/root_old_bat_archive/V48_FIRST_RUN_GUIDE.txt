@@ -1,0 +1,24 @@
+Kakao Emoticon Profit System v48 first run guide
+
+1. ZIP file must be fully extracted first.
+2. Recommended folder:
+   C:\KakaoEmoticonV48
+3. Run:
+   1_INSTALL_NOW.bat
+4. If asked about cleaning old versions:
+   Y = clean old install folders and desktop shortcuts after backing up user data
+   Enter/N = skip cleanup and install v48 only
+5. Start program:
+   2_START_PROGRAM.bat
+6. First run may take 3 to 10 minutes because Python packages and the virtual environment are prepared.
+7. If a Streamlit error appears, run:
+   15_V48_CANDIDATE_APPLY_EVOLUTION_CHECK.bat
+   13_V48_COLLECT_STARTUP_SUPPORT.bat
+
+v48 main new tab:
+- 45 후보 적용/정지형 품질 진화
+
+Main v48 fixes:
+- selected candidates can be applied to active prompt/expression bank/candidate gallery flow
+- static character quality evolution engine added
+- duplicate Streamlit radio key issue fixed

@@ -1,0 +1,37 @@
+카카오톡 이모티콘 자동생성 프로그램 v46 첫 실행 안내
+
+1. ZIP 파일을 먼저 압축 해제하세요.
+   - ZIP 안에서 BAT 파일을 바로 실행하지 마세요.
+   - 권장 위치: C:\KakaoEmoticonV46 또는 바탕화면의 일반 폴더
+   - OneDrive 바탕화면에서 오류가 나면 C:\KakaoEmoticonV46 로 옮겨서 실행하세요.
+
+2. 설치 실행
+   - 압축을 푼 폴더에서 1_INSTALL_NOW.bat 실행
+
+3. 이전 버전 정리 안내가 나오면
+   - 이전 버전 설치 폴더/바탕화면 아이콘을 지우고 싶으면 Y 입력
+   - 정리하지 않고 넘어가려면 Enter 또는 N 입력
+   - 정리 대상은 LOCALAPPDATA 안의 본 프로그램 이전 버전 폴더와 바탕화면 바로가기입니다.
+   - 사용자 데이터는 ZIP 백업 후 정리합니다.
+
+4. 설치 위치
+   - %LOCALAPPDATA%\KakaoEmoticonProfitSystemV46
+
+5. 설치 후 실행
+   - 바탕화면의 Kakao Emoticon Profit System v46 바로가기 실행
+   - 또는 설치 폴더의 2_START_PROGRAM.bat 실행
+
+6. 첫 실행 주의
+   - Python 가상환경 생성과 패키지 설치 때문에 3~10분 걸릴 수 있습니다.
+   - Creating Python virtual environment... 또는 Installing required packages... 상태라면 기다려 주세요.
+
+7. 문제가 생기면
+   - 4_REPAIR_ENVIRONMENT.bat 실행
+   - 6_RUN_DIAGNOSTICS.bat 실행
+   - 13_V46_COLLECT_STARTUP_SUPPORT.bat 실행 후 생성된 ZIP을 공유하세요.
+
+8. 이전 버전 정리만 다시 하고 싶으면
+   - 14_V46_CLEAN_OLD_VERSIONS.bat 실행
+
+주의:
+카카오 공식 규격은 바뀔 수 있으므로 실제 제출 직전에는 카카오 이모티콘 스튜디오의 최신 공식 기준을 확인하세요.

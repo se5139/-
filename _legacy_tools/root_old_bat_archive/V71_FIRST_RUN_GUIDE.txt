@@ -1,0 +1,9 @@
+Kakao Emoticon Profit System v71 실행 안내
+
+1. ZIP을 C:\KakaoEmoticonV71 같은 짧은 경로에 압축 해제합니다.
+2. 0_BUILD_WINDOWS_INSTALLER_EXE.bat를 실행해 설치마법사 EXE를 만듭니다.
+3. installer\Output\KakaoEmoticonSetup_v71.exe를 실행합니다.
+4. 설치 후 프로그램 좌측 메뉴에서 "58 제출 전 규격/용량/프레임 QC"를 선택합니다.
+5. v71 QC 패키지 생성 버튼을 눌러 HTML 리포트, QC 표, 체크리스트, ZIP 패키지를 확인합니다.
+
+주의: v71은 로컬 사전 검사이며 카카오 공식 승인을 보장하지 않습니다. 제출 직전 공식 기준을 다시 확인해야 합니다.

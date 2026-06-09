@@ -1,0 +1,19 @@
+Kakao Emoticon Profit System v56
+
+Purpose:
+- Fix v55 Inno Setup compiler detection failure shown in user video.
+- Keep final application Python-centered.
+- Use Inno Setup only as Windows installer wizard wrapper.
+
+Main fix:
+- v55 only checked Program Files paths for ISCC.exe.
+- v56 checks PATH, Program Files, LocalAppData, per-user installations, desktop/start-menu shortcut targets, and Compil32.exe fallback.
+
+Main build command:
+- 0_BUILD_WINDOWS_INSTALLER_EXE.bat
+
+Fallback:
+- OPEN_V56_INNO_SCRIPT.bat
+
+Output:
+- installer\Output\KakaoEmoticonSetup_v56.exe

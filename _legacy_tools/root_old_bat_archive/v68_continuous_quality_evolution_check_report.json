@@ -1,0 +1,271 @@
+{
+  "version": "68.0.0",
+  "status": "PASS",
+  "checks": [
+    {
+      "name": "exists_static_png",
+      "status": "PASS",
+      "path": "/mnt/data/kakao_v68_work/outputs/v68_check_output/v68_check_1780830968/generated_emoticon/v68_check_v68_base_1780830968/v67_static_preview.png"
+    },
+    {
+      "name": "exists_animated_preview_gif",
+      "status": "PASS",
+      "path": "/mnt/data/kakao_v68_work/outputs/v68_check_output/v68_check_1780830968/generated_emoticon/v68_check_v68_base_1780830968/v67_motion_01_bounce.gif"
+    },
+    {
+      "name": "exists_trend_signal_json",
+      "status": "PASS",
+      "path": "/mnt/data/kakao_v68_work/outputs/v68_check_output/v68_check_1780830968/v68_abstract_trend_signals.json"
+    },
+    {
+      "name": "exists_quality_history_db",
+      "status": "PASS",
+      "path": "/mnt/data/kakao_v68_work/outputs/v68_check_output/v68_check_1780830968/v68_quality_history.sqlite3"
+    },
+    {
+      "name": "exists_quality_score_csv",
+      "status": "PASS",
+      "path": "/mnt/data/kakao_v68_work/outputs/v68_check_output/v68_check_1780830968/v68_quality_scores.csv"
+    },
+    {
+      "name": "exists_feedback_memory_json",
+      "status": "PASS",
+      "path": "/mnt/data/kakao_v68_work/outputs/v68_check_output/v68_check_1780830968/v68_feedback_memory.json"
+    },
+    {
+      "name": "exists_evolution_plan_json",
+      "status": "PASS",
+      "path": "/mnt/data/kakao_v68_work/outputs/v68_check_output/v68_check_1780830968/v68_evolution_plan.json"
+    },
+    {
+      "name": "exists_html_report_path",
+      "status": "PASS",
+      "path": "/mnt/data/kakao_v68_work/outputs/v68_check_output/v68_check_1780830968/v68_continuous_quality_evolution_report.html"
+    },
+    {
+      "name": "exists_prompt_template_path",
+      "status": "PASS",
+      "path": "/mnt/data/kakao_v68_work/outputs/v68_check_output/v68_check_1780830968/v68_next_generation_prompt.md"
+    },
+    {
+      "name": "exists_package_zip_path",
+      "status": "PASS",
+      "path": "/mnt/data/kakao_v68_work/outputs/v68_check_output/v68_check_1780830968/v68_continuous_quality_evolution_package.zip"
+    },
+    {
+      "name": "motion_variants_count",
+      "status": "PASS",
+      "count": 6
+    },
+    {
+      "name": "abstract_trend_guardrails",
+      "status": "PASS"
+    },
+    {
+      "name": "zip_contains_learning_db",
+      "status": "PASS"
+    },
+    {
+      "name": "api_key_raw_leak_guard",
+      "status": "PASS"
+    }
+  ],
+  "sample_output": {
+    "project_name": "v68_check",
+    "output_dir": "/mnt/data/kakao_v68_work/outputs/v68_check_output/v68_check_1780830968",
+    "source_v67_package": "/mnt/data/kakao_v68_work/outputs/v68_check_output/v68_check_1780830968/generated_emoticon/v68_check_v68_base_1780830968/v67_quality_direction_package.zip",
+    "trend_signal_json": "/mnt/data/kakao_v68_work/outputs/v68_check_output/v68_check_1780830968/v68_abstract_trend_signals.json",
+    "quality_history_db": "/mnt/data/kakao_v68_work/outputs/v68_check_output/v68_check_1780830968/v68_quality_history.sqlite3",
+    "quality_score_csv": "/mnt/data/kakao_v68_work/outputs/v68_check_output/v68_check_1780830968/v68_quality_scores.csv",
+    "feedback_memory_json": "/mnt/data/kakao_v68_work/outputs/v68_check_output/v68_check_1780830968/v68_feedback_memory.json",
+    "evolution_plan_json": "/mnt/data/kakao_v68_work/outputs/v68_check_output/v68_check_1780830968/v68_evolution_plan.json",
+    "html_report_path": "/mnt/data/kakao_v68_work/outputs/v68_check_output/v68_check_1780830968/v68_continuous_quality_evolution_report.html",
+    "prompt_template_path": "/mnt/data/kakao_v68_work/outputs/v68_check_output/v68_check_1780830968/v68_next_generation_prompt.md",
+    "package_zip_path": "/mnt/data/kakao_v68_work/outputs/v68_check_output/v68_check_1780830968/v68_continuous_quality_evolution_package.zip",
+    "static_png": "/mnt/data/kakao_v68_work/outputs/v68_check_output/v68_check_1780830968/generated_emoticon/v68_check_v68_base_1780830968/v67_static_preview.png",
+    "animated_preview_gif": "/mnt/data/kakao_v68_work/outputs/v68_check_output/v68_check_1780830968/generated_emoticon/v68_check_v68_base_1780830968/v67_motion_01_bounce.gif",
+    "motion_variants": [
+      {
+        "label": "대표 통통 튐",
+        "phrase": "넵",
+        "emotion": "확인",
+        "motion": "bounce",
+        "path": "/mnt/data/kakao_v68_work/outputs/v68_check_output/v68_check_1780830968/generated_emoticon/v68_check_v68_base_1780830968/v67_motion_01_bounce.gif"
+      },
+      {
+        "label": "꾸벅 인사",
+        "phrase": "감사합니다",
+        "emotion": "감사",
+        "motion": "bow",
+        "path": "/mnt/data/kakao_v68_work/outputs/v68_check_output/v68_check_1780830968/generated_emoticon/v68_check_v68_base_1780830968/v67_motion_02_bow.gif"
+      },
+      {
+        "label": "부들부들 공감",
+        "phrase": "이미 구겨짐",
+        "emotion": "공감",
+        "motion": "wobble",
+        "path": "/mnt/data/kakao_v68_work/outputs/v68_check_output/v68_check_1780830968/generated_emoticon/v68_check_v68_base_1780830968/v67_motion_03_wobble.gif"
+      },
+      {
+        "label": "손 흔들기",
+        "phrase": "손 흔들",
+        "emotion": "인사",
+        "motion": "wave",
+        "path": "/mnt/data/kakao_v68_work/outputs/v68_check_output/v68_check_1780830968/generated_emoticon/v68_check_v68_base_1780830968/v67_motion_04_wave.gif"
+      },
+      {
+        "label": "문구 동기화",
+        "phrase": "진짜요?",
+        "emotion": "놀람",
+        "motion": "text_sync",
+        "path": "/mnt/data/kakao_v68_work/outputs/v68_check_output/v68_check_1780830968/generated_emoticon/v68_check_v68_base_1780830968/v67_motion_05_text_sync.gif"
+      },
+      {
+        "label": "피곤 녹아내림",
+        "phrase": "살려줘요",
+        "emotion": "피곤",
+        "motion": "melt",
+        "path": "/mnt/data/kakao_v68_work/outputs/v68_check_output/v68_check_1780830968/generated_emoticon/v68_check_v68_base_1780830968/v67_motion_06_melt.gif"
+      }
+    ],
+    "quality_scores": {
+      "gif_visible": 100,
+      "identity_consistency": 96,
+      "thumbnail_readability": 93,
+      "text_readability": 94,
+      "motion_variety": 92,
+      "kakao_direction_fit": 91,
+      "copyright_safety": 97
+    },
+    "evolution_scores": {
+      "thumbnail_readability": 60,
+      "phrase_readability": 70,
+      "mini_reaction_fit": 73,
+      "handdrawn_identity": 63,
+      "relatable_concept": 78,
+      "dark_mode_contrast": 63,
+      "speech_bubble_clarity": 68,
+      "motion_clarity": 63,
+      "motion_preview": 70,
+      "set_expandability": 69,
+      "submission_readiness": 50,
+      "user_preference_alignment": 92
+    },
+    "abstract_trend_signals": {
+      "created_at": "2026-06-07 11:16:08",
+      "collection_mode": {
+        "window_days": 30,
+        "local_file_zip_first": true,
+        "youtube_api_optional": true,
+        "google_search_api_default_off": true,
+        "openai_api_default_off": true,
+        "paid_calls_blocked_by_default": true,
+        "quota_counter_required": true
+      },
+      "abstract_only_policy": true,
+      "raw_source_storage": "disabled",
+      "detected_signal_hits": [
+        {
+          "keyword": "짧은 문구",
+          "mapped_to": "phrase_readability",
+          "count": 1,
+          "weight": 10
+        },
+        {
+          "keyword": "미니",
+          "mapped_to": "mini_reaction_fit",
+          "count": 1,
+          "weight": 9
+        },
+        {
+          "keyword": "리액션",
+          "mapped_to": "mini_reaction_fit",
+          "count": 1,
+          "weight": 9
+        },
+        {
+          "keyword": "손그림",
+          "mapped_to": "handdrawn_identity",
+          "count": 1,
+          "weight": 8
+        },
+        {
+          "keyword": "하찮",
+          "mapped_to": "relatable_concept",
+          "count": 1,
+          "weight": 9
+        },
+        {
+          "keyword": "공감",
+          "mapped_to": "relatable_concept",
+          "count": 1,
+          "weight": 9
+        },
+        {
+          "keyword": "다크모드",
+          "mapped_to": "dark_mode_contrast",
+          "count": 1,
+          "weight": 8
+        },
+        {
+          "keyword": "말풍선",
+          "mapped_to": "speech_bubble_clarity",
+          "count": 1,
+          "weight": 8
+        },
+        {
+          "keyword": "움직",
+          "mapped_to": "motion_clarity",
+          "count": 1,
+          "weight": 8
+        },
+        {
+          "keyword": "GIF",
+          "mapped_to": "motion_preview",
+          "count": 1,
+          "weight": 10
+        },
+        {
+          "keyword": "24개",
+          "mapped_to": "set_expandability",
+          "count": 1,
+          "weight": 7
+        },
+        {
+          "keyword": "32개",
+          "mapped_to": "set_expandability",
+          "count": 1,
+          "weight": 7
+        }
+      ],
+      "risk_hits": [],
+      "scores": {
+        "thumbnail_readability": 60,
+        "phrase_readability": 70,
+        "mini_reaction_fit": 73,
+        "handdrawn_identity": 63,
+        "relatable_concept": 78,
+        "dark_mode_contrast": 63,
+        "speech_bubble_clarity": 68,
+        "motion_clarity": 63,
+        "motion_preview": 70,
+        "set_expandability": 69,
+        "submission_readiness": 50
+      },
+      "recommendations": [
+        "미니 리액션처럼 한눈에 의미가 읽히는 포즈를 우선합니다.",
+        "GIF는 파일명 표시가 아니라 화면에서 실제 재생되는 비교 패널을 기본으로 둡니다.",
+        "하찮은 공감·직장/일상 답장형 표현을 우선 추천합니다."
+      ],
+      "source_notes_preview": "짧은 문구 공감 하찮 손그림 움직이는 GIF 미니 리액션 작은 썸네일 다크모드 말풍선 24개 32개 초기 결과는 만족. 계속 진화하는 품질개선 필요. 정지형 identity 유지 및 모션 후보 비교"
+    },
+    "safety_notes": [
+      "온라인 정보는 감정 유형, 문구 길이, 모션 리듬, 가독성 같은 추상 신호만 저장합니다.",
+      "기존 판매 중인 이모티콘의 동일 메시지, 동일 표현법, 동일 애니메이션은 재사용하지 않습니다.",
+      "API 키 원문은 리포트, JSON, CSV, ZIP에 저장하지 않습니다.",
+      "YouTube/Google/OpenAI 등 유료 호출은 기본 OFF이며 사용자가 승인해야만 실행합니다.",
+      "카카오 공식 규격은 제출 직전 공식 스튜디오/가이드에서 다시 확인해야 합니다."
+    ],
+    "checksum_sha256": "7e96e0b1d9307d50d432a1697ce946b644588701203e4bb8aff100b53e7785a1"
+  }
+}

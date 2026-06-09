@@ -1,0 +1,87 @@
+{
+  "ok": true,
+  "result": {
+    "project_name": "v80_final_integrated_delivery",
+    "output_dir": "/mnt/data/work_final/outputs/v80_final_check/v80_final_integrated_delivery_1780835771",
+    "final_status": "FINAL_DELIVERY_READY",
+    "v76_regeneration_report_html": "/mnt/data/work_final/outputs/v80_final_check/v80_final_integrated_delivery_1780835771/v77_regenerated_qc_reconnect/v80_final_integrated_delivery_1780835771/v76_rejection_to_regeneration_report.html",
+    "v76_regenerated_work_package_zip": "/mnt/data/work_final/outputs/v80_final_check/v80_final_integrated_delivery_1780835771/v77_regenerated_qc_reconnect/v80_final_integrated_delivery_1780835771/v76_rejection_to_regeneration_work_package.zip",
+    "v73_approval_report_html": "/mnt/data/work_final/outputs/v80_final_check/v80_final_integrated_delivery_1780835771/v78_autofix_approval_reconnect/v80_final_integrated_delivery_1780835777/v73_final_user_approval_report.html",
+    "v73_final_approved_zip": "/mnt/data/work_final/outputs/v80_final_check/v80_final_integrated_delivery_1780835771/v78_autofix_approval_reconnect/v80_final_integrated_delivery_1780835777/v73_user_approved_final_candidate.zip",
+    "v73_manual_review_zip": "/mnt/data/work_final/outputs/v80_final_check/v80_final_integrated_delivery_1780835771/v78_autofix_approval_reconnect/v80_final_integrated_delivery_1780835777/v73_manual_review_package.zip",
+    "final_operator_guide_md": "/mnt/data/work_final/outputs/v80_final_check/v80_final_integrated_delivery_1780835771/V80_FINAL_OPERATOR_GUIDE.md",
+    "final_manifest_json": "/mnt/data/work_final/outputs/v80_final_check/v80_final_integrated_delivery_1780835771/v80_final_manifest.json",
+    "final_checklist_csv": "/mnt/data/work_final/outputs/v80_final_check/v80_final_integrated_delivery_1780835771/v80_final_checklist.csv",
+    "final_html_report": "/mnt/data/work_final/outputs/v80_final_check/v80_final_integrated_delivery_1780835771/v80_final_delivery_report.html",
+    "final_master_delivery_zip": "/mnt/data/work_final/outputs/v80_final_check/v80_final_integrated_delivery_1780835771/v80_final_master_delivery.zip",
+    "final_learning_db": "/mnt/data/work_final/outputs/v80_final_check/v80_final_integrated_delivery_1780835771/v80_final_delivery_learning.sqlite3",
+    "official_recheck_required": true,
+    "api_key_plaintext_found": false,
+    "total_pipeline_steps": 7,
+    "passed_pipeline_steps": 7,
+    "blocking_reasons": [],
+    "final_next_steps": [
+      "Windows에서 0_BUILD_WINDOWS_INSTALLER_EXE.bat 실행 후 KakaoEmoticonSetup_v80.exe 생성",
+      "설치마법사에서 바탕화면 아이콘 생성과 이전 버전 정리 옵션 확인",
+      "프로그램 실행 후 64 최종 통합 납품/재검사 메뉴에서 v80 리포트 확인",
+      "제출 전 카카오 이모티콘 스튜디오/카카오비즈니스 최신 공식 기준을 직접 재확인",
+      "32개/24개/GIF/WebP/아이콘/공유이미지/파일명/용량을 실제 제출 화면 기준으로 마지막 확인",
+      "카카오 심사 결과가 반려이면 v75 캡처 입력 → v76 재생성 → v80 최종 루프를 다시 실행"
+    ],
+    "safety_notes": [
+      "자동 제출 기능은 넣지 않았습니다. 최종 업로드는 사용자가 직접 확인 후 수동으로 진행해야 합니다.",
+      "온라인/유튜브/카카오 자료는 원본 복제 없이 추상 품질 신호만 반영합니다.",
+      "기존 인기 캐릭터·문구·애니메이션을 재사용하거나 단순 변형하지 않습니다.",
+      "프로그램 코드와 사용자 데이터 폴더를 분리하고 업데이트 전 백업을 유지합니다.",
+      "API 키·비밀번호·개인정보 원문은 리포트/ZIP/CSV/JSON에 저장하지 않습니다."
+    ],
+    "checksum_sha256": "19536d5652f5040d43c99da083ed43966d9b7a4f56633058673fc2b53b980160"
+  },
+  "checks": [
+    {
+      "name": "final_status_ready",
+      "ok": true,
+      "detail": "FINAL_DELIVERY_READY"
+    },
+    {
+      "name": "pipeline_steps_passed",
+      "ok": true,
+      "detail": "7/7"
+    },
+    {
+      "name": "v76_report_exists",
+      "ok": true,
+      "detail": "/mnt/data/work_final/outputs/v80_final_check/v80_final_integrated_delivery_1780835771/v77_regenerated_qc_reconnect/v80_final_integrated_delivery_1780835771/v76_rejection_to_regeneration_report.html"
+    },
+    {
+      "name": "v73_report_exists",
+      "ok": true,
+      "detail": "/mnt/data/work_final/outputs/v80_final_check/v80_final_integrated_delivery_1780835771/v78_autofix_approval_reconnect/v80_final_integrated_delivery_1780835777/v73_final_user_approval_report.html"
+    },
+    {
+      "name": "final_html_exists",
+      "ok": true,
+      "detail": "/mnt/data/work_final/outputs/v80_final_check/v80_final_integrated_delivery_1780835771/v80_final_delivery_report.html"
+    },
+    {
+      "name": "final_manifest_exists",
+      "ok": true,
+      "detail": "/mnt/data/work_final/outputs/v80_final_check/v80_final_integrated_delivery_1780835771/v80_final_manifest.json"
+    },
+    {
+      "name": "final_master_zip_exists",
+      "ok": true,
+      "detail": "/mnt/data/work_final/outputs/v80_final_check/v80_final_integrated_delivery_1780835771/v80_final_master_delivery.zip"
+    },
+    {
+      "name": "api_key_plaintext_not_found",
+      "ok": true,
+      "detail": "sensitive token scan"
+    },
+    {
+      "name": "zip_integrity",
+      "ok": true,
+      "detail": "members=11"
+    }
+  ]
+}

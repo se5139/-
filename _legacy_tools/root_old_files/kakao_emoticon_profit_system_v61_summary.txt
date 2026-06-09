@@ -1,0 +1,27 @@
+카카오 이모티콘 자동생성 프로그램 v61
+
+핵심 수정:
+1. 정지형 캐릭터 생성 후 움직이는 GIF가 화면에 바로 보이는 v61 전용 탭 추가.
+2. 좌측 메뉴 51번: 카카오형 GIF 미리보기/트렌드 개선.
+3. 정지형 identity_lock을 움직이는형 GIF 프레임 전체에 적용.
+4. 대표 GIF + 통통 튐/꾸벅/부들부들 3개 모션 후보 생성.
+5. 카카오형 24개 구성 초안 CSV/JSON 생성: 21 PNG + 3 GIF 계획.
+6. 온라인/유튜브/인터넷 자료는 기존 캐릭터 복제가 아니라 문구 길이, 감정 분포, 포즈 리듬, 가독성 같은 추상 신호만 반영.
+7. GIF 미리보기가 Streamlit 환경에서 첫 프레임만 보일 수 있는 문제를 대비해 base64 HTML 인라인 GIF 미리보기 추가.
+8. OpenAI API 키 원문은 패키지에 포함하지 않음.
+
+검증:
+- Python compileall PASS
+- app.py AST PASS
+- v61 엔진 smoke test PASS
+- 정지형 PNG 생성 PASS
+- 움직이는 GIF 생성 PASS
+- 3개 모션 후보 GIF 생성 PASS
+- 24개 계획 CSV/JSON 생성 PASS
+- ZIP 무결성 PASS
+
+실행:
+1. 압축 해제
+2. 0_BUILD_WINDOWS_INSTALLER_EXE.bat 실행
+3. installer\Output\KakaoEmoticonSetup_v61.exe 실행
+4. 설치 후 좌측 메뉴에서 51 카카오형 GIF 미리보기/트렌드 개선 선택

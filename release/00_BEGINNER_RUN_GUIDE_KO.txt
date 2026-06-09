@@ -1,0 +1,33 @@
+Kakao Emoticon Profit System v90 - beginner run guide
+
+1. ZIP file extraction
+   - Extract the full ZIP first.
+   - Recommended folder on Windows: C:\KakaoEmoticonV90
+   - Do not run the program directly from inside the ZIP viewer.
+
+2. Portable install
+   - Double-click 00_STEP_2_PORTABLE_INSTALL_NOW.bat.
+   - The program copies itself to the local app folder, prepares Python packages, and creates shortcuts when possible.
+
+3. Start the program
+   - Double-click 00_STEP_3_START_PROGRAM.bat.
+   - If the browser does not open automatically, open this address manually:
+     http://127.0.0.1:8520
+
+4. Basic workflow
+   - Use the 5 large menu flows only at first.
+   - Advanced functions are kept behind the advanced menu.
+
+5. Final output rule
+   - Static submission files: static_png_submit, PNG 32 files.
+   - Animated submission files: animated_gif_submit, GIF 24 files.
+   - preview_jpg is only for visual checking.
+   - JPG preview files are not included in v90_submit_only_png_gif.zip.
+
+6. Repair
+   - If the app does not start, run 4_REPAIR_ENVIRONMENT.bat.
+   - Then run 00_STEP_3_START_PROGRAM.bat again.
+
+7. Old version cleanup
+   - v90 cleanup backs up likely user data before removing older version folders.
+   - Current v90 and newer folders are excluded from cleanup.

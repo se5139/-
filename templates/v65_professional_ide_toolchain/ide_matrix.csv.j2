@@ -1,0 +1,4 @@
+priority,tool,category,primary_domain,project_role,adoption_policy,install_stage
+{% for row in ide_tools -%}
+{{ row.priority }},"{{ row.tool }}","{{ row.category }}","{{ row.primary_domain }}","{{ row.project_role }}","{{ row.adoption_policy }}","{{ row.install_stage }}"
+{% endfor -%}

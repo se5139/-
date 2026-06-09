@@ -1,0 +1,24 @@
+{
+  "checks": {
+    "exists:modules/professional_ide_toolchain_manager.py": true,
+    "exists:templates/v65_professional_ide_toolchain/ide_toolchain_report.html.j2": true,
+    "exists:templates/v65_professional_ide_toolchain/ide_matrix.csv.j2": true,
+    "exists:templates/v65_professional_ide_toolchain/developer_install_guide.md.j2": true,
+    "exists:docs/v65_professional_ide_toolchain.md": true,
+    "exists:.vscode/extensions.json": true,
+    "exists:requirements-dev.txt": true,
+    "app_ast_ok": true,
+    "render_ok": true,
+    "has_pycharm": true,
+    "has_vscode": true,
+    "has_visual_studio": true,
+    "has_android_studio": true,
+    "tool_count_10": true,
+    "package_zip_valid": true,
+    "final_python_rule": true,
+    "no_api_key_leak": true,
+    "app_menu_has_v65": true
+  },
+  "errors": [],
+  "ok": true
+}

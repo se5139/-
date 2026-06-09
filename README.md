@@ -1,22 +1,18 @@
-# 카카오 이모티콘 자동생성 프로젝트
+# Kakao Emoticon Maker
 
-현재 실행 기준 소스는 `_review_v92` 폴더입니다. Windows에서 Streamlit 기반 프로그램으로 실행합니다.
+이 저장소는 카카오 이모티콘 제작 보조 프로그램입니다. 현재 기본 실행 기준은 원격 저장소의 `v100 clean` 구조이고, 기존 v92 패키지는 `_review_v92`와 `_deliverables_v92`에 보관되어 있습니다.
 
-## 핵심 기능
+## 먼저 실행
 
-- 러프 스케치 기반 자동완성: 사용자가 대충 얼굴, 몸통, 팔다리 또는 자유 형태를 그리면 완성형 이모티콘 후보를 생성합니다.
-- 제출 패키지 생성: 정지형 PNG 32개, 움직이는 GIF 24개 후보와 제출용 ZIP을 만듭니다.
-- 창작 기록 보관: 원본 러프, 생성 설정, 해시, 생성 로그, 권리 확인 메모를 함께 저장합니다.
-- 사전 검수: PNG/GIF 크기, 파일명 위험, 대비 부족, 글자 잘림 가능성을 확인합니다.
-- 자동 저장과 이어서 만들기: 최근 작업 상태를 저장하고 다시 불러올 수 있습니다.
-- Windows 설치파일: `_deliverables_v92` 폴더에 설치 EXE와 배포 ZIP이 있습니다.
-
-주의: 이 프로그램은 제작 보조 도구입니다. 카카오 심사 통과, 수익, 법적 적합성을 보장하지 않습니다. 제출 전 최신 카카오 공식 기준, 저작권, 상표권, 초상권 문제를 직접 확인해야 합니다.
-
-## 빠른 실행
+Windows에서 가장 간단한 실행:
 
 ```bat
-cd _review_v92
+START_HERE.bat
+```
+
+또는:
+
+```bat
 START_WINDOWS.bat
 ```
 
@@ -26,66 +22,117 @@ START_WINDOWS.bat
 http://127.0.0.1:8520
 ```
 
-## Windows 설치파일로 실행
-
-1. `_deliverables_v92` 폴더로 이동합니다.
-2. `KakaoEmoticonSetup_v92_DirectCreationHotfix.exe`를 실행합니다.
-3. 설치 후 바탕화면의 `Kakao Emoticon Profit System v92` 바로가기를 실행합니다.
-4. 바로가기가 안 생기면 `_review_v92\00_STEP_5_CREATE_DESKTOP_SHORTCUTS.bat`를 실행합니다.
-
 ## 다른 PC에서 이어가기
 
 ```bat
 git clone https://github.com/se5139/-.git kakao-emoticon
 cd kakao-emoticon
+START_HERE.bat
+```
+
+실행 전 점검:
+
+```bat
+VERIFY_PACKAGE.bat
+```
+
+최신 배포 ZIP을 GitHub에서 받는 방법은 `DOWNLOAD_LATEST_FROM_GITHUB_KO.md`와 `DOWNLOAD_LATEST_RELEASE.bat`을 참고합니다.
+
+## 주요 기능
+
+- 러프 스케치 업로드와 캐릭터 일관성 보조
+- 정지형 PNG와 움직이는 GIF 후보 생성
+- 카카오 제출 전 규격, 용량, 문구, 위험 표현 점검
+- 사람 제작 증빙 패키지 생성
+- 조사 URL/메모 기반 로컬 진화 메모리 저장
+- API 키 없이 기본 작동
+- API 사용 시 비용 방지를 위한 호출 한도 장부 적용
+- 최근 결과물, 갤러리, ZIP, 리포트 확인 페이지 제공
+
+주의: 이 프로그램은 제작 보조 도구입니다. 카카오 심사 통과, 수익, 법적 적합성을 보장하지 않습니다. 최종 제출 전 최신 카카오 공식 기준, 저작권, 상표권, 초상권, 생성형 AI 관련 정책을 직접 확인해야 합니다.
+
+## v92 설치파일
+
+기존 v92 설치파일과 배포 ZIP은 `_deliverables_v92` 폴더에 있습니다.
+
+- `KakaoEmoticonSetup_v92_DirectCreationHotfix.exe`
+- `kakao_emoticon_profit_system_v92_direct_creation_hotfix.zip`
+- 각 파일의 `.sha256.txt` 체크섬
+
+v92 소스에서 직접 실행:
+
+```bat
 cd _review_v92
 START_WINDOWS.bat
 ```
 
-수동 실행이 필요하면:
-
-```bat
-cd _review_v92
-py -3 -m venv .venv
-call .venv\Scripts\activate.bat
-python -m pip install --upgrade pip
-python -m pip install -r requirements.txt
-streamlit run app.py --server.address 127.0.0.1 --server.port 8520
-```
-
 ## 바탕화면 바로가기 문제 해결
 
-바로가기가 안 생기는 주된 원인은 다음 중 하나입니다.
+`Codex 앱 자체 바로가기`는 이 프로젝트 설치파일이 만들 수 없습니다. Codex는 별도 앱/도구이므로 Windows에 설치된 Codex 실행 파일이나 앱 설정에서 바로가기를 만들어야 합니다.
 
-- 기존 스크립트가 `pywin32`가 없으면 바로가기 생성을 건너뛰었습니다.
-- OneDrive 또는 한국어 Windows의 `바탕 화면` 경로를 제대로 찾지 못했습니다.
-- 설치 프로그램이 아니라 Git 소스에서 바로 실행한 경우 바로가기 생성 단계가 실행되지 않았습니다.
-- 보안 프로그램이나 권한 설정이 `.lnk` 생성을 막았습니다.
+`이모티콘 프로그램 바로가기`가 안 생기는 경우는 이번 v92 수정으로 보완했습니다.
 
-현재 v92는 `pywin32` 없이도 PowerShell COM 방식으로 `.lnk`를 생성하고, 실패하면 `.bat` 실행 파일을 대체 생성합니다.
+원인:
+
+- 기존 v92 스크립트가 `pywin32`가 없으면 바로가기 생성을 건너뜀
+- OneDrive 또는 한국어 Windows의 `바탕 화면` 경로 탐지 실패
+- Git 소스에서 바로 실행해 설치 단계가 실행되지 않음
+- 보안 프로그램이나 권한 설정이 `.lnk` 생성을 차단
+
+해결:
 
 ```bat
 cd _review_v92
 00_STEP_5_CREATE_DESKTOP_SHORTCUTS.bat
 ```
 
-## 빠른 점검
+현재 v92는 `pywin32` 없이도 PowerShell COM 방식으로 `.lnk` 생성을 시도합니다. `.lnk` 생성이 차단되면 실행 가능한 `.url` 대체 바로가기를 생성합니다.
+
+## 동기화 상태 옮기기
+
+현재 PC의 메모리와 최근 결과물을 다른 PC로 옮기려면:
 
 ```bat
-cd _review_v92
-python quick_check.py
+EXPORT_SYNC_STATE.bat
 ```
 
-## 배포 파일
+다른 PC에서는:
 
-`_deliverables_v92` 폴더:
-
-- `KakaoEmoticonSetup_v92_DirectCreationHotfix.exe`
-- `kakao_emoticon_profit_system_v92_direct_creation_hotfix.zip`
-- 각 파일의 `.sha256.txt` 체크섬
-
-## GitHub 저장소
-
-```text
-https://github.com/se5139/-.git
+```bat
+IMPORT_SYNC_STATE.bat
 ```
+
+자세한 내용은 `SYNC_STATE_GUIDE_KO.md`를 확인합니다.
+
+## API 사용 정책
+
+기본 실행에는 API 키가 필요 없습니다.
+
+- 필수 API 없음
+- OpenAI API 없음
+- YouTube API 없음
+- 검색 API 없음
+
+API를 쓰려면 키와 호출 한도 환경변수를 함께 설정해야 합니다. 한도가 없거나 0이면 호출하지 않습니다.
+
+예:
+
+- `YOUTUBE_API_KEY` + `YOUTUBE_API_DAILY_CALL_LIMIT`
+- `SEARCH_API_KEY` + `SEARCH_API_DAILY_CALL_LIMIT`
+- `GEMINI_API_KEY` + `GEMINI_API_DAILY_CALL_LIMIT`
+- `OPENAI_API_KEY` + `OPENAI_API_31D_CALL_LIMIT`
+
+사용량은 `memory/api_usage_ledger.json`에 저장됩니다.
+
+## 결과물
+
+생성 결과는 기본적으로 `outputs/` 아래에 저장됩니다.
+
+- 제출 후보 ZIP
+- PNG/GIF 후보
+- 미리보기 갤러리
+- 검증 리포트
+- 문구 품질 리포트
+- 사람 제작 증빙 패키지
+
+`outputs/`, `.venv/`, `__pycache__/`, `.git/`, 로그, 기존 ZIP/EXE 산출물은 배포 ZIP에서 제외됩니다.
