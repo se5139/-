@@ -1,0 +1,5 @@
+v72 실행 안내
+1) 0_BUILD_WINDOWS_INSTALLER_EXE.bat 실행
+2) installer\Output\KakaoEmoticonSetup_v72.exe 실행
+3) 설치 후 좌측 메뉴 59 제출 패키지 자동보정/잠금 실행
+주의: 공식 카카오 기준은 제출 직전 다시 확인해야 합니다.

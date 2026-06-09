@@ -1,0 +1,16 @@
+카카오 이모티콘 자동생성 프로그램 v50 요약
+
+버전: v50 무료 API 수집 안전모드 + 로컬 우선 품질 진화
+핵심 반영:
+1. API 키 입력: YouTube / Google Search / OpenAI 분리
+2. 최근 30일 수집 기준
+3. 쿼터 카운터 표시
+4. 유료 호출 차단 기본값
+5. 로컬 파일/ZIP 분석 우선
+6. API 키 원문 저장 금지
+7. 결과를 후보/표현 은행/정지형·움직이는형 제작 흐름에 적용
+
+실행:
+1_INSTALL_NOW.bat
+2_START_PROGRAM.bat
+17_V50_FREE_API_SAFETY_CHECK.bat

@@ -1,0 +1,106 @@
+{
+  "version": "v59",
+  "ok": true,
+  "checks": [
+    {
+      "name": "cleanup script exists",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "cleanup script avoids powershell cleanup",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "run cleanup batch exists",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "manual cleanup batch exists",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "installer v59 exists",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "build script v59 exists",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "shortcut script v59 exists",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "installer cleanup batch uses --yes",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "installer cleanup task checked",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "installer runs v59 cleanup",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "installer v59 output exe",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "installer clean shortcut created",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "constants v59",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "py_compile cleanup_old_versions_v59.py",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "py_compile build_inno_installer_v59.py",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "py_compile create_shortcuts_v59.py",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "py_compile app.py",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "py_compile constants.py",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "cleanup dry-run and actual simulation",
+      "ok": true,
+      "detail": "{\"rc_dry\": 0, \"rc_actual\": 0, \"dry_ok\": true, \"actual_ok\": true, \"report_count\": 1}"
+    },
+    {
+      "name": "active BAT version strings v59",
+      "ok": true,
+      "detail": ""
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+Kakao Emoticon Profit System v60
+- Fixes v59 installer builder argument error shown in uploaded video.
+- Adds robust no-argument Inno Setup builder.
+- Adds v60 installer script and cleanup script.
+- Keeps Python-centered local PC app and Inno Setup Windows installer flow.

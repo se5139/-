@@ -1,0 +1,14 @@
+Kakao Emoticon Profit System v50 first run guide
+
+1. Extract this ZIP completely.
+2. Recommended folder: C:\KakaoEmoticonV50
+3. Run 1_INSTALL_NOW.bat
+4. Run 2_START_PROGRAM.bat
+5. Open tab: 47 무료 API 수집 안전모드
+6. Default mode is free/local-first. API keys are optional.
+7. Run 17_V50_FREE_API_SAFETY_CHECK.bat if you want to verify v50 functions.
+
+Safety:
+- Paid calls are blocked by default.
+- Raw API keys are not saved in reports.
+- Local files/ZIP analysis is preferred before external API calls.

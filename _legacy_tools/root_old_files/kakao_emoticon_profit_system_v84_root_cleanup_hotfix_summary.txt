@@ -1,0 +1,17 @@
+Kakao Emoticon Profit System v84 Root Cleanup / Execution Clarity Hotfix
+
+영상 검토 결과: BAT 파일이 선택된 장면은 보이지만 실제 CMD 실행/오류 장면은 확인되지 않았습니다. 단, v83 패키지 루트에 구버전 BAT가 너무 많이 노출되어 사용자가 어떤 파일을 실행해야 하는지 혼란스러운 구조 문제가 있었습니다.
+
+수정 내용:
+- 구버전 루트 BAT를 _legacy_tools/root_old_bat_archive로 이동
+- 00_DOUBLE_CLICK_THIS_FIRST_BUILD_SETUP_EXE.bat 추가
+- 00_STEP_1/2/3 실행 순서 파일 추가
+- v84 빌드/설치/실행 안내 강화
+- v84 root cleanup check 추가
+
+검증:
+- Python compileall: PASS
+- Root cleanup check: PASS
+- Root BAT count: 18
+- Old visible root BATs: 0
+- API key plaintext hits: 0

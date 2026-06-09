@@ -1,0 +1,31 @@
+# Python caches
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Generated outputs and local test data
+outputs/
+output/
+_final_zip_recheck/
+_test_localappdata*/
+v90_simple_png_gif_output_check_report.json
+
+# Local installer build noise
+installer/Output/
+installer/*_build_report.json
+*.log
+
+# OS/editor noise
+.DS_Store
+Thumbs.db
+.vscode/.ropeproject
+
+# Temporary files
+*.tmp
+*.bak
+~*

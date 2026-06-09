@@ -1,0 +1,44 @@
+Kakao Emoticon Profit System v46 Cleanup Installer Summary
+
+Version: v46
+Base: v45 startup fix
+Purpose: Add safe cleanup of old installed program versions and old desktop shortcuts during latest version installation.
+
+New files:
+- scripts/cleanup_old_versions.ps1
+- 14_V46_CLEAN_OLD_VERSIONS.bat
+- V46_CHANGELOG.md
+- V46_FIRST_RUN_GUIDE.txt
+- kakao_emoticon_profit_system_v46_summary.txt
+
+Installer behavior:
+- 1_INSTALL_NOW.bat now checks old version cleanup candidates before copying v46 files.
+- User must type Y to clean old versions.
+- Enter/N skips cleanup.
+
+Cleanup scope:
+- %LOCALAPPDATA%\KakaoEmoticonProfitSystemV1~V45 folders
+- %LOCALAPPDATA%\KakaoEmoticonProfitSystemV1~V45_install_logs folders
+- Desktop shortcuts matching old Kakao Emoticon Profit System versions
+
+Protected data:
+- outputs
+- user_data
+- settings
+- performance_data
+- strategy_reports
+- system_profile
+- reports
+- projects
+- backups
+- data/database/databases
+- migrated_old_outputs
+
+Backup/report location:
+%LOCALAPPDATA%\KakaoEmoticonProfitSystemUserData\old_version_cleanup_backups
+
+Safety:
+- Does not clean Downloads/Documents/Pictures/personal folders.
+- Does not delete arbitrary folders.
+- Does not remove current v46 folder.
+- Does not run cleanup unless user confirms.

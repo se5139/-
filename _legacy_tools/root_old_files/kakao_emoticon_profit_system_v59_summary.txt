@@ -1,0 +1,6 @@
+Kakao Emoticon Profit System v59
+- Purpose: fix old-version cleanup not actually deleting extracted/installed old folders.
+- Main fix: cleanup task is checked by default in Inno Setup and run_cleanup_old_versions_v59.bat passes --yes --current-version 59.
+- Safety: old user data folders are backed up before old version folders are removed.
+- Manual cleanup: run 14_V59_CLEAN_OLD_VERSIONS_AND_EXTRACTED.bat from installed v59 folder.
+- Verification: run 26_V59_SAFE_CLEANUP_CHECK.bat.
