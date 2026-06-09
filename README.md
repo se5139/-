@@ -2,7 +2,7 @@
 
 Python 중심의 로컬 PC 실행형 카카오톡 이모티콘 제작 보조 프로그램입니다.
 
-현재 저장소 루트는 사용자가 요청한 **v90 간편 PNG/GIF 출력 hotfix 기준**으로 실행할 수 있게 정리되어 있습니다. GitHub 원격 저장소에 이미 있던 v92/v100 관련 자료는 삭제하지 않고 보존했습니다.
+현재 저장소 루트는 사용자가 요청한 **v90 간편 PNG/GIF 출력 hotfix 기준**으로 실행할 수 있게 정리되어 있습니다. 이전에 다른 GitHub 주소에 저장했던 v90/v92/v100 관련 자료도 삭제하지 않고 함께 보존했습니다.
 
 ## 빠른 실행
 
@@ -13,8 +13,8 @@ Python 중심의 로컬 PC 실행형 카카오톡 이모티콘 제작 보조 프
 3. 이 저장소를 받습니다.
 
 ```powershell
-git clone https://github.com/se5139/-.git
-cd -
+git clone https://github.com/se5139/my-app.git
+cd my-app
 ```
 
 4. 설치 배치 파일을 실행합니다.
@@ -101,7 +101,7 @@ release/kakao_emoticon_profit_system_v90_simple_png_gif_output_hotfix_codex_fixe
 
 ## 보존된 이전/상위 버전 자료
 
-원격 저장소에 이미 있던 자료는 병합 과정에서 보존했습니다.
+이전에 다른 저장소에 있던 자료는 병합 과정에서 보존했습니다.
 
 ```text
 _review_v92/
