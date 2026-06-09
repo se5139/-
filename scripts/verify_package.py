@@ -14,8 +14,11 @@ REQUIRED_FILES = [
     "DOWNLOAD_LATEST_FROM_GITHUB_KO.md",
     "RELEASE_NOTES_KO.md",
     "TROUBLESHOOTING_KO.md",
+    "SYNC_STATE_GUIDE_KO.md",
     "requirements.txt",
     "DOWNLOAD_LATEST_RELEASE.bat",
+    "EXPORT_SYNC_STATE.bat",
+    "IMPORT_SYNC_STATE.bat",
     "START_HERE.bat",
     "START_WINDOWS.bat",
     "RUN_SERVER_NO_BROWSER.bat",
@@ -27,6 +30,8 @@ REQUIRED_FILES = [
     "scripts/stop_port.py",
     "scripts/wait_for_port.py",
     "scripts/verify_package.py",
+    "scripts/export_sync_state.py",
+    "scripts/import_sync_state.py",
 ]
 
 FORBIDDEN_PATH_PARTS = {
@@ -86,7 +91,14 @@ def check_launcher_text() -> list[str]:
 
 def check_python_files() -> list[str]:
     issues: list[str] = []
-    for rel_path in ["app.py", "scripts/stop_port.py", "scripts/wait_for_port.py", "scripts/verify_package.py"]:
+    for rel_path in [
+        "app.py",
+        "scripts/stop_port.py",
+        "scripts/wait_for_port.py",
+        "scripts/verify_package.py",
+        "scripts/export_sync_state.py",
+        "scripts/import_sync_state.py",
+    ]:
         path = ROOT / rel_path
         if not path.exists():
             continue
