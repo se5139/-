@@ -2390,6 +2390,7 @@ def release_allowlist_files() -> list[Path]:
         Path("requirements.txt"),
         Path("START_WINDOWS.bat"),
         Path("RUN_SERVER_NO_BROWSER.bat"),
+        Path("VERIFY_PACKAGE.bat"),
         Path("START_MAC_LINUX.sh"),
         Path("KAKAO_SAFE_WORKFLOW.md"),
         Path("RESEARCH_SOURCES.md"),
@@ -2397,6 +2398,7 @@ def release_allowlist_files() -> list[Path]:
         Path("memory/api_usage_ledger.json"),
         Path("scripts/stop_port.py"),
         Path("scripts/wait_for_port.py"),
+        Path("scripts/verify_package.py"),
     ]
     return [path for path in candidates if path.exists() and path.is_file()]
 
@@ -2433,12 +2435,14 @@ def build_release_package() -> dict[str, object]:
         "included_files": [path.as_posix() for path in included_files],
         "excluded_summary": excluded_summary,
         "run_after_extract": "START_WINDOWS.bat",
+        "verify_after_extract": "VERIFY_PACKAGE.bat",
         "no_browser_server": "RUN_SERVER_NO_BROWSER.bat",
         "local_url": f"http://{HOST}:{PORT}",
         "notes": [
             "표준 .zip 형식입니다. 알집에서도 열 수 있지만 .alz 전용 형식은 사용하지 않습니다.",
             "outputs 폴더는 용량이 커서 기본 제외했습니다. 결과물은 필요할 때 별도로 보관하세요.",
             "API 키, .env, 로그, 캐시, Git 폴더는 기본 제외했습니다.",
+            "압축 해제 후 VERIFY_PACKAGE.bat로 실행 전 검증을 할 수 있습니다.",
         ],
     }
 
@@ -2673,10 +2677,10 @@ def release_check_page() -> str:
         <h2>최종 ZIP에 넣을 것</h2>
         <ul>
           <li><code>app.py</code>, <code>README.md</code>, <code>requirements.txt</code></li>
-          <li><code>START_WINDOWS.bat</code>, <code>RUN_SERVER_NO_BROWSER.bat</code></li>
+          <li><code>START_WINDOWS.bat</code>, <code>RUN_SERVER_NO_BROWSER.bat</code>, <code>VERIFY_PACKAGE.bat</code></li>
           <li><code>KAKAO_SAFE_WORKFLOW.md</code>, <code>RESEARCH_SOURCES.md</code></li>
           <li><code>memory/*.json</code> 기본 메모리와 API 사용량 원장</li>
-          <li><code>scripts/stop_port.py</code>, <code>scripts/wait_for_port.py</code> 실행 보조 스크립트</li>
+          <li><code>scripts/stop_port.py</code>, <code>scripts/wait_for_port.py</code>, <code>scripts/verify_package.py</code> 실행 보조 스크립트</li>
         </ul>
       </div>
       <div class="panel">
