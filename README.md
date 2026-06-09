@@ -25,7 +25,7 @@ http://127.0.0.1:8520
 ## 다른 PC에서 이어가기
 
 ```bat
-git clone https://github.com/se5139/-.git kakao-emoticon
+git clone https://github.com/se5139/my-app.git kakao-emoticon
 cd kakao-emoticon
 START_HERE.bat
 ```

@@ -1,22 +1,32 @@
-Kakao Emoticon Maker v100 Clean - 다른 PC 실행 순서
+Kakao Emoticon Maker - 다른 PC 실행 순서
 
-1. GitHub 또는 전달받은 파일에서 아래 ZIP을 받습니다.
-   release/kakao_emoticon_v100_clean_latest.zip
+방법 1. GitHub에서 바로 이어가기
 
-2. ZIP 압축을 풉니다.
-   압축을 풀면 kakao_emoticon_v100_clean 폴더가 생깁니다.
+1. 새 PC에 Git과 Python 3.10 이상을 설치합니다.
+2. 명령 프롬프트 또는 PowerShell을 엽니다.
+3. 아래 명령을 실행합니다.
 
-3. START_HERE.bat을 실행합니다.
-   이 파일은 VERIFY_PACKAGE.bat으로 먼저 점검한 뒤 START_WINDOWS.bat을 이어서 실행합니다.
+   git clone https://github.com/se5139/my-app.git kakao-emoticon
+   cd kakao-emoticon
+   START_HERE.bat
 
-4. 직접 나눠서 실행하고 싶으면 VERIFY_PACKAGE.bat 실행 후 START_WINDOWS.bat을 실행합니다.
-   첫 실행은 Python 가상환경을 만들고 Pillow를 설치하므로 시간이 조금 걸릴 수 있습니다.
+4. 브라우저가 자동으로 열리지 않으면 아래 주소를 직접 엽니다.
 
-5. 브라우저가 열리지 않으면 아래 주소를 직접 엽니다.
    http://127.0.0.1:8520
 
-주의:
-- Python 3.10 이상이 필요합니다.
-- 첫 실행 때만 인터넷 연결이 필요할 수 있습니다. 인터넷은 Pillow 설치에 사용됩니다.
-- API 키가 없어도 기본 제작, 검수, 자료 메모 분석은 가능합니다.
-- 결과물은 outputs 폴더에 생성되며, portable ZIP에는 기본 포함되지 않습니다.
+방법 2. ZIP 파일로 실행하기
+
+1. GitHub 저장소의 release 폴더에서 최신 ZIP을 받습니다.
+
+   release/kakao_emoticon_v100_clean_latest.zip
+
+2. ZIP을 원하는 위치에 압축 해제합니다.
+3. 압축 해제된 폴더에서 START_HERE.bat을 실행합니다.
+4. 문제가 있으면 VERIFY_PACKAGE.bat을 먼저 실행한 뒤 START_WINDOWS.bat을 실행합니다.
+
+주의
+
+- 첫 실행에는 Python 가상환경을 만들고 Pillow를 설치하므로 인터넷 연결이 필요할 수 있습니다.
+- API 키가 없어도 기본 제작, 검수, 자료 메모 분석 기능은 사용할 수 있습니다.
+- 생성 결과물은 outputs 폴더에 저장됩니다.
+- 다른 PC로 최근 작업 결과와 메모리까지 옮기려면 기존 PC에서 EXPORT_SYNC_STATE.bat을 실행하고, 새 PC에서 IMPORT_SYNC_STATE.bat을 실행합니다.
