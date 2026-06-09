@@ -2120,7 +2120,7 @@ def system_status_page() -> str:
   <main>
     <section class="panel">
       <h1>실행 상태</h1>
-      <p><a class="button" href="/">제작 화면으로</a><a class="button" href="/results">최근 결과물</a><a class="button" href="/memory">진화 메모리</a><a class="button" href="/api-settings">API 키 안내</a></p>
+      <p><a class="button" href="/">제작 화면으로</a><a class="button" href="/results">최근 결과물</a><a class="button" href="/memory">진화 메모리</a><a class="button" href="/api-settings">API 키 안내</a><a class="button" href="/release-check">배포 점검</a></p>
     </section>
     <section class="panel">
       <h2>웹서버 비용</h2>
@@ -2196,7 +2196,7 @@ def api_settings_page(message: str = "") -> str:
   <main>
     <section class="panel">
       <h1>API 키 안내</h1>
-      <p><a class="button" href="/">제작 화면으로</a><a class="button" href="/status">실행 상태</a></p>
+      <p><a class="button" href="/">제작 화면으로</a><a class="button" href="/status">실행 상태</a><a class="button" href="/release-check">배포 점검</a></p>
       <form method="post" action="/api-usage/reset">
         <button type="submit">API 사용량 원장 초기화</button>
       </form>
@@ -2299,6 +2299,186 @@ def read_json_file(path: Path, fallback: object) -> object:
         return fallback
 
 
+def bytes_label(size: int) -> str:
+    units = ["B", "KB", "MB", "GB"]
+    value = float(max(size, 0))
+    for unit in units:
+        if value < 1024 or unit == units[-1]:
+            if unit == "B":
+                return f"{int(value)} {unit}"
+            return f"{value:.1f} {unit}"
+        value /= 1024
+    return f"{value:.1f} GB"
+
+
+def directory_size(path: Path) -> int:
+    total = 0
+    if not path.exists():
+        return total
+    for item in path.rglob("*"):
+        if item.is_file():
+            try:
+                total += item.stat().st_size
+            except OSError:
+                continue
+    return total
+
+
+def release_check_page() -> str:
+    required_files = [
+        ("앱 본체", Path("app.py")),
+        ("실행 안내", Path("README.md")),
+        ("Windows 실행", Path("START_WINDOWS.bat")),
+        ("브라우저 미실행 서버", Path("RUN_SERVER_NO_BROWSER.bat")),
+        ("의존성 목록", Path("requirements.txt")),
+        ("카카오 안전 워크플로우", Path("KAKAO_SAFE_WORKFLOW.md")),
+        ("조사 출처 메모", Path("RESEARCH_SOURCES.md")),
+        ("진화 메모리", EVOLUTION_MEMORY_PATH),
+        ("API 사용량 원장", API_USAGE_LEDGER_PATH),
+    ]
+    exclude_targets = ["outputs/", "__pycache__/", ".venv/", "github_backup/", "_github_upload/"]
+    gitignore_text = Path(".gitignore").read_text(encoding="utf-8") if Path(".gitignore").exists() else ""
+
+    checks: list[dict[str, str]] = []
+    for label, path in required_files:
+        exists = path.exists()
+        checks.append(
+            {
+                "label": label,
+                "status": "pass" if exists else "fail",
+                "message": f"{path.as_posix()} 확인됨" if exists else f"{path.as_posix()} 없음",
+            }
+        )
+
+    for target in exclude_targets:
+        normalized = target.rstrip("/")
+        ignored = target in gitignore_text or normalized in gitignore_text
+        checks.append(
+            {
+                "label": f"배포 제외: {target}",
+                "status": "pass" if ignored else "warn",
+                "message": ".gitignore에 등록됨" if ignored else "최종 ZIP 만들 때 직접 제외 필요",
+            }
+        )
+
+    results = load_recent_results(limit=200)
+    output_size = directory_size(OUTPUT_ROOT)
+    output_message = f"결과 폴더 {len(results)}개, 전체 {bytes_label(output_size)}"
+    checks.append(
+        {
+            "label": "결과물 폴더",
+            "status": "pass" if results else "warn",
+            "message": output_message if results else "아직 생성 결과 없음. 앱 배포는 가능하지만 샘플 검수는 부족합니다.",
+        }
+    )
+    checks.append(
+        {
+            "label": "GitHub 연결",
+            "status": "pass" if Path(".git").exists() else "warn",
+            "message": "Git 저장소 확인됨" if Path(".git").exists() else "Git 저장소 정보가 없습니다.",
+        }
+    )
+
+    fail_count = sum(1 for item in checks if item["status"] == "fail")
+    warn_count = sum(1 for item in checks if item["status"] == "warn")
+    if fail_count:
+        readiness = "수정 필요"
+        readiness_class = "fail"
+        readiness_text = "필수 파일이 빠져 있어 최종 ZIP 전에 보완이 필요합니다."
+    elif warn_count:
+        readiness = "거의 준비됨"
+        readiness_class = "warn"
+        readiness_text = "실행은 가능하지만, ZIP 구성과 샘플 결과물은 한 번 더 확인하면 좋습니다."
+    else:
+        readiness = "준비 양호"
+        readiness_class = "pass"
+        readiness_text = "다른 PC에서 이어 쓰기 위한 기본 구성이 잘 갖춰져 있습니다."
+
+    rows = "".join(
+        f"""
+        <tr>
+          <td><span class="pill {html.escape(item["status"])}">{html.escape(item["status"].upper())}</span></td>
+          <td>{html.escape(item["label"])}</td>
+          <td>{html.escape(item["message"])}</td>
+        </tr>
+        """
+        for item in checks
+    )
+    return f"""<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>v100 Release Check</title>
+  <style>
+    body {{ margin:0; color:#2d2424; font-family:"Malgun Gothic", sans-serif; background:linear-gradient(135deg,#fffaf0,#eef8ef 55%,#f6efe1); }}
+    main {{ width:min(1080px, calc(100% - 32px)); margin:0 auto; padding:42px 0; }}
+    .panel {{ border:2px solid #ead8bc; border-radius:28px; background:rgba(255,255,255,.88); padding:24px; box-shadow:0 18px 50px rgba(96,69,45,.11); margin-bottom:18px; }}
+    h1 {{ margin:0 0 10px; font-size:clamp(32px,5vw,54px); letter-spacing:-.05em; }}
+    h2 {{ margin:0 0 10px; }}
+    p, li, td, th {{ line-height:1.65; color:#6f625f; }}
+    table {{ width:100%; border-collapse:collapse; overflow:hidden; border-radius:18px; }}
+    th, td {{ text-align:left; padding:12px; border-bottom:1px solid #ead8bc; vertical-align:top; }}
+    th {{ color:#2d2424; background:#fff3d8; }}
+    code {{ background:#fff3d8; padding:2px 7px; border-radius:8px; }}
+    a.button {{ display:inline-block; border-radius:999px; padding:10px 14px; background:#7fd8be; color:#2d2424; font-weight:900; text-decoration:none; margin:4px 6px 4px 0; }}
+    .hero {{ display:grid; grid-template-columns:1.2fr .8fr; gap:18px; align-items:stretch; }}
+    .score {{ display:flex; flex-direction:column; justify-content:center; min-height:180px; }}
+    .score strong {{ font-size:clamp(34px,6vw,62px); letter-spacing:-.06em; }}
+    .pill {{ display:inline-block; border-radius:999px; padding:6px 10px; font-weight:900; font-size:12px; }}
+    .pass {{ background:#e9fff4; color:#22725b; border:1px solid #9be2c7; }}
+    .warn {{ background:#fff3d8; color:#8a5a00; border:1px solid #f2cc80; }}
+    .fail {{ background:#ffe9e5; color:#9f3729; border:1px solid #f0a096; }}
+    .pack {{ display:grid; grid-template-columns:1fr 1fr; gap:14px; }}
+    @media (max-width:820px) {{ .hero, .pack {{ grid-template-columns:1fr; }} }}
+  </style>
+</head>
+<body>
+  <main>
+    <section class="hero">
+      <div class="panel">
+        <h1>최종 배포 점검</h1>
+        <p>다른 PC에서도 이어서 쓸 수 있도록 ZIP 만들기 전에 필수 파일, 제외 폴더, 결과물 상태를 확인합니다.</p>
+        <p><a class="button" href="/">제작 화면</a><a class="button" href="/results">최근 결과물</a><a class="button" href="/status">실행 상태</a><a class="button" href="/api-settings">API 키 안내</a></p>
+      </div>
+      <div class="panel score">
+        <span class="pill {readiness_class}">RELEASE</span>
+        <strong>{html.escape(readiness)}</strong>
+        <p>{html.escape(readiness_text)}</p>
+      </div>
+    </section>
+    <section class="panel">
+      <h2>점검 결과</h2>
+      <table>
+        <thead><tr><th>상태</th><th>항목</th><th>내용</th></tr></thead>
+        <tbody>{rows}</tbody>
+      </table>
+    </section>
+    <section class="pack">
+      <div class="panel">
+        <h2>최종 ZIP에 넣을 것</h2>
+        <ul>
+          <li><code>app.py</code>, <code>README.md</code>, <code>requirements.txt</code></li>
+          <li><code>START_WINDOWS.bat</code>, <code>RUN_SERVER_NO_BROWSER.bat</code></li>
+          <li><code>KAKAO_SAFE_WORKFLOW.md</code>, <code>RESEARCH_SOURCES.md</code></li>
+          <li><code>memory/*.json</code> 기본 메모리와 API 사용량 원장</li>
+        </ul>
+      </div>
+      <div class="panel">
+        <h2>기본 제외할 것</h2>
+        <ul>
+          <li><code>outputs/</code>: 생성 결과물은 용량이 커서 기본 배포 ZIP에서 제외</li>
+          <li><code>.venv/</code>, <code>__pycache__/</code>: PC마다 다시 만들 수 있는 실행 캐시</li>
+          <li><code>.git/</code>, <code>github_backup/</code>, <code>_github_upload/</code>: 개발/백업용 폴더</li>
+          <li>완성 배포는 알집 전용 형식보다 표준 <code>.zip</code> 권장</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+</body>
+</html>"""
+
+
 def results_page() -> str:
     rows = load_recent_results()
     row_html = ""
@@ -2356,7 +2536,7 @@ def results_page() -> str:
   <section class="panel">
     <h1>최근 결과물</h1>
     <p>최근 생성한 결과 폴더와 갤러리, ZIP, 리포트를 바로 확인합니다.</p>
-    <p><a class="nav" href="/">제작 화면</a><a class="nav" href="/memory">진화 메모리</a><a class="nav" href="/status">실행 상태</a></p>
+    <p><a class="nav" href="/">제작 화면</a><a class="nav" href="/memory">진화 메모리</a><a class="nav" href="/status">실행 상태</a><a class="nav" href="/release-check">배포 점검</a></p>
   </section>
   <section class="panel">
     <table>
@@ -4815,7 +4995,7 @@ def page(
           복잡한 v92를 그대로 끌고 가지 않고, 제출물 생성에 필요한 최소 흐름부터 다시 세웁니다.
           지금 버전은 PNG 32개, GIF 24개, 제출 ZIP을 빠르게 만드는 출발점입니다.
         </p>
-        <p><a class="memory-link" href="/results">최근 결과물</a> <a class="memory-link" href="/memory">진화 메모리 보기</a> <a class="memory-link" href="/status">실행 상태 보기</a> <a class="memory-link" href="/api-settings">API 키 안내</a></p>
+        <p><a class="memory-link" href="/results">최근 결과물</a> <a class="memory-link" href="/memory">진화 메모리 보기</a> <a class="memory-link" href="/status">실행 상태 보기</a> <a class="memory-link" href="/api-settings">API 키 안내</a> <a class="memory-link" href="/release-check">배포 점검</a></p>
         {error_html}
         {research_html}
         {result_html}
@@ -4911,6 +5091,9 @@ class Handler(BaseHTTPRequestHandler):
             return
         if self.path == "/results":
             self.respond(200, results_page())
+            return
+        if self.path == "/release-check":
+            self.respond(200, release_check_page())
             return
         parsed = urlparse(self.path)
         if parsed.path == "/result":

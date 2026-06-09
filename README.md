@@ -44,6 +44,7 @@
 - 확인용 JPG 미리보기 생성
 - 제출용 ZIP 생성
 - 제출 전 자동 검사 리포트 생성
+- 최종 배포 ZIP 전용 점검 페이지 제공
 - 용량 최적화 리포트 `optimization_report.json` 생성
 - 제출 전 준비 점수 리포트 `submission_readiness_report.json` 생성
 - 사람 제작 증빙 패키지 `creator_evidence_package.zip` 생성
@@ -55,6 +56,7 @@
 - 수정판 문구 세트 `revised_phrase_variant` 폴더 생성
 - 원본/수정판 비교 갤러리 `preview_gallery.html` 생성
 - `/results`에서 최근 결과물, 갤러리, ZIP, 리포트 바로가기 제공
+- `/release-check`에서 다른 PC 이동 전 필수 파일, 제외 폴더, 결과물 용량 점검
 - 캐릭터 성격/말투 리포트 `creator_profile.json` 생성
 - 스케치 일관성 리포트 `sketch_consistency_report.json` 생성
 - 조사 분석 리포트 `research_insights.json` 생성
@@ -156,6 +158,7 @@ v100은 내 PC에서만 실행되는 무료 로컬 웹서버를 사용합니다.
 - 다른 사람에게 공개되는 웹사이트가 아님
 
 앱 화면의 `실행 상태 보기`에서 현재 서버 상태와 의존성을 확인할 수 있습니다.
+최종 배포 ZIP을 만들기 전에는 `배포 점검` 화면에서 필수 파일과 제외 폴더를 먼저 확인하세요.
 
 ## API 사용 여부
 
