@@ -2,7 +2,7 @@
 
 Python 중심의 로컬 PC 실행형 카카오톡 이모티콘 제작 보조 프로그램입니다.
 
-현재 저장소 루트는 사용자가 요청한 **v90 간편 PNG/GIF 출력 hotfix 기준**으로 실행할 수 있게 정리되어 있습니다. 기존 GitHub 저장소에 있던 v92 자료는 삭제하지 않고 `_review_v92/`, `_deliverables_v92/`에 보존했습니다.
+현재 저장소 루트는 사용자가 요청한 **v90 간편 PNG/GIF 출력 hotfix 기준**으로 실행할 수 있게 정리되어 있습니다. GitHub 원격 저장소에 이미 있던 v92/v100 관련 자료는 삭제하지 않고 보존했습니다.
 
 ## 빠른 실행
 
@@ -27,6 +27,12 @@ cd -
 
 ```powershell
 .\00_STEP_3_START_PROGRAM.bat
+```
+
+또는 루트 실행 파일을 직접 실행할 수 있습니다.
+
+```powershell
+.\START_WINDOWS.bat
 ```
 
 6. 브라우저에서 아래 주소를 엽니다.
@@ -93,13 +99,16 @@ release/kakao_emoticon_profit_system_v90_simple_png_gif_output_hotfix_codex_fixe
 
 이 프로젝트는 사용자 데이터를 삭제하거나 덮어쓰지 않는 방향을 우선합니다. 버전 정리 스크립트는 이전 버전 후보를 백업 대상으로 먼저 분류하고, 현재 버전과 상위 버전은 삭제 대상에서 제외하도록 설계되어 있습니다.
 
-## 기존 v92 자료
+## 보존된 이전/상위 버전 자료
 
-원격 저장소에 이미 있던 v92 자료는 병합 과정에서 보존했습니다.
+원격 저장소에 이미 있던 자료는 병합 과정에서 보존했습니다.
 
 ```text
 _review_v92/
 _deliverables_v92/
+KAKAO_SAFE_WORKFLOW.md
+RESEARCH_SOURCES.md
+memory/
 ```
 
 v92 설치 파일은 아래 위치에 있습니다.
@@ -107,3 +116,5 @@ v92 설치 파일은 아래 위치에 있습니다.
 ```text
 _deliverables_v92/KakaoEmoticonSetup_v92_DirectCreationHotfix.exe
 ```
+
+원격 이력에 있던 v100 관련 문서도 유지했지만, 이 저장소 루트에서 바로 실행되는 기본 프로그램은 v90 기준입니다.
