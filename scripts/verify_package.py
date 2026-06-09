@@ -13,6 +13,7 @@ REQUIRED_FILES = [
     "QUICK_START_OTHER_PC_KO.txt",
     "DOWNLOAD_LATEST_FROM_GITHUB_KO.md",
     "RELEASE_NOTES_KO.md",
+    "TROUBLESHOOTING_KO.md",
     "requirements.txt",
     "DOWNLOAD_LATEST_RELEASE.bat",
     "START_HERE.bat",

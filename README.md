@@ -176,6 +176,7 @@ v100은 내 PC에서만 실행되는 무료 로컬 웹서버를 사용합니다.
 - ZIP 안에는 실행 파일, README, 문서, 스크립트, 기본 메모리 파일이 포함됩니다.
 - 다른 PC 실행 순서는 `QUICK_START_OTHER_PC_KO.txt`에 짧게 정리되어 있습니다.
 - 배포본 변경 내용은 `RELEASE_NOTES_KO.md`에서 확인할 수 있습니다.
+- 실행 문제가 생기면 `TROUBLESHOOTING_KO.md`를 먼저 확인하세요.
 - 다른 PC에서는 압축을 푼 뒤 `START_HERE.bat`을 실행하면 검증 후 앱이 시작됩니다.
 - 실행 전 점검이 필요하면 `VERIFY_PACKAGE.bat`을 먼저 실행하세요.
 - 다른 PC 첫 실행에는 Python 3.10+와 인터넷 연결이 필요할 수 있습니다. 인터넷은 `Pillow` 설치에만 사용됩니다.
