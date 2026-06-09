@@ -37,8 +37,17 @@ if errorlevel 1 (
   exit /b 1
 )
 
+powershell -NoProfile -ExecutionPolicy Bypass -Command "$expected = (Get-Content '%SHA_PATH%' -Raw).Split(' ', [System.StringSplitOptions]::RemoveEmptyEntries)[0].Trim().ToUpperInvariant(); $actual = (Get-FileHash '%ZIP_PATH%' -Algorithm SHA256).Hash.ToUpperInvariant(); Write-Host '[verify] expected:' $expected; Write-Host '[verify] actual:  ' $actual; if ($expected -ne $actual) { exit 1 }"
+if errorlevel 1 (
+  echo.
+  echo [FAIL] Downloaded ZIP checksum did not match.
+  echo Delete the downloaded file and try again.
+  pause
+  exit /b 1
+)
+
 echo.
-echo [OK] Download complete.
+echo [OK] Download complete and SHA256 verified.
 echo [file] %ZIP_PATH%
 echo [sha]  %SHA_PATH%
 echo.

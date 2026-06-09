@@ -169,7 +169,7 @@ v100은 내 PC에서만 실행되는 무료 로컬 웹서버를 사용합니다.
 - 표준 `.zip` 형식으로 생성됩니다.
 - 시간표시 ZIP과 함께 `kakao_emoticon_v100_clean_latest.zip` 고정 이름도 생성됩니다.
 - GitHub에서 받는 방법은 `DOWNLOAD_LATEST_FROM_GITHUB_KO.md`에 정리되어 있습니다.
-- Windows에서는 `DOWNLOAD_LATEST_RELEASE.bat`으로 최신 ZIP을 자동 다운로드할 수 있습니다.
+- Windows에서는 `DOWNLOAD_LATEST_RELEASE.bat`으로 최신 ZIP을 자동 다운로드하고 SHA256 검증까지 할 수 있습니다.
 - 저장소가 비공개이면 자동 다운로드 대신 GitHub 로그인 후 `release` 폴더에서 직접 받을 수 있습니다.
 - `outputs/`, `.venv/`, `__pycache__/`, `.git/`, 로그, 기존 ZIP/EXE 산출물은 자동 제외됩니다.
 - v90 레거시 도구와 개발용 폴더는 제외하고 v100 실행에 필요한 핵심 파일만 포함합니다.
