@@ -7,7 +7,8 @@
 - 자동 다운로드 배치: `DOWNLOAD_LATEST_RELEASE.bat`
 - 실행 방식: 내 PC에서만 열리는 무료 로컬 웹서버
 - 기본 주소: `http://127.0.0.1:8520`
-- 첫 실행 파일: `START_WINDOWS.bat`
+- 추천 첫 실행 파일: `START_HERE.bat`
+- 직접 실행 파일: `START_WINDOWS.bat`
 - 실행 전 점검 파일: `VERIFY_PACKAGE.bat`
 
 ## 핵심 기능
@@ -24,8 +25,8 @@
 ## 다른 PC 실행 순서
 
 1. `kakao_emoticon_v100_clean_latest.zip` 압축 풀기
-2. `VERIFY_PACKAGE.bat` 실행
-3. 통과하면 `START_WINDOWS.bat` 실행
+2. `START_HERE.bat` 실행
+3. 직접 나눠 실행하려면 `VERIFY_PACKAGE.bat` 실행 후 `START_WINDOWS.bat` 실행
 4. 브라우저가 열리지 않으면 `http://127.0.0.1:8520` 직접 열기
 
 ## 주의사항

@@ -15,6 +15,7 @@ REQUIRED_FILES = [
     "RELEASE_NOTES_KO.md",
     "requirements.txt",
     "DOWNLOAD_LATEST_RELEASE.bat",
+    "START_HERE.bat",
     "START_WINDOWS.bat",
     "RUN_SERVER_NO_BROWSER.bat",
     "VERIFY_PACKAGE.bat",

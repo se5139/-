@@ -2393,6 +2393,7 @@ def release_allowlist_files() -> list[Path]:
         Path("RELEASE_NOTES_KO.md"),
         Path("requirements.txt"),
         Path("DOWNLOAD_LATEST_RELEASE.bat"),
+        Path("START_HERE.bat"),
         Path("START_WINDOWS.bat"),
         Path("RUN_SERVER_NO_BROWSER.bat"),
         Path("VERIFY_PACKAGE.bat"),
@@ -2442,7 +2443,8 @@ def build_release_package() -> dict[str, object]:
         "included_file_count": len(included_files),
         "included_files": [path.as_posix() for path in included_files],
         "excluded_summary": excluded_summary,
-        "run_after_extract": "START_WINDOWS.bat",
+        "run_after_extract": "START_HERE.bat",
+        "direct_start": "START_WINDOWS.bat",
         "verify_after_extract": "VERIFY_PACKAGE.bat",
         "no_browser_server": "RUN_SERVER_NO_BROWSER.bat",
         "local_url": f"http://{HOST}:{PORT}",
@@ -2702,7 +2704,7 @@ def release_check_page() -> str:
         <h2>최종 ZIP에 넣을 것</h2>
         <ul>
           <li><code>app.py</code>, <code>README.md</code>, <code>QUICK_START_OTHER_PC_KO.txt</code>, <code>DOWNLOAD_LATEST_FROM_GITHUB_KO.md</code>, <code>RELEASE_NOTES_KO.md</code>, <code>requirements.txt</code></li>
-          <li><code>DOWNLOAD_LATEST_RELEASE.bat</code>, <code>START_WINDOWS.bat</code>, <code>RUN_SERVER_NO_BROWSER.bat</code>, <code>VERIFY_PACKAGE.bat</code></li>
+          <li><code>DOWNLOAD_LATEST_RELEASE.bat</code>, <code>START_HERE.bat</code>, <code>START_WINDOWS.bat</code>, <code>RUN_SERVER_NO_BROWSER.bat</code>, <code>VERIFY_PACKAGE.bat</code></li>
           <li><code>KAKAO_SAFE_WORKFLOW.md</code>, <code>RESEARCH_SOURCES.md</code></li>
           <li><code>memory/*.json</code> 기본 메모리와 API 사용량 원장</li>
           <li><code>scripts/stop_port.py</code>, <code>scripts/wait_for_port.py</code>, <code>scripts/verify_package.py</code> 실행 보조 스크립트</li>

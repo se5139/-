@@ -30,8 +30,8 @@ https://github.com/se5139/-/tree/main/release
 
 1. `kakao_emoticon_v100_clean_latest.zip` 압축 풀기
 2. 압축이 풀린 `kakao_emoticon_v100_clean` 폴더 열기
-3. `VERIFY_PACKAGE.bat` 실행
-4. OK가 나오면 `START_WINDOWS.bat` 실행
+3. `START_HERE.bat` 실행
+4. 직접 나눠서 실행하고 싶으면 `VERIFY_PACKAGE.bat` 실행 후 `START_WINDOWS.bat` 실행
 5. 브라우저가 열리지 않으면 `http://127.0.0.1:8520` 직접 열기
 
 ## 참고
