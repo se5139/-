@@ -11,19 +11,19 @@ release/kakao_emoticon_v100_clean_latest.zip
 저장소가 공개 상태이면 아래 주소로 최신 ZIP을 바로 받을 수 있습니다.
 
 ```text
-https://raw.githubusercontent.com/se5139/-/main/release/kakao_emoticon_v100_clean_latest.zip
+https://raw.githubusercontent.com/se5139/my-app/main/release/kakao_emoticon_v100_clean_latest.zip
 ```
 
 체크섬 파일:
 
 ```text
-https://raw.githubusercontent.com/se5139/-/main/release/kakao_emoticon_v100_clean_latest.sha256.txt
+https://raw.githubusercontent.com/se5139/my-app/main/release/kakao_emoticon_v100_clean_latest.sha256.txt
 ```
 
 저장소가 비공개이거나 로그인이 필요한 상태이면 raw 링크가 `404`처럼 보일 수 있습니다. 이 경우 아래 GitHub 폴더를 브라우저에서 열고 로그인한 뒤 직접 받으세요.
 
 ```text
-https://github.com/se5139/-/tree/main/release
+https://github.com/se5139/my-app/tree/main/release
 ```
 
 ## 받은 뒤 실행 순서

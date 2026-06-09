@@ -2,9 +2,9 @@
 setlocal EnableExtensions
 cd /d "%~dp0"
 
-set "ZIP_URL=https://raw.githubusercontent.com/se5139/-/main/release/kakao_emoticon_v100_clean_latest.zip"
-set "SHA_URL=https://raw.githubusercontent.com/se5139/-/main/release/kakao_emoticon_v100_clean_latest.sha256.txt"
-set "GITHUB_RELEASE_PAGE=https://github.com/se5139/-/tree/main/release"
+set "ZIP_URL=https://raw.githubusercontent.com/se5139/my-app/main/release/kakao_emoticon_v100_clean_latest.zip"
+set "SHA_URL=https://raw.githubusercontent.com/se5139/my-app/main/release/kakao_emoticon_v100_clean_latest.sha256.txt"
+set "GITHUB_RELEASE_PAGE=https://github.com/se5139/my-app/tree/main/release"
 set "OUT_DIR=%~dp0downloaded_release"
 set "ZIP_PATH=%OUT_DIR%\kakao_emoticon_v100_clean_latest.zip"
 set "SHA_PATH=%OUT_DIR%\kakao_emoticon_v100_clean_latest.sha256.txt"

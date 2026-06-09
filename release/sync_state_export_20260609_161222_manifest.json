@@ -1,0 +1,30 @@
+{
+  "created_at_local": "2026-06-09 16:12:22",
+  "export_type": "kakao_emoticon_v100_sync_state",
+  "memory_files": [
+    "memory/evolution_memory.json",
+    "memory/api_usage_ledger.json"
+  ],
+  "output_dir_limit": 10,
+  "output_dirs": [
+    "20260609_100303_몽실이",
+    "20260609_100242_몽실이",
+    "20260609_100220_learning_cycle",
+    "20260609_100200_research_only",
+    "20260609_094908_몽실이",
+    "20260609_094850_learning_cycle",
+    "20260609_094837_research_only",
+    "20260608_180836_갤러리테스트",
+    "20260608_180225_수정판재개선테스트",
+    "20260608_175930_수정판세트테스트"
+  ],
+  "import_entry": "IMPORT_SYNC_STATE.bat",
+  "notes": [
+    "Extract this ZIP into the app folder, then run IMPORT_SYNC_STATE.bat.",
+    "Existing memory files are backed up before import.",
+    "Recent outputs are copied into outputs/ without deleting existing outputs."
+  ],
+  "zip_name": "sync_state_export_20260609_161222.zip",
+  "zip_size_bytes": 16716406,
+  "sha256": "d03d209b4b843aa4610788e32fa3e79377349670d48c66716003e8026b46a4f0"
+}
