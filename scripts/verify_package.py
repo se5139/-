@@ -11,6 +11,7 @@ REQUIRED_FILES = [
     "app.py",
     "README.md",
     "QUICK_START_OTHER_PC_KO.txt",
+    "DOWNLOAD_LATEST_FROM_GITHUB_KO.md",
     "RELEASE_NOTES_KO.md",
     "requirements.txt",
     "START_WINDOWS.bat",

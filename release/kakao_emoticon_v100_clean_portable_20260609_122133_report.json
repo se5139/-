@@ -1,13 +1,14 @@
 {
   "app_name": "Kakao Emoticon Maker v100 Clean",
   "app_version": "v100-clean",
-  "created_at_kst": "2026-06-09T12:15:10.845354+09:00",
+  "created_at_kst": "2026-06-09T12:21:36.122062+09:00",
   "package_type": "portable_standard_zip",
-  "included_file_count": 16,
+  "included_file_count": 17,
   "included_files": [
     "app.py",
     "README.md",
     "QUICK_START_OTHER_PC_KO.txt",
+    "DOWNLOAD_LATEST_FROM_GITHUB_KO.md",
     "RELEASE_NOTES_KO.md",
     "requirements.txt",
     "START_WINDOWS.bat",
@@ -25,7 +26,7 @@
   "excluded_summary": {
     "v100 portable 핵심 구성 외 파일 제외": 677,
     "빌드/캐시 산출물 제외": 6,
-    ".git 폴더 제외": 108,
+    ".git 폴더 제외": 120,
     ".vscode 폴더 제외": 2,
     "github_backup 폴더 제외": 7,
     "outputs 폴더 제외": 3502,
@@ -44,15 +45,15 @@
     "API 키, .env, 로그, 캐시, Git 폴더는 기본 제외했습니다.",
     "압축 해제 후 VERIFY_PACKAGE.bat로 실행 전 검증을 할 수 있습니다."
   ],
-  "zip_path": "release\\kakao_emoticon_v100_clean_portable_20260609_121507.zip",
-  "zip_name": "kakao_emoticon_v100_clean_portable_20260609_121507.zip",
+  "zip_path": "release\\kakao_emoticon_v100_clean_portable_20260609_122133.zip",
+  "zip_name": "kakao_emoticon_v100_clean_portable_20260609_122133.zip",
   "latest_zip_path": "release\\kakao_emoticon_v100_clean_latest.zip",
   "latest_zip_name": "kakao_emoticon_v100_clean_latest.zip",
   "latest_checksum_path": "release\\kakao_emoticon_v100_clean_latest.sha256.txt",
   "latest_report_path": "release\\kakao_emoticon_v100_clean_latest_report.json",
-  "zip_size_bytes": 83616,
-  "zip_size_label": "81.7 KB",
-  "sha256": "5257b36ecc73d905e9799ae812f229d66940c74656a328228579096cd8bcda55",
-  "checksum_path": "release\\kakao_emoticon_v100_clean_portable_20260609_121507.sha256.txt",
-  "report_path": "release\\kakao_emoticon_v100_clean_portable_20260609_121507_report.json"
+  "zip_size_bytes": 84658,
+  "zip_size_label": "82.7 KB",
+  "sha256": "9e0b5120661bbbc93579cf599e3b4f5778c122c9e5f6c3f4095109865bbf6aa0",
+  "checksum_path": "release\\kakao_emoticon_v100_clean_portable_20260609_122133.sha256.txt",
+  "report_path": "release\\kakao_emoticon_v100_clean_portable_20260609_122133_report.json"
 }

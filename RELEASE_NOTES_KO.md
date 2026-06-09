@@ -3,6 +3,7 @@
 ## 현재 배포본
 
 - 배포 파일: `release/kakao_emoticon_v100_clean_latest.zip`
+- GitHub 다운로드 안내: `DOWNLOAD_LATEST_FROM_GITHUB_KO.md`
 - 실행 방식: 내 PC에서만 열리는 무료 로컬 웹서버
 - 기본 주소: `http://127.0.0.1:8520`
 - 첫 실행 파일: `START_WINDOWS.bat`
