@@ -127,6 +127,12 @@ Windows에서:
 START_WINDOWS.bat
 ```
 
+브라우저 자동 실행 없이 서버 창만 켜려면:
+
+```bat
+RUN_SERVER_NO_BROWSER.bat
+```
+
 직접 실행:
 
 ```bat

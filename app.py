@@ -5081,10 +5081,11 @@ def main() -> None:
     with socketserver.TCPServer((HOST, PORT), Handler) as httpd:
         url = f"http://{HOST}:{PORT}"
         print(f"{APP_NAME} running at {url}")
-        try:
-            webbrowser.open(url)
-        except Exception:
-            pass
+        if os.environ.get("KAKAO_NO_BROWSER", "").strip() != "1":
+            try:
+                webbrowser.open(url)
+            except Exception:
+                pass
         try:
             httpd.serve_forever()
         except KeyboardInterrupt:
