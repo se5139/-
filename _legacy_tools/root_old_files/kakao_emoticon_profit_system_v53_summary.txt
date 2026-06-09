@@ -1,0 +1,4 @@
+v53 install cleanup desktop shortcut fix
+- Cleans old installed folders and extracted package folders when user chooses Y.
+- Creates desktop shortcuts robustly.
+- Protects current v53 source/target and backs up user data candidates.

@@ -1,0 +1,48 @@
+﻿Kakao Emoticon Profit System v90 final validation result
+Generated: 2026-06-08 09:53:25
+
+Final ZIP:
+C:\Users\jhyoon\Documents\카카오 이모티콘 자동생성\_deliverables_v90\kakao_emoticon_profit_system_v90_simple_png_gif_output_hotfix_codex_fixed.zip
+
+SHA-256:
+2a54fb5abc4331f5b1ab55fbbe639ae48e7aadc71166e44b8def21534b818e22
+
+Overall status:
+PASS
+
+Required checks:
+- Python compileall: PASS
+- Core module import check: PASS
+- Static PNG actual generation: PASS (32/32)
+- Animated GIF actual generation: PASS (/24)
+- preview_jpg generation: PASS (56/56)
+- v90_submit_only_png_gif.zip contains no JPG: PASS
+- Manifest JSON/CSV count match: PASS (CSV rows 56, manifest items 56)
+- Windows forbidden filename check: PASS
+- Special phrase preservation test: PASS
+  Test phrases: 진짜? / 확인/완료 / 다시! / 흠... / 좋아요~! / 왜요? / 안녕:) / 고마워요♡
+- Basic 5-menu flow check: PASS
+- Root BAT count <= 8: PASS (7)
+- v89-and-lower cleanup fake-flow: PASS
+- API key plaintext pattern scan: PASS
+- ZIP integrity check: PASS
+- Re-extract and re-run validation: PASS
+
+Key output counts from re-extracted ZIP:
+- Root BAT files: 7
+- Static source PNG files: 32
+- Animated source GIF files: 24
+- v90 static_png_submit PNG files: 32
+- v90 animated_gif_submit GIF files: 
+- v90 preview_jpg files: 56
+
+Windows/non-Windows note:
+- This validation was run in the local Windows PowerShell environment, so no required check was skipped because of a non-Windows environment.
+- Inno Setup installer EXE compilation and interactive installer execution were not part of the required check list here. They still require a Windows PC with Inno Setup installed.
+
+Fix summary:
+- Prevented same-second output folder reuse from mixing stale files into new v90 ZIP outputs.
+- Fixed app cleanup preview to use current-version 90, matching the BAT cleanup flow.
+- Fixed v90 Inno build report metadata from version 89 to version 90.
+- Strengthened v90 validation to require exactly 56 preview JPG files, no JPG in submit-only ZIP, and matching manifest JSON/CSV counts.
+- Added a beginner run guide at ZIP root: 00_BEGINNER_RUN_GUIDE_KO.txt

@@ -1,0 +1,21 @@
+
+# v65 Developer Install Guide
+
+Project: {{ project_name }}
+
+## Fixed rule
+{{ fixed_rule }}
+
+## Priority install order
+1. Python 3.11+
+2. Git
+3. PyCharm Professional or VS Code
+4. Inno Setup 6
+5. Optional IDEs only when the matching expansion phase starts
+
+## Use policy
+- Do not require paid IDEs for end users.
+- Do not bundle IDE installers into the app package.
+- Keep Python/Streamlit/Pillow/pandas/Jinja2 as the actual runtime stack.
+- Use Visual Studio, WebStorm, Android Studio, Xcode, CLion, Rider, IntelliJ, Eclipse, and NetBeans only by role.
+- Store no raw API keys.

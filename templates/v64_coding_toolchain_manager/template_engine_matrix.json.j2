@@ -1,0 +1,5 @@
+[
+{% for row in template_engines %}
+  {"engine": {{ row.engine|tojson }}, "use_case": {{ row.use_case|tojson }}, "decision": {{ row.decision|tojson }}}{% if not loop.last %},{% endif %}
+{% endfor %}
+]

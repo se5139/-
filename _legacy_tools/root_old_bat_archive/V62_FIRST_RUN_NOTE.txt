@@ -1,0 +1,1 @@
+v62 adds Jinja2. Run 4_REPAIR_ENVIRONMENT.bat or Prepare Python environment after installing so Jinja2 is installed. Then open menu 52 Jinja2 Template Report/Prompt Engine.

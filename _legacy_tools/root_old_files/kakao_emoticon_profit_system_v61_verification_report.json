@@ -1,0 +1,145 @@
+{
+  "ok": true,
+  "checks": [
+    {
+      "name": "file exists: app.py",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "file exists: modules/constants.py",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "file exists: modules/kakao_motion_preview_improver.py",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "file exists: installer/KakaoEmoticonSetup_v61.iss",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "file exists: scripts/build_inno_installer_v61.py",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "file exists: scripts/cleanup_old_versions_v61.py",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "file exists: 0_BUILD_WINDOWS_INSTALLER_EXE.bat",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "app.py AST parse",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "v61 module AST parse",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "APP_VERSION 61.0.0",
+      "ok": true,
+      "detail": "61.0.0"
+    },
+    {
+      "name": "APP_NAME contains v61",
+      "ok": true,
+      "detail": "카카오 이모티콘 자동생성 프로그램 v61"
+    },
+    {
+      "name": "smoke output exists: static_preview_png",
+      "ok": true,
+      "detail": "/tmp/tmps_lfoshz/v61_smoke_test/20260607_074714/v61_static_preview_identity_locked.png"
+    },
+    {
+      "name": "smoke output exists: animated_preview_gif",
+      "ok": true,
+      "detail": "/tmp/tmps_lfoshz/v61_smoke_test/20260607_074714/v61_animated_preview_visible.gif"
+    },
+    {
+      "name": "smoke output exists: contact_sheet_path",
+      "ok": true,
+      "detail": "/tmp/tmps_lfoshz/v61_smoke_test/20260607_074714/v61_preview_contact_sheet.png"
+    },
+    {
+      "name": "smoke output exists: kakao_24_plan_csv",
+      "ok": true,
+      "detail": "/tmp/tmps_lfoshz/v61_smoke_test/20260607_074714/v61_kakao_24_item_plan.csv"
+    },
+    {
+      "name": "smoke output exists: package_zip_path",
+      "ok": true,
+      "detail": "/tmp/tmps_lfoshz/v61_smoke_test/20260607_074714/v61_kakao_motion_preview_package.zip"
+    },
+    {
+      "name": "animated variants count >= 3",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "gif preview visible score 100",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "24 plan rows == 24",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "package contains main GIF",
+      "ok": true,
+      "detail": "v61_static_preview_identity_locked.png,v61_animated_preview_visible.gif,v61_preview_contact_sheet.png,v61_kakao_24_item_plan.csv,v61_kakao_24_item_plan.json,v61_kakao_motion_preview_report.html,v61_kakao_motion_preview_report.json,v61_animated_preview_visible.webp,v61_motion_bounce.gif,v61_motion_bow.gif"
+    },
+    {
+      "name": "PAGE_LABELS has 51st v61 menu",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "base64 GIF inline preview present",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "selected_page_index == 50 block present",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "OpenAI key raw leak absent",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "installer v61 output filename",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "installer app dir v61",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "installer cleanup v61",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "installer run v61 title",
+      "ok": true,
+      "detail": ""
+    }
+  ]
+}

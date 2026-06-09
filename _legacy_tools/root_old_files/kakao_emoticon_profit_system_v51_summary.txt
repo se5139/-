@@ -1,0 +1,2 @@
+v51: API key input / 30-day limit / quota ledger / paid-call guard / local-first analysis.
+Final package remains Python-centered local PC program.

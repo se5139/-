@@ -1,0 +1,9 @@
+{
+  "ok": true,
+  "missing": [],
+  "image_count": 1,
+  "ocr_available": false,
+  "extracted_text_count": 0,
+  "output_dir": "/mnt/data/work_v75/outputs/v75_check/v75_check_capture_rejection_1780834678",
+  "work_zip": "/mnt/data/work_v75/outputs/v75_check/v75_check_capture_rejection_1780834678/v75_capture_to_resubmission_work_package.zip"
+}

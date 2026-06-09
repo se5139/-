@@ -1,0 +1,271 @@
+{
+  "status": "PASS",
+  "errors": [],
+  "checks": [
+    {
+      "name": "python_ast_app.py",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "python_ast_modules/constants.py",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "python_ast_modules/static_to_animated_apply/__init__.py",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "installer_targets_v53",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "installer_does_not_call_v52_cleanup",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "shortcut_bat_calls_v53",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "shortcut_target_exists_2_START_PROGRAM.bat",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "shortcut_target_referenced_2_START_PROGRAM.bat",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "shortcut_target_exists_4_REPAIR_ENVIRONMENT.bat",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "shortcut_target_referenced_4_REPAIR_ENVIRONMENT.bat",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "shortcut_target_exists_6_RUN_DIAGNOSTICS.bat",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "shortcut_target_referenced_6_RUN_DIAGNOSTICS.bat",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "shortcut_target_exists_5_OPEN_OUTPUTS.bat",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "shortcut_target_referenced_5_OPEN_OUTPUTS.bat",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "shortcut_target_exists_14_V53_CLEAN_OLD_VERSIONS_AND_EXTRACTED.bat",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "shortcut_target_referenced_14_V53_CLEAN_OLD_VERSIONS_AND_EXTRACTED.bat",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "shortcut_target_exists_20_V53_INSTALL_CLEANUP_SHORTCUT_CHECK.bat",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "shortcut_target_referenced_20_V53_INSTALL_CLEANUP_SHORTCUT_CHECK.bat",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "shortcut_script_multiple_desktops",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "cleanup_scans_c_root",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "cleanup_matches_extracted_zip_folders",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "cleanup_matches_localappdata_installs",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "cleanup_protects_current_paths",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "cleanup_backs_up_user_data",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "cleanup_not_broad_personal_folders",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "constants_v53",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "bat_ascii_10_V43_DIAGNOSE_AND_REPAIR.bat",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "bat_ascii_11_V43_COLLECT_SUPPORT_PACKAGE.bat",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "bat_ascii_12_V44_FULL_INTEGRATION_CHECK.bat",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "bat_ascii_13_V44_CREATE_FINAL_DELIVERY_PACKAGE.bat",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "bat_ascii_13_V48_COLLECT_STARTUP_SUPPORT.bat",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "bat_ascii_14_V48_CLEAN_OLD_VERSIONS.bat",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "bat_ascii_15_V48_CANDIDATE_APPLY_EVOLUTION_CHECK.bat",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "bat_ascii_1_INSTALL_NOW.bat",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "bat_ascii_2_START_PROGRAM.bat",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "bat_ascii_3_CREATE_SHORTCUTS_ONLY.bat",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "bat_ascii_4_REPAIR_ENVIRONMENT.bat",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "bat_ascii_5_OPEN_OUTPUTS.bat",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "bat_ascii_6_RUN_DIAGNOSTICS.bat",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "bat_ascii_7_STOP_PORTS.bat",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "bat_ascii_8_BACKUP_USER_DATA.bat",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "bat_ascii_9_DATA_SAFETY_CHECK.bat",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "bat_ascii_START_WINDOWS.bat",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "bat_ascii_13_V49_COLLECT_STARTUP_SUPPORT.bat",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "bat_ascii_14_V49_CLEAN_OLD_VERSIONS.bat",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "bat_ascii_16_V49_STATIC_ANIMATED_EVOLUTION_CHECK.bat",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "bat_ascii_17_V50_FREE_API_SAFETY_CHECK.bat",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "bat_ascii_14_V51_CLEAN_OLD_VERSIONS.bat",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "bat_ascii_18_V51_API_GUARDRAIL_LEDGER_CHECK.bat",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "bat_ascii_14_V52_CLEAN_OLD_VERSIONS.bat",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "bat_ascii_19_V52_STATIC_TO_ANIMATED_APPLY_CHECK.bat",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "bat_ascii_14_V53_CLEAN_OLD_VERSIONS_AND_EXTRACTED.bat",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "bat_ascii_20_V53_INSTALL_CLEANUP_SHORTCUT_CHECK.bat",
+      "ok": true,
+      "detail": ""
+    }
+  ]
+}

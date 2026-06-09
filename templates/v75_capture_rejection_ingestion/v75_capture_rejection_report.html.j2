@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>v75 캡처 반려 사유 입력/OCR 보조 리포트</title>
+<style>
+body{font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:#f5f7fb;color:#172033;margin:0;padding:28px;}
+.wrap{max-width:1160px;margin:0 auto;}
+.hero{background:linear-gradient(135deg,#172554,#2563eb,#22c55e);color:white;border-radius:28px;padding:28px 32px;box-shadow:0 18px 42px rgba(15,23,42,.20);}
+.card{background:white;border:1px solid #e5e7eb;border-radius:22px;padding:20px;margin-top:18px;box-shadow:0 10px 28px rgba(15,23,42,.06);}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;}
+.badge{display:inline-block;background:#e0f2fe;color:#075985;border-radius:999px;padding:5px 10px;margin:3px;font-weight:700;}
+.warn{background:#fff7ed;border-left:6px solid #f97316;padding:13px 16px;border-radius:14px;}
+table{border-collapse:collapse;width:100%;font-size:14px;}th,td{border:1px solid #e5e7eb;padding:8px;vertical-align:top;}th{background:#f8fafc;}
+pre{white-space:pre-wrap;background:#0f172a;color:#e5e7eb;border-radius:16px;padding:16px;overflow:auto;}
+img{max-width:100%;border-radius:18px;border:1px solid #e5e7eb;background:white;}
+</style>
+</head>
+<body><div class="wrap">
+<div class="hero">
+  <h1>v75 캡처 이미지 반려 사유 입력/OCR 보조</h1>
+  <p>캡처 원본 보존 · 선택형 OCR 보조 · 수동 교정 텍스트 · v74 재제출 루프 자동 연결</p>
+</div>
+<div class="card">
+  <h2>프로젝트</h2>
+  <p><b>{{ project_name }}</b></p>
+  <p>{{ concept_text }}</p>
+  <span class="badge">스타일: {{ selected_style }}</span>
+  <span class="badge">대표 문구: {{ main_phrase }}</span>
+  <span class="badge">캡처 {{ image_rows|length }}개</span>
+  <span class="badge">OCR 후보 {{ ocr_rows|length }}개</span>
+</div>
+<div class="card warn">
+  <b>중요:</b> OCR은 보조 기능입니다. 한글 심사 결과 캡처는 폰트/해상도/화면 확대율에 따라 오인식될 수 있으므로, 최종 반려 사유는 사용자가 수동 교정한 텍스트를 기준으로 처리합니다.
+</div>
+<div class="card">
+  <h2>캡처 미리보기</h2>
+  <img src="{{ contact_sheet_name }}" alt="capture contact sheet">
+</div>
+<div class="card">
+  <h2>결합된 반려 사유 텍스트</h2>
+  <pre>{{ combined_rejection_text }}</pre>
+</div>
+<div class="card">
+  <h2>OCR 후보</h2>
+  <table><thead><tr><th>No</th><th>상태</th><th>후보 텍스트</th><th>메모</th></tr></thead><tbody>
+  {% for r in ocr_rows %}<tr><td>{{ r.no }}</td><td>{{ r.status }}</td><td>{{ r.text }}</td><td>{{ r.note }}</td></tr>{% endfor %}
+  </tbody></table>
+</div>
+<div class="card">
+  <h2>v74 개선 루프 연결 결과</h2>
+  <div class="grid">
+    <div><b>상태</b><br>{{ v74_result.rejection_status }}</div>
+    <div><b>개선 준비 점수</b><br>{{ v74_result.overall_revision_score }}</div>
+    <div><b>분석 항목</b><br>{{ v74_result.rejection_count }}</div>
+    <div><b>HIGH</b><br>{{ v74_result.high_priority_count }}</div>
+  </div>
+  <p><b>감지 카테고리:</b> {{ v74_result.detected_categories|join(', ') }}</p>
+</div>
+<div class="card">
+  <h2>안전 원칙</h2>
+  <ul>{% for note in manifest.safety_notes %}<li>{{ note }}</li>{% endfor %}</ul>
+</div>
+</div></body></html>

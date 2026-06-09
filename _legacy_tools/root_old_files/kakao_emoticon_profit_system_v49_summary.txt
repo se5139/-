@@ -1,0 +1,25 @@
+카카오톡 이모티콘 자동생성 프로그램 v49 요약
+
+버전: v49.0.0
+핵심 기능: 후보 적용/정지형/움직이는형 품질 진화
+
+추가된 내용:
+1. 후보를 선택하면 실제 제작 흐름에 적용
+2. 정지형 캐릭터 품질 진화 분석
+3. 정지형 캐릭터를 기준으로 움직이는 캐릭터 모션 계획 생성
+4. 이미지/텍스트/CSV/JSON/GIF/ZIP 다중 업로드 분석
+5. 세련된 카드형 v49 탭 UI 추가
+6. v49 전용 검증 스크립트와 BAT 추가
+
+검증 결과:
+- Python compileall PASS
+- app.py compile PASS
+- v49 engine smoke test PASS
+- multi-file + ZIP analysis PASS
+- board PNG/GIF/HTML/JSON/CSV/ZIP output PASS
+- Streamlit duplicate key static scan PASS
+- root BAT ASCII-only PASS
+
+주의:
+YouTube/인터넷 참고자료는 기존 캐릭터 복제가 아니라 추상 품질 신호 분석용으로만 사용합니다.
+YouTube API를 사용할 때는 YouTube API Services Terms of Service와 Developer Policies를 준수해야 합니다.

@@ -1,0 +1,3 @@
+v84 first-run note:
+Double-click 00_DOUBLE_CLICK_THIS_FIRST_BUILD_SETUP_EXE.bat to build installer EXE.
+A single click in File Explorer only selects the file.

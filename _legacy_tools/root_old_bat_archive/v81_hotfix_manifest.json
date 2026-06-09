@@ -1,0 +1,13 @@
+{
+  "version": "v81",
+  "name": "installer_visible_build_hotfix",
+  "reason": "v80 build video showed Windows publisher warning followed by black CMD window with no visible progress.",
+  "fixes": [
+    "visible progress output",
+    "py -3/python fallback",
+    "v81 Inno Setup script",
+    "manual OPEN_V81_INNO_SCRIPT fallback",
+    "build report json",
+    "API key leak check"
+  ]
+}

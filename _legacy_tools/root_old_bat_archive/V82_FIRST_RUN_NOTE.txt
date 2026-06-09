@@ -1,0 +1,10 @@
+Kakao Emoticon Profit System v82
+
+이번 버전은 기능 추가가 아니라 설치마법사 빌드 흐름을 분리해서 확인하는 핫픽스입니다.
+
+추천 실행 순서:
+1) 44_V82_STEPWISE_BUILD_CHECK.bat
+2) 0_BUILD_WINDOWS_INSTALLER_EXE.bat
+3) installer\Output\KakaoEmoticonSetup_v82.exe
+
+검은 창이 30초 이상 아무 메시지 없이 멈추면 캡처와 installer82_inno_build_report.json을 보내주세요.

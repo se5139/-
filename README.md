@@ -1,4 +1,4 @@
-# Kakao Emoticon Maker v100 Clean
+﻿# Kakao Emoticon Maker v100 Clean
 
 처음부터 다시 세운 가벼운 카카오 이모티콘 제작 도구입니다.
 

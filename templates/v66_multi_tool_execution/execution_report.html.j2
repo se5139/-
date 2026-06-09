@@ -1,0 +1,10 @@
+
+<!doctype html>
+<html lang="ko">
+<head><meta charset="utf-8"><title>{{ project_name }} · v66 Multi Tool Execution</title>
+<style>
+body{font-family:Arial,'Malgun Gothic',sans-serif;margin:28px;background:#f7f8fb;color:#1f2937}.card{background:#fff;border-radius:16px;padding:22px;margin:16px 0;box-shadow:0 8px 22px rgba(15,23,42,.08)}table{border-collapse:collapse;width:100%;background:#fff}th,td{border:1px solid #e5e7eb;padding:10px;vertical-align:top}th{background:#111827;color:#fff}.badge{display:inline-block;padding:5px 10px;border-radius:999px;background:#eef2ff;color:#3730a3;font-weight:700}</style></head>
+<body>
+<div class="card"><h1>{{ project_name }}</h1><p><span class="badge">v66</span> Python 중심 최종 산출물 + 전문 개발도구 활용 실행 구조</p><p>생성시각: {{ generated_at }}</p><p>{{ final_policy }}</p></div>
+<div class="card"><h2>개발 단계별 도구 적용</h2><table><thead><tr><th>순서</th><th>단계</th><th>주 도구</th><th>보조 도구</th><th>출력</th><th>검증</th><th>최종 기준</th></tr></thead><tbody>{% for s in stages %}<tr><td>{{s.order}}</td><td>{{s.stage}}</td><td>{{s.primary_tool}}</td><td>{{s.support_tools|join(', ')}}</td><td>{{s.output}}</td><td>{{s.verification}}</td><td>{{s.final_rule}}</td></tr>{% endfor %}</tbody></table></div>
+</body></html>

@@ -1,0 +1,29 @@
+카카오 이모티콘 수익화 시스템 v37 요약
+
+버전명: v37 1차 포맷 추천 + 단계별 확장 전략 엔진
+
+핵심:
+- 처음부터 정지형/움직이는형/큰이모티콘/미니이모티콘을 모두 만들지 않도록 전략을 수정했습니다.
+- 캐릭터 콘셉트, 문구 사용성, 제작 난이도, 심사 리스크, 품질 점수, 채팅 가독성, 현재 심사/판매 데이터 수준을 기준으로 1차 제작 포맷 1개를 추천합니다.
+- 선택되지 않은 포맷은 실제 제작하지 않고 미래 확장 후보로 보관합니다.
+- 데이터가 쌓이면 시리즈화, 움직이는 문구형, 미니 이모티콘, 큰 이모티콘, 타 플랫폼 재활용 방향을 다시 추천합니다.
+
+추가 탭:
+37 1차 포맷/확장 전략
+
+추가 모듈:
+modules/format_strategy/format_strategy_engine.py
+
+생성 파일:
+format_strategy_v37.html
+format_strategy_v37.json
+format_strategy_v37_scores.csv
+format_strategy_v37_roadmap.csv
+format_strategy_v37_data_requirements.csv
+format_strategy_v37_notes.txt
+format_strategy_v37.zip
+
+검증:
+Python compileall PASS
+v37_format_strategy_check PASS
+v36 카카오 규격 검수 모듈 import 유지 PASS
